@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Chapitre a venir : Le HTTPS, un prerequis de confiance. Ce chapitre du palier 1 (L'architecture technique) sera bientot disponible sur La Boussole SEO.">
-<title>Le HTTPS, un prérequis de confiance — La Boussole SEO</title>
+<meta name="description" content="Qu'est-ce que le HTTPS ? Découvre simplement son rôle, le certificat TLS, son impact sur le SEO et comment vérifier que ton site est correctement sécurisé.">
+<title>HTTPS : définition, sécurité et impact sur le SEO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../styles.css">
@@ -44,8 +44,9 @@
       <div>
         <h1>Le HTTPS, un prérequis de confiance</h1>
         <div class="chapter-meta">
-          <span>🚧 Chapitre en préparation</span>
-          <span>✅ Quiz à venir</span>
+          <span>⏱️ Lecture ~9 min</span>
+          <span>🧩 Prérequis : Chapitre 6</span>
+          <span>✅ Quiz en fin de chapitre</span>
         </div>
       </div>
       <div class="chapter-hero-tag">
@@ -72,39 +73,122 @@
 
     <article id="accroche" class="block hook-block">
       <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
-      <h3>Ce chapitre arrive bientôt</h3>
-      <div class="analogy-card">
-        🚧 <strong>Contenu à venir</strong> — le chapitre « Le HTTPS, un prérequis de confiance » (🟢 Palier 1 — L'architecture technique) est en cours de rédaction. Reviens bientôt pour le découvrir !
-      </div>
-      <p>[Placeholder] Accroche du chapitre — à rédiger.</p>
+      <h3>Le petit cadenas sert-il vraiment à quelque chose ?</h3>
+      <p>Regarde la barre d'adresse de ton navigateur. Tu as probablement déjà remarqué le petit cadenas à côté de certaines adresses. Tu t'es peut-être déjà demandé : « Ça sert vraiment à quelque chose ? »</p>
+      <p>Oui, le <strong>HTTPS</strong> permet de sécuriser les échanges entre le navigateur d'un utilisateur et le serveur auquel il se connecte. Pour un site qui demande un mot de passe, une adresse, des informations personnelles ou un paiement, cette sécurité est évidemment essentielle. Mais même pour un simple site vitrine, le HTTPS est aujourd'hui devenu la norme.</p>
+      <p>Et ce n'est pas seulement une question de SEO. C'est avant tout une question de <strong>sécurité et de confiance</strong>.</p>
     </article>
 
     <article id="objectifs" class="block">
       <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
       <h3>À la fin de ce chapitre, tu sauras</h3>
       <ul class="objectives-list">
-        <li><span class="tick">✓</span> [Placeholder] Objectif pédagogique 1</li>
-        <li><span class="tick">✓</span> [Placeholder] Objectif pédagogique 2</li>
-        <li><span class="tick">✓</span> [Placeholder] Objectif pédagogique 3</li>
+        <li><span class="tick">✓</span> Ce que signifie HTTPS</li>
+        <li><span class="tick">✓</span> Quelle différence il y a entre HTTP et HTTPS</li>
+        <li><span class="tick">✓</span> Ce qu'est un certificat TLS</li>
+        <li><span class="tick">✓</span> Comment HTTPS sécurise les échanges</li>
+        <li><span class="tick">✓</span> Quel est son rapport avec le SEO</li>
+        <li><span class="tick">✓</span> Comment vérifier que ton site utilise correctement HTTPS</li>
+        <li><span class="tick">✓</span> Quels sont les pièges techniques à éviter</li>
       </ul>
     </article>
 
     <article id="concept" class="block">
       <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
-      <h3>[Placeholder] Titre du concept</h3>
-      <p>[Placeholder] Texte d'explication du concept — à rédiger.</p>
+
+      <h3>HTTP et HTTPS, quelle différence ?</h3>
+      <p><strong>HTTP</strong> est un protocole qui permet notamment au navigateur et au serveur de communiquer.</p>
+      <p>HTTPS reprend ce principe en ajoutant une couche de sécurité grâce au <strong>chiffrement des échanges</strong>. Le « S » signifie <strong>Secure</strong>.</p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine que tu envoies une lettre. Si la communication n'est pas chiffrée, une personne qui parviendrait à intercepter le message pourrait potentiellement en lire le contenu. Avec HTTPS, les échanges sont chiffrés afin de rendre leur lecture beaucoup plus difficile pour un tiers qui les intercepterait.
+      </div>
+      <p>Tu peux donc retenir une idée très simple : <strong>HTTP permet de communiquer. HTTPS permet de communiquer de manière sécurisée.</strong></p>
+
+      <h3>Le certificat TLS, c'est quoi ?</h3>
+      <p>Pour établir une connexion HTTPS, le site utilise notamment un <strong>certificat TLS</strong>. Ce certificat permet au navigateur de vérifier certains éléments liés à l'identité du site et de mettre en place une connexion chiffrée.</p>
+      <p>Pas besoin de rentrer dans les détails de la cryptographie pour comprendre l'essentiel.</p>
+      <p>Retient simplement : <strong>HTTPS repose notamment sur TLS pour sécuriser les communications entre le navigateur et le serveur.</strong></p>
+      <p>C'est notamment grâce à ce mécanisme que les informations échangées ne circulent pas simplement en clair.</p>
+
+      <h3>HTTPS et SEO : quel rapport ?</h3>
+      <p>Le HTTPS a également un lien avec le référencement naturel. Google considère HTTPS comme un <strong>signal de classement léger</strong>. Mais attention à ne pas lui donner plus d'importance qu'il n'en a.</p>
+      <p>Passer ton site en HTTPS ne va pas soudainement le faire passer de la position 50 à la position 1. Le bénéfice principal du HTTPS reste la <strong>sécurisation des échanges</strong> et la confiance qu'il contribue à instaurer auprès des utilisateurs.</p>
+      <p>Pour un site moderne, le HTTPS doit donc être considéré comme un <strong>standard technique</strong>, et non comme une technique miracle de référencement.</p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <p>Voici les erreurs les plus fréquentes :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser que HTTPS garantit qu'un site est honnête</li>
+        <li><span class="tick">✗</span> Croire que HTTPS suffit à sécuriser toute une application</li>
+        <li><span class="tick">✗</span> Oublier de rediriger les anciennes URLs HTTP</li>
+        <li><span class="tick">✗</span> Laisser des ressources importantes en HTTP</li>
+        <li><span class="tick">✗</span> Oublier de surveiller le certificat TLS</li>
+        <li><span class="tick">✗</span> Considérer HTTPS comme une stratégie SEO complète</li>
+        <li><span class="tick">✗</span> Penser que le petit cadenas signifie que tout risque de sécurité a disparu</li>
+      </ul>
+      <p>Le HTTPS est donc une <strong>base technique importante</strong>, mais ce n'est qu'une partie de la sécurité globale d'un site.</p>
     </article>
 
     <article id="exemple" class="block">
       <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
-      <h3>[Placeholder] Titre de l'exemple</h3>
-      <p>[Placeholder] Exemple concret illustrant le concept — à rédiger.</p>
+      <h3>Que se passe-t-il sur une boutique en ligne ?</h3>
+      <p>Imagine une boutique en ligne. Un utilisateur renseigne : son nom, son adresse, ses coordonnées bancaires. Ces informations sont échangées entre son navigateur et différents services.</p>
+      <p>Il serait évidemment problématique que ces communications puissent être facilement lues par un tiers qui parviendrait à les intercepter. HTTPS contribue à protéger ces échanges.</p>
+      <p>À l'inverse, imagine que ton navigateur affiche : « Non sécurisé » à côté de l'adresse du site. Même si ton site ne demande aucune information sensible, l'utilisateur peut immédiatement avoir un doute. Est-ce que le site est fiable ? Est-ce que je peux remplir ce formulaire ? Est-ce que je peux donner mon adresse e-mail ?</p>
+      <p>La confiance commence parfois par des détails techniques qui passent complètement inaperçus… jusqu'au jour où ils deviennent visibles.</p>
     </article>
 
     <article id="pratique" class="block">
       <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
-      <h3>[Placeholder] Titre de la mise en pratique</h3>
-      <p>[Placeholder] Étapes pratiques — à rédiger.</p>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Vérifie ton URL</p>
+            <p>Commence par regarder l'adresse de ton site. Elle doit utiliser : <code>https://</code> et non simplement : <code>http://</code>. Par exemple : <code>https://www.tonsite.fr</code>.</p>
+            <p>Le petit cadenas affiché par ton navigateur est également un premier indicateur que la connexion HTTPS est correctement établie.</p>
+            <div class="pitfall">⚠️ Piège fréquent : voir le cadenas et considérer que tout le site est forcément parfaitement sécurisé. HTTPS protège principalement la communication entre le navigateur et le serveur. Il ne garantit pas, à lui seul, que l'application ne contient aucune faille ou que le propriétaire du site est digne de confiance.</div>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Vérifie la redirection HTTP → HTTPS</p>
+            <p>Essaie d'ouvrir directement la version HTTP de ton site : <code>http://www.tonsite.fr</code>. Si ton site est correctement configuré, tu dois être redirigé vers sa version HTTPS.</p>
+            <p>L'objectif est d'éviter que les anciennes URLs HTTP restent accessibles comme des versions concurrentes de tes pages.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie les différentes variantes</p>
+            <p>Teste les principales versions de ton domaine : <code>http://tonsite.fr</code>, <code>http://www.tonsite.fr</code>, <code>https://tonsite.fr</code>, <code>https://www.tonsite.fr</code>.</p>
+            <p>Selon la configuration de ton site, une seule version doit être considérée comme la version principale. Les autres doivent généralement rediriger vers celle-ci.</p>
+            <div class="analogy-card">
+              💡 <strong>Pourquoi ?</strong> — Imagine que ton site existe réellement sous quatre adresses différentes. Pour un utilisateur, cela peut sembler anodin. Pour les moteurs de recherche, cela peut en revanche créer des problèmes de gestion des URLs et de signaux entre différentes versions du site.
+            </div>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Vérifie les ressources de tes pages</p>
+            <p>Une page HTTPS peut malgré tout essayer de charger certaines ressources en HTTP. Par exemple, une page en <code>https://tonsite.fr</code> qui charge une image en <code>http://tonsite.fr/image.jpg</code>.</p>
+            <p>On parle alors de <strong>mixed content</strong>, ou contenu mixte. Selon la nature de la ressource, le navigateur peut afficher un avertissement ou bloquer son chargement.</p>
+            <p>Vérifie donc que les ressources importantes de tes pages utilisent elles aussi HTTPS.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Vérifie ton certificat TLS</p>
+            <p>Ton navigateur permet également de consulter certaines informations concernant le certificat TLS utilisé par ton site. Tu peux notamment vérifier qu'il est valide et qu'il correspond bien au domaine consulté.</p>
+            <p>Des outils spécialisés permettent également d'aller plus loin dans l'analyse de la configuration HTTPS.</p>
+            <div class="pitfall">⚠️ Piège fréquent : oublier qu'un certificat doit être renouvelé ou correctement configuré. Un certificat expiré peut provoquer des avertissements dans les navigateurs et empêcher les utilisateurs d'accéder normalement au site.</div>
+          </div>
+        </div>
+      </div>
     </article>
 
     <article id="jargon" class="block">
@@ -112,20 +196,74 @@
       <h3>Mini-lexique</h3>
       <table class="jargon-table">
         <tr><th>Terme</th><th>Définition simple</th></tr>
-        <tr><td>[Placeholder]</td><td>[Placeholder] Définition à venir.</td></tr>
+        <tr><td>HTTP</td><td>Protocole permettant notamment au navigateur et au serveur de communiquer.</td></tr>
+        <tr><td>HTTPS</td><td>Version sécurisée de HTTP qui chiffre les communications.</td></tr>
+        <tr><td>TLS</td><td>Technologie utilisée notamment pour sécuriser et chiffrer les communications.</td></tr>
+        <tr><td>Certificat TLS</td><td>Élément utilisé pour établir une connexion HTTPS et vérifier certains éléments liés au site.</td></tr>
+        <tr><td>Chiffrement</td><td>Transformation des données afin qu'elles ne puissent pas être facilement lues par un tiers.</td></tr>
+        <tr><td>Mixed content</td><td>Page HTTPS qui charge certaines ressources via HTTP.</td></tr>
       </table>
     </article>
 
     <article id="quiz" class="block">
       <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
-      <div class="analogy-card">
-        🚧 <strong>Quiz à venir</strong> — disponible dès la publication de ce chapitre.
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/3</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Que signifie le « S » de HTTPS ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Search</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Secure</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Server</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Site</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le « S » signifie <strong>Secure</strong>, car HTTPS ajoute une couche de sécurité aux communications.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Quel est le principal intérêt du HTTPS ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Augmenter automatiquement le trafic</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Sécuriser les échanges entre le navigateur et le site</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Doubler la vitesse du site</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Créer des backlinks</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> HTTPS permet notamment de chiffrer les échanges entre le navigateur et le serveur.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — HTTPS garantit-il qu'un site est honnête ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement pour les sites e-commerce</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement avec Google</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> HTTPS protège principalement les communications. Il ne garantit ni l'honnêteté du propriétaire du site, ni l'absence de toutes les failles de sécurité.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+        <div class="score-num">3/3</div>
+        <p>Bravo, le HTTPS n'a plus de secret pour toi !</p>
+        <div class="score-actions">
+          <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+          <a href="../chapitre-8/" class="btn btn-primary">Chapitre suivant →</a>
+        </div>
+      </div>
       </div>
     </article>
 
     <article id="suite" class="block">
       <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
-      <h3>La suite du programme</h3>
+      <h3>La suite logique</h3>
+      <p>Ton site utilise maintenant une connexion sécurisée. Mais il reste une situation très fréquente à comprendre : les sites qui contiennent <strong>beaucoup de pages</strong>.</p>
+      <p>Blogs, catalogues, boutiques en ligne… Comment organiser toutes ces pages lorsqu'elles sont réparties sur plusieurs pages de navigation ?</p>
+      <p>C'est ce qu'on va découvrir avec la pagination.</p>
       <div class="next-card">
         <div class="next-card-prev-row">
           <a href="../chapitre-6/">← Chapitre précédent</a>
@@ -190,6 +328,7 @@
   });
 })();
 </script>
+<script src="../../quiz.js"></script>
 
 </body>
 </html>
