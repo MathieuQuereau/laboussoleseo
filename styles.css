@@ -183,6 +183,13 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 
 .btn-sm { padding: 9px 16px; font-size: 0.85rem; box-shadow: 0 0 0 2px var(--border), 3px 3px 0 var(--ink); }
 
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.btn[disabled]:hover, .btn[disabled]:active { transform: none; }
+
 /* ---------- Hero ---------- */
 
 .hero {

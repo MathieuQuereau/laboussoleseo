@@ -69,6 +69,7 @@ Ces couleurs pilotent : le badge numéroté de chaque palier (`.palier-num`, `.b
 - **Désactivé** (`.chapter-row.disabled`) : `opacity: 0.7`, texte en `--ink-faint`, curseur par défaut, pas de survol.
 - **Hover générique** : accentuation de l'ombre (`--shadow` → `--shadow-hover`) + léger décalage `translate(-1px,-1px)` à `translate(-2px,-2px)`.
 - **Active/pressed** : décalage inverse `translate(2px,2px)`, ombre réduite à `1px 1px 0 var(--ink)`.
+- **Désactivé (bouton)** : `.btn[disabled]` → `opacity: 0.5; cursor: not-allowed; pointer-events: none;`, sans effet de survol/clic. Utilisé pour les CTA menant à un chapitre pas encore publié (voir 5.1 et 11).
 - **Focus** : non stylé explicitement dans le CSS actuel (à traiter en priorité — voir section 9, Points d'attention).
 
 Il n'existe **pas de mode sombre** sur le site (à l'exception des bandes intentionnellement sombres `.trust-band` et `.hook-block`, qui sont des choix de mise en page, pas un thème global).
@@ -145,6 +146,7 @@ Pas de tokens d'espacement formalisés (`--space-*`) : les valeurs sont posées 
 - **`.btn-primary`** : fond `--accent` (jaune), texte `--ink`. C'est le CTA principal du site — "Commencer gratuitement", "Découvrir le premier chapitre", "Continuer".
 - **`.btn-ghost`** : fond `--surface` (blanc), texte `--ink` — CTA secondaire ("Voir le programme complet", "Refaire le quiz"). Au survol, fond `--brand-soft`.
 - **`.btn-sm`** : variante compacte pour le header (`padding: 9px 16px; font-size: 0.85rem`).
+- **`.btn[disabled]`** : variante désactivée (bouton HTML natif avec l'attribut `disabled` + `aria-disabled="true"`, pas un lien `<a>`), utilisée pour un CTA qui mène à un chapitre non encore publié — voir 11. Toujours accompagnée d'un libellé qui l'indique clairement (ex. "À venir", "Chapitre suivant — à venir") plutôt que du texte d'action habituel ("Continuer →").
 - Interaction : survol = ombre agrandie + `translate(-1px,-1px)` ; clic (`:active`) = décalage inverse `translate(2px,2px)` + ombre réduite à `1px 1px 0 var(--ink)`.
 
 ### 5.2 Cartes
@@ -363,3 +365,23 @@ Conformément à la règle de reformulation minimale (10.0), **tout le reste du 
 - Les deux `<h3>` fixes "Mini-lexique" et "La suite logique", à ajouter systématiquement même absents du document (ce sont des intitulés de gabarit, pas du contenu éditorial).
 
 Cette liste est volontairement limitative : si un doute survient sur un passage qui n'y figure pas, la règle par défaut est de **copier le texte du document sans le modifier**, quitte à ajuster uniquement la ponctuation de jonction entre phrases fusionnées.
+
+---
+
+## 11. Politique de publication des chapitres non écrits
+
+Le site est déployé tel quel sur GitHub Pages, sans étape de build ni exclusion de fichiers (`actions/upload-pages-artifact` avec `path: .`) : **tout fichier `index.html` présent dans le dépôt est accessible publiquement**, qu'il soit lié depuis une page ou non. Cela a une conséquence directe sur la gestion des chapitres pas encore rédigés :
+
+- **Aucune page "placeholder" de chapitre ne doit exister dans le dépôt.** Tant qu'un chapitre n'a pas son contenu réel (au format décrit en section 10), son dossier `palier-P/chapitre-N/` ne doit **pas être créé**. Créer une page provisoire ("Chapitre en préparation", contenu `[Placeholder]`) revient à la publier malgré elle, puisque rien n'empêche techniquement d'y accéder directement par son URL.
+- **Un chapitre non écrit est représenté uniquement par une entrée non cliquable** dans les pages qui listent le programme :
+  - Dans `programme/index.html` et `palier-P/index.html` : une ligne `<div class="chapter-row disabled">…<span class="status status-draft">À venir</span></div>` (pas de balise `<a>`, pas de `href`) — convention déjà en place, à ne jamais transformer en lien avant que le chapitre existe réellement.
+  - Dans un chapitre **déjà publié** qui doit annoncer le chapitre suivant (bloc "Et après ?" et bouton de fin de quiz), le CTA qui mènerait normalement vers ce chapitre doit être un **bouton HTML désactivé**, pas un lien :
+    ```html
+    <button type="button" class="btn btn-primary" disabled aria-disabled="true">À venir</button>
+    ```
+    Le titre du chapitre à venir (`<h3>` du `.next-card-body`) peut rester affiché s'il est déjà connu (annoncé dans le document source du chapitre courant) — seul le bouton de navigation doit être neutralisé, jamais transformé en `<a href>` vers une page qui n'existe pas.
+- **Réactivation** : dès que le chapitre suivant est réellement rédigé et son fichier `index.html` créé (en suivant la section 10), il faut à la fois :
+  1. Créer la page réelle du chapitre (jamais un fichier "placeholder" intermédiaire).
+  2. Remplacer le(s) bouton(s) `disabled` par des liens `<a href="../chapitre-N/" class="btn btn-primary">` dans tous les chapitres qui y pointent en amont.
+  3. Transformer la ligne `.chapter-row.disabled` correspondante en `<a class="chapter-row">` avec `<span class="status status-published">Publié</span>`, dans `programme/index.html` et `palier-P/index.html`.
+  4. Mettre à jour les compteurs "X publiés" à ces deux mêmes endroits (voir 10.5).
