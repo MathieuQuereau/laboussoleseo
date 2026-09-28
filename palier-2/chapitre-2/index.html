@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pourquoi les images ralentissent-elles un site ? Découvre comment le poids, les dimensions et la compression des images influencent les performances de tes pages.">
+<title>Poids des images : pourquoi elles ralentissent ton site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 2 — La webperformance</a> <span>/</span>
+    <span>Chapitre 2</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Le poids des images et pourquoi ça ralentit ton site</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~9 min</span>
+          <span>🧩 Prérequis : Chapitre 1</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 2 · Chapitre 2 sur 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Une belle image peut ralentir ton site</h3>
+      <p>Tu viens de prendre une belle photo. Elle fait 8 Mo. Tu la trouves magnifique. Tu l'envoies directement sur ton site. Sur ton ordinateur, tout semble fonctionner. Mais sur un téléphone avec une connexion moyenne, le visiteur attend. Et attend encore. Le problème ne vient peut-être pas de ton serveur. Il vient simplement… <strong>de ton image.</strong></p>
+      <p>C'est un problème assez courant. Une image peut sembler parfaitement normale lorsqu'on la regarde sur son ordinateur, tout en représentant une quantité importante de données à télécharger pour le navigateur. Et lorsque plusieurs images lourdes sont présentes sur une même page, le problème peut rapidement s'accumuler.</p>
+      <p>Alors, comment éviter de charger beaucoup plus de données que nécessaire ?</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Pourquoi une image lourde ralentit une page</li>
+        <li><span class="tick">✓</span> Comment connaître le poids d'une image</li>
+        <li><span class="tick">✓</span> Pourquoi les dimensions d'une image comptent</li>
+        <li><span class="tick">✓</span> Comment réduire le poids d'une image sans dégrader inutilement sa qualité</li>
+        <li><span class="tick">✓</span> Quelles erreurs éviter avec les images</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Pourquoi une image lourde ralentit-elle une page ?</h3>
+      <p>Une image numérique est composée de données. Plus elle contient de pixels et plus elle est enregistrée avec une qualité importante, plus son fichier peut être lourd. Par exemple, une image de 4 000 × 3 000 pixels contient énormément plus d'informations qu'une petite image de 800 × 600 pixels. Et toutes ces données doivent être téléchargées par le navigateur avant de pouvoir être affichées.</p>
+      <p>C'est là que le poids d'une image devient important. Plus le fichier est lourd, plus la quantité de données à transférer est importante.</p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine que tu dois déménager. Tu peux transporter une petite boîte. Ou transporter une armoire entière alors que tu n'avais besoin que d'un seul tiroir. Dans les deux cas, tu transportes quelque chose. Mais le deuxième voyage demande beaucoup plus de temps et d'efforts. Pour les images, c'est pareil. Envoyer une image de 5 Mo alors qu'une version de 150 Ko suffit revient souvent à <strong>transporter une armoire pour déplacer un livre.</strong>
+      </div>
+
+      <h3>Le poids d'une image et ses dimensions sont deux choses liées, mais différentes</h3>
+      <p>Il faut également distinguer deux notions. D'un côté, tu as les <strong>dimensions de l'image</strong> : 4 000 × 3 000 pixels. De l'autre, tu as le <strong>poids du fichier</strong> : 5 Mo. Une grande image peut être lourde. Mais deux images ayant exactement les mêmes dimensions peuvent également avoir des poids différents. Le format, la qualité et la compression utilisée peuvent notamment faire varier le poids du fichier.</p>
+      <p>Pour optimiser une image, il faut donc regarder <strong>à la fois ses dimensions et son poids.</strong></p>
+
+      <h3>Réduire l'affichage ne réduit pas forcément le poids</h3>
+      <p>C'est un piège très courant. Imagine que tu possèdes une image de 3 000 pixels de large. Mais que ton site ne l'affiche que dans un espace de 500 pixels. Visuellement, tu vois bien une petite image. Mais le fichier original peut toujours faire 3 000 pixels de large.</p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine une grande affiche pliée dans une petite boîte. Le fait de la mettre dans une petite boîte ne change pas la taille de l'affiche. Pour une image, c'est pareil. Réduire son affichage avec du CSS ne réduit pas forcément son poids.
+      </div>
+
+      <h3>La compression permet de réduire le poids</h3>
+      <p>La compression permet de réduire la quantité de données nécessaire pour stocker une image. Elle peut donc permettre d'obtenir un fichier beaucoup plus léger. Il existe notamment deux grandes approches : <strong>compression avec perte</strong> (certaines informations sont supprimées afin de réduire davantage le poids) et <strong>compression sans perte</strong> (les informations originales sont conservées).</p>
+      <p>L'objectif n'est pas nécessairement d'obtenir le fichier le plus petit possible. Il faut trouver un <strong>bon équilibre entre poids et qualité visuelle.</strong></p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Envoyer directement des photos très lourdes sur son site</li>
+        <li><span class="tick">✗</span> Penser qu'une image affichée en petit est forcément légère</li>
+        <li><span class="tick">✗</span> Négliger les dimensions originales de l'image</li>
+        <li><span class="tick">✗</span> Compresser tellement une image que sa qualité devient insuffisante</li>
+        <li><span class="tick">✗</span> Utiliser une image beaucoup plus grande que nécessaire</li>
+        <li><span class="tick">✗</span> Charger des images qui n'apportent aucune réelle valeur à la page</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Une bannière de 7 Mo pour un affichage de 1 200 pixels</h3>
+      <p>Tu as une bannière qui s'affiche sur ton site avec une largeur de 1 200 pixels. Mais tu as envoyé directement une photo originale de 6 000 × 4 000 pixels — 7 Mo. Le navigateur doit alors télécharger cette grosse image. Pourtant, ton site n'a pas nécessairement besoin d'une image aussi grande. Une version adaptée à l'usage pourrait par exemple faire 1 600 × 1 067 pixels — 200 Ko.</p>
+      <p>Visuellement, la différence peut être difficile à percevoir. Mais la quantité de données à télécharger est radicalement différente. Tu passes ici d'un fichier de <strong>7 Mo à 200 Ko</strong>.</p>
+      <p>L'objectif n'est donc pas de supprimer les images de ton site. Il est de <strong>servir une image adaptée à son usage.</strong></p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Fais l'inventaire</p>
+            <p>Commence par regarder les images présentes sur tes pages principales. Identifie notamment les images qui semblent particulièrement lourdes. Tu peux commencer par ta page d'accueil, tes pages les plus visitées, tes pages commerciales ou tes fiches produits si tu as un e-commerce. L'objectif est simplement de savoir <strong>quelles images méritent ton attention en priorité.</strong></p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Regarde leurs dimensions</p>
+            <p>Vérifie ensuite les dimensions de tes images. Une image destinée à être affichée dans un petit bloc n'a probablement pas besoin de faire 5 000 pixels de large. Compare toujours les dimensions du fichier avec l'espace réellement utilisé sur la page.</p>
+            <div class="analogy-card">
+              💡 <strong>Bon réflexe</strong> — Demande-toi toujours : « Quelle taille cette image doit-elle réellement avoir pour être affichée correctement ? »
+            </div>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Compresse tes images</p>
+            <p>La compression permet de réduire le poids d'un fichier. L'objectif est de diminuer la quantité de données à télécharger tout en conservant une qualité visuelle suffisante. Teste différentes compressions si nécessaire. Une image destinée à être affichée en petit peut souvent supporter davantage d'optimisation qu'une grande image très visible.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Utilise un format adapté</p>
+            <p>Plusieurs formats d'image peuvent être utilisés selon les besoins. Tu peux notamment rencontrer JPEG, WebP et AVIF. Le choix du format peut avoir une influence sur le poids du fichier et sur sa qualité. Nous verrons ces différents formats plus précisément dans le prochain chapitre.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Adapte la taille à l'usage</p>
+            <p>Une image affichée en 400 pixels de large n'a généralement pas besoin d'être envoyée dans une version gigantesque. Si ton site affiche une image dans un petit espace, évite de lui fournir systématiquement une image beaucoup plus grande que nécessaire. L'idée est simple : <strong>envoyer la bonne taille pour le bon usage.</strong></p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Évite les images inutiles</p>
+            <p>La meilleure image pour la performance est parfois… <strong>celle que tu n'as pas besoin de charger.</strong> Toutes les images présentes sur une page ne sont pas forcément indispensables. Si une image est uniquement décorative et n'apporte aucune information ou valeur particulière, demande-toi si elle est réellement nécessaire. Chaque ressource supprimée est une ressource que le navigateur n'a pas besoin de télécharger.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Poids d'une image</td><td>Taille du fichier à télécharger</td></tr>
+        <tr><td>Pixel</td><td>Petit élément qui compose une image numérique</td></tr>
+        <tr><td>Résolution</td><td>Dimensions d'une image en pixels</td></tr>
+        <tr><td>Compression</td><td>Technique permettant de réduire le poids d'un fichier</td></tr>
+        <tr><td>Compression avec perte</td><td>Compression qui réduit le poids en supprimant certaines informations</td></tr>
+        <tr><td>Compression sans perte</td><td>Compression qui conserve les informations originales</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/4</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Pourquoi une image lourde ralentit-elle une page ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Elle nécessite davantage de données à télécharger</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Elle augmente automatiquement le nombre de pages</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Elle bloque toujours Google</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Elle empêche systématiquement le site de fonctionner</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Plus une image est lourde, plus la quantité de données à télécharger est importante.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Afficher une image de 4 000 pixels dans un bloc de 500 pixels réduit-il automatiquement son poids ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement avec WordPress</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement sur mobile</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> La taille affichée à l'écran et la taille du fichier sont deux choses différentes. Une image peut être affichée en petit tout en conservant un fichier très lourd.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Que permet la compression ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Réduire le poids d'un fichier</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Créer automatiquement du contenu</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Améliorer le référencement local</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Ajouter des pixels à une image</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> La compression permet de réduire la quantité de données nécessaire pour stocker une image et donc son poids.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Une image de 5 000 pixels de large est-elle toujours nécessaire pour un petit bloc de 400 pixels ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement sur ordinateur</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement pour le SEO</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Il est généralement inutile de charger une image beaucoup plus grande que l'espace dans lequel elle doit être affichée.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">4<span>/4</span></p>
+          <p>Parfait ! Tu comprends maintenant comment les images influencent les performances. L'étape suivante : choisir le bon format.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <a href="../chapitre-3/" class="btn btn-primary">Chapitre suivant →</a>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Tu sais maintenant pourquoi une image trop lourde peut ralentir ton site. Tu as également vu qu'il ne suffit pas de réduire visuellement une image : il faut aussi <strong>faire attention à ses dimensions, à son poids et à sa compression.</strong></p>
+      <p>Mais il reste une question importante : <strong>quel format utiliser pour ses images ?</strong></p>
+      <p>JPEG, WebP, AVIF… Ces formats ne fonctionnent pas exactement de la même manière et peuvent avoir un impact différent sur le poids et la qualité des images.</p>
+      <div class="next-card">
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Les formats d'image modernes : WebP, AVIF et JPEG</h3>
+          </div>
+          <a href="../chapitre-3/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>

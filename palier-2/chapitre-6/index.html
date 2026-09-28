@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est la minification CSS et JavaScript, pourquoi elle réduit le poids des fichiers et comment l'utiliser sans casser ton site.">
+<title>Minification CSS et JavaScript : réduire le poids du code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 2 — La webperformance</a> <span>/</span>
+    <span>Chapitre 6</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>La minification du code (CSS/JS)</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 5</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 2 · Chapitre 6 sur 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Du code compact plutôt que du code lisible</h3>
+      <p>Ton site fonctionne. Mais derrière les boutons, les couleurs et les animations, il y a énormément de code. Et ce code peut contenir des espaces, des retours à la ligne, des commentaires, des noms de variables et des morceaux de code inutiles. Tout cela n'est pas forcément nécessaire pour que le navigateur exécute le fichier. On peut donc parfois le réduire. C'est la <strong>minification.</strong></p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce qu'est la minification</li>
+        <li><span class="tick">✓</span> Pourquoi elle concerne notamment CSS et JavaScript</li>
+        <li><span class="tick">✓</span> Ce qu'elle peut apporter</li>
+        <li><span class="tick">✓</span> Pourquoi elle peut aussi créer des problèmes</li>
+        <li><span class="tick">✓</span> Comment l'utiliser sans casser ton site</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce que la minification ?</h3>
+      <p>La <strong>minification</strong> consiste à réduire la taille d'un fichier de code en supprimant notamment certains caractères inutiles à son exécution. Par exemple les espaces inutiles, les retours à la ligne, les commentaires et certains caractères de mise en forme. Le navigateur n'a pas besoin de ces éléments pour comprendre et exécuter le code. Le fichier peut donc être rendu plus compact.</p>
+
+      <h3>Le cas du CSS</h3>
+      <p>Le <strong>CSS</strong> permet notamment de définir l'apparence d'une page. Il peut contenir de nombreuses règles, espaces et commentaires destinés à faciliter la lecture du code par les développeurs. Une version minifiée conserve les informations nécessaires à l'exécution, mais dans une forme plus compacte.</p>
+
+      <h3>Le cas du JavaScript</h3>
+      <p>Le <strong>JavaScript</strong> permet notamment d'ajouter des comportements et des interactions à une page. Comme pour le CSS, certains éléments présents dans le fichier peuvent être supprimés ou transformés lors de la minification afin de réduire sa taille.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine que tu dois envoyer une recette à quelqu'un. Tu peux écrire « Prends une casserole. Place-la sur le feu. Ajoute de l'eau. » Ou condenser les informations dans un format beaucoup plus compact. Le message contient les mêmes instructions, mais prend moins de place. La minification fait quelque chose de comparable avec le code.
+      </div>
+
+      <h3>Pourquoi minifier du code ?</h3>
+      <p>Un fichier plus léger nécessite potentiellement moins de données à télécharger. Cela peut donc contribuer à améliorer les performances d'un site. Mais le gain dépend du fichier concerné et de sa configuration. La minification n'est donc qu'une optimisation parmi d'autres.</p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Croire que minifier du code consiste à supprimer des fonctionnalités</li>
+        <li><span class="tick">✗</span> Penser que tous les fichiers gagneront énormément en poids</li>
+        <li><span class="tick">✗</span> Activer toutes les options d'optimisation sans tester</li>
+        <li><span class="tick">✗</span> Oublier de sauvegarder avant une modification</li>
+        <li><span class="tick">✗</span> Ne pas vérifier les fonctionnalités du site après minification</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Un fichier JavaScript optimisé</h3>
+      <p>Ton site utilise un fichier JavaScript de <strong>500 Ko</strong>. Après optimisation, une version minifiée peut être sensiblement plus petite. Le navigateur a donc moins de données à télécharger. Le gain dépend évidemment du fichier et de sa configuration. Si ton fichier contient déjà très peu d'espaces, de commentaires ou d'éléments pouvant être réduits, le gain sera naturellement plus limité.</p>
+      <p>La minification n'est donc pas une baguette magique.</p>
+      <div class="analogy-card">
+        💡 <strong>À retenir</strong> — L'objectif est de réduire la quantité de données à transmettre sans modifier le fonctionnement attendu du code.
+      </div>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie les fichiers lourds</p>
+            <p>Utilise PageSpeed Insights ou les outils développeur de ton navigateur. Cherche notamment les fichiers CSS et JavaScript qui représentent une part importante des ressources chargées.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Regarde les CSS et JavaScript</p>
+            <p>Identifie les fichiers particulièrement volumineux. Tous les fichiers ne nécessitent pas forcément la même optimisation. Commence par les fichiers qui peuvent avoir le plus d'impact.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie les possibilités de minification</p>
+            <p>Ton CMS, ton plugin de performance ou ton système de build peut parfois le faire automatiquement. Vérifie donc d'abord les fonctionnalités déjà disponibles dans ton environnement.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Sauvegarde avant modification</p>
+            <p><strong>Toujours.</strong> Une optimisation mal configurée peut provoquer un menu qui ne fonctionne plus, une mise en page cassée ou une interaction qui ne répond plus. Avant d'activer une nouvelle option, assure-toi donc de pouvoir revenir en arrière.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Teste ton site</p>
+            <p>Après activation : ouvre plusieurs pages, teste le menu, teste les formulaires, teste les boutons, vérifie les animations importantes. Ne te contente pas de regarder si la page s'affiche. Teste également les fonctionnalités avec lesquelles tes visiteurs interagissent.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Mesure</p>
+            <p>Compare les performances avant et après. Regarde notamment la taille des fichiers et les résultats des outils de performance. L'objectif n'est pas simplement d'activer une option d'optimisation. Il faut vérifier qu'elle apporte réellement quelque chose sans créer de problème.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>CSS</td><td>Code qui définit notamment l'apparence d'une page</td></tr>
+        <tr><td>JavaScript</td><td>Code qui permet notamment d'ajouter des comportements et interactions</td></tr>
+        <tr><td>Minification</td><td>Réduction de la taille d'un fichier de code</td></tr>
+        <tr><td>Script</td><td>Programme ou morceau de code exécuté pour effectuer une tâche</td></tr>
+        <tr><td>Build</td><td>Processus de préparation et de transformation du code avant sa mise en ligne</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/4</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Que cherche à faire la minification ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Réduire la taille des fichiers de code</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Supprimer toutes les fonctionnalités</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Ajouter des pages au site</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Remplacer les images</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> La minification cherche à réduire la taille des fichiers de code en supprimant notamment certains éléments qui ne sont pas nécessaires à leur exécution.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Quels fichiers peuvent notamment être minifiés ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> CSS et JavaScript</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Uniquement les images</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Uniquement les PDF</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Uniquement les fichiers HTML</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Le CSS et le JavaScript peuvent notamment être minifiés afin de réduire la taille des fichiers transmis au navigateur.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Faut-il tester après une minification ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement sur mobile</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement si le site utilise WordPress</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Une mauvaise configuration peut provoquer des dysfonctionnements. Il est donc important de tester le site après une minification.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Que faut-il comparer après avoir activé une minification ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Les performances avant et après</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Uniquement le nombre de pages indexées</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Uniquement le nombre de backlinks</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Uniquement le nombre d'images</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Comparer les performances avant et après permet de vérifier si l'optimisation apporte réellement un gain.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">4<span>/4</span></p>
+          <p>Excellent ! Tu sais maintenant comment optimiser le code de ton site.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <a href="../chapitre-7/" class="btn btn-primary">Chapitre suivant →</a>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Tu viens de réduire ce que ton site doit envoyer. Mais une autre question se pose : <strong>« Et si on pouvait rapprocher ces fichiers des visiteurs ? »</strong></p>
+      <p>C'est justement le rôle d'un <strong>CDN.</strong></p>
+      <div class="next-card">
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Le CDN : rapprocher les ressources de tes visiteurs</h3>
+          </div>
+          <a href="../chapitre-7/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>

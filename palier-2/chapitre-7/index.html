@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est un CDN, comment il fonctionne, pourquoi il peut accélérer un site et dans quels cas son utilisation est réellement pertinente.">
+<title>CDN : définition, fonctionnement et intérêt pour un site web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 2 — La webperformance</a> <span>/</span>
+    <span>Chapitre 7</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Le CDN, c'est quoi et pour qui ?</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 6</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 2 · Chapitre 7 sur 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Rapprocher les ressources des visiteurs</h3>
+      <p>Ton serveur est situé en France. Ton visiteur est à Montréal. Un autre est à Tokyo. À chaque visite, les ressources doivent parcourir une certaine distance avant d'arriver jusqu'au navigateur. Et si ton site pouvait rapprocher certaines ressources de tes visiteurs ? C'est notamment ce que permet un <strong>CDN.</strong></p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce qu'est un CDN</li>
+        <li><span class="tick">✓</span> Comment il fonctionne</li>
+        <li><span class="tick">✓</span> Pourquoi il peut accélérer un site</li>
+        <li><span class="tick">✓</span> Dans quels cas il est particulièrement utile</li>
+        <li><span class="tick">✓</span> Pourquoi tous les sites n'en ont pas forcément besoin</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce qu'un CDN ?</h3>
+      <p><strong>CDN</strong> signifie <strong>Content Delivery Network</strong>. Il s'agit d'un réseau de serveurs répartis dans différentes zones géographiques. Ces serveurs peuvent servir certaines ressources du site depuis un emplacement plus proche du visiteur. L'objectif est notamment de réduire la distance que certaines données doivent parcourir avant d'arriver jusqu'au navigateur.</p>
+
+      <h3>Comment fonctionne un CDN ?</h3>
+      <p>Sans CDN, les ressources peuvent être récupérées depuis le serveur d'origine du site. Avec un CDN, certaines ressources peuvent être distribuées depuis différents points du réseau. Un visiteur situé loin du serveur d'origine peut alors récupérer certaines données depuis un serveur plus proche de lui. Cela concerne notamment des ressources statiques comme les images, les fichiers CSS ou les fichiers JavaScript.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine une entreprise qui possède un seul entrepôt à Paris. Un client habite à Marseille, un autre à Lille, un autre à Strasbourg. Tu pourrais tout envoyer depuis Paris. Mais tu pourrais aussi avoir plusieurs entrepôts régionaux. Les colis parcourent alors une distance plus courte. Un CDN fonctionne avec une logique comparable.
+      </div>
+
+      <h3>Pour qui un CDN peut-il être intéressant ?</h3>
+      <p>Un CDN peut être particulièrement intéressant lorsque ton audience est répartie dans différentes zones géographiques. Par exemple, si ton site est consulté par des visiteurs situés dans plusieurs pays, rapprocher certaines ressources des utilisateurs peut être pertinent. À l'inverse, un site destiné exclusivement à une audience locale n'a pas forcément le même besoin.</p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser qu'un CDN rend automatiquement n'importe quel site ultra-rapide</li>
+        <li><span class="tick">✗</span> Utiliser un CDN sans avoir optimisé les images</li>
+        <li><span class="tick">✗</span> Oublier que le code peut également être lourd</li>
+        <li><span class="tick">✗</span> Croire qu'un CDN règle tous les problèmes de performance</li>
+        <li><span class="tick">✗</span> Mettre en place une infrastructure complexe sans mesurer les résultats</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Un site international avec beaucoup de ressources</h3>
+      <p>Tu as un site international avec beaucoup d'images, de fichiers CSS, de JavaScript et de vidéos. Un CDN peut mettre certaines de ces ressources à disposition depuis différents points du réseau. Un visiteur situé loin de ton serveur d'origine peut alors récupérer certaines données depuis un serveur plus proche.</p>
+      <p>Imagine par exemple que ton serveur d'origine soit situé en France et qu'un visiteur consulte ton site depuis le Japon. Certaines ressources statiques peuvent être distribuées depuis un point du CDN plus proche de ce visiteur. Le principe reste le même pour d'autres zones géographiques.</p>
+      <div class="analogy-card">
+        💡 <strong>À retenir</strong> — Un CDN permet notamment de rapprocher certaines ressources des visiteurs. Mais il ne remplace pas les autres optimisations de performance.
+      </div>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Regarde ton audience</p>
+            <p>Tes visiteurs sont-ils concentrés dans une seule région ? Ou viennent-ils de plusieurs pays ? Si ton audience est internationale, un CDN peut être particulièrement intéressant.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Regarde ton hébergement</p>
+            <p>Certains hébergeurs proposent déjà des services proches d'un CDN. Vérifie donc ce qui est inclus dans ton offre avant de mettre en place une solution supplémentaire.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Identifie les ressources adaptées</p>
+            <p>Un CDN est particulièrement intéressant pour distribuer des ressources statiques : images, CSS, JavaScript et fichiers. Commence par identifier les ressources qui peuvent réellement bénéficier de cette distribution.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Configure progressivement</p>
+            <p>Ne modifie pas toute ton infrastructure sans comprendre ce que tu fais. Commence progressivement et vérifie que les ressources continuent à être correctement distribuées.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Vérifie les URL</p>
+            <p>Assure-toi que les ressources sont correctement chargées après la configuration. Vérifie notamment les images, les fichiers CSS et les fichiers JavaScript. Une configuration qui semble fonctionner sur une page peut parfois provoquer des problèmes ailleurs.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Mesure</p>
+            <p>Teste ton site depuis différents endroits et compare les performances. L'objectif est de vérifier si le CDN apporte réellement un bénéfice pour ton audience.</p>
+            <div class="analogy-card">
+              💡 <strong>La bonne approche</strong> — Ne mets pas en place un CDN simplement parce que c'est une technologie moderne. Commence par regarder ton audience, ton infrastructure et tes besoins réels.
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>CDN</td><td>Réseau de serveurs permettant de distribuer des ressources depuis différents emplacements</td></tr>
+        <tr><td>Serveur d'origine</td><td>Serveur principal qui héberge ou génère les ressources</td></tr>
+        <tr><td>Ressource statique</td><td>Fichier qui change peu ou pas selon chaque visiteur</td></tr>
+        <tr><td>Latence</td><td>Temps nécessaire pour qu'une information voyage entre deux points</td></tr>
+        <tr><td>Edge</td><td>Serveur ou point du réseau situé au plus près de l'utilisateur</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/4</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Que signifie CDN ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Content Delivery Network</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Central Data Navigation</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Content Domain Name</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Central Delivery Node</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> CDN signifie Content Delivery Network, ou réseau de distribution de contenu.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Quel est l'un des principaux intérêts d'un CDN ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Servir certaines ressources depuis des serveurs géographiquement proches</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Créer automatiquement des contenus</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Remplacer Google Search Console</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Générer automatiquement des backlinks</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Un CDN peut permettre de servir certaines ressources depuis des serveurs situés plus près des utilisateurs.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Tous les sites ont-ils absolument besoin d'un CDN ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement les sites WordPress</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement les sites e-commerce</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Son intérêt dépend notamment de la taille du site, de son audience et de sa répartition géographique.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Un CDN règle-t-il automatiquement tous les problèmes de performance ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement si les images sont lourdes</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement sur mobile</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Un CDN peut aider à distribuer certaines ressources, mais il ne règle pas automatiquement les problèmes liés à un serveur lent, un code lourd ou des images trop volumineuses.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">4<span>/4</span></p>
+          <p>Excellent ! Tu sais maintenant comment rapprocher les ressources de tes visiteurs.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <a href="../chapitre-8/" class="btn btn-primary">Chapitre suivant →</a>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Tu sais maintenant comment rapprocher certaines ressources des visiteurs. Mais revenons au début de la chaîne. Avant même de recevoir une image ou un fichier CSS, ton navigateur doit d'abord obtenir une réponse du serveur. Et parfois, c'est précisément là que le problème commence.</p>
+      <div class="next-card">
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Le temps de réponse serveur : quand le problème commence avant même l'affichage</h3>
+          </div>
+          <a href="../chapitre-8/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>

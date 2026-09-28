@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est le lazy loading, comment fonctionne le chargement différé des images et comment l'utiliser pour améliorer les performances de ton site.">
+<title>Lazy loading : définition et intérêt pour les performances web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 2 — La webperformance</a> <span>/</span>
+    <span>Chapitre 4</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Le lazy loading, c'est quoi ?</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 3</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 2 · Chapitre 4 sur 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Charger seulement ce qui est nécessaire</h3>
+      <p>Imagine une page avec 50 images. Est-ce vraiment nécessaire de télécharger les 50 immédiatement alors que le visiteur ne voit que les 3 premières ? Pas forcément. C'est là que le <strong>lazy loading</strong>, ou chargement différé, devient intéressant. L'idée est simple : ne pas forcément charger immédiatement ce qui n'est pas encore nécessaire.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce qu'est le lazy loading</li>
+        <li><span class="tick">✓</span> Pourquoi il peut améliorer les performances</li>
+        <li><span class="tick">✓</span> Quelles images sont de bonnes candidates</li>
+        <li><span class="tick">✓</span> Pourquoi il ne faut pas l'appliquer aveuglément</li>
+        <li><span class="tick">✓</span> Comment vérifier son fonctionnement</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce que le lazy loading ?</h3>
+      <p>Le <strong>lazy loading</strong>, ou <strong>chargement différé</strong>, consiste à attendre avant de charger certaines ressources qui ne sont pas immédiatement nécessaires. Prenons une image située tout en bas d'une longue page. Lorsque le visiteur arrive, cette image est très loin de la zone qu'il regarde. Elle n'a donc pas forcément besoin d'être téléchargée immédiatement. Le navigateur peut attendre que l'image approche de la zone visible avant de la charger.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Tu pars en randonnée avec un sac. Est-ce que tu sors immédiatement tout ce dont tu auras besoin dans six heures ? Non. Tu gardes certaines choses dans ton sac et tu les prends au moment où elles deviennent utiles. Le lazy loading fonctionne avec une logique comparable.
+      </div>
+
+      <h3>Pourquoi cela peut améliorer les performances ?</h3>
+      <p>Imaginons une page contenant beaucoup d'images. Sans chargement différé, le navigateur peut devoir télécharger de nombreuses images alors que le visiteur ne les voit pas encore. Avec le lazy loading, certaines images peuvent attendre. La quantité de données à télécharger au début peut donc être réduite. Le navigateur peut ainsi se concentrer davantage sur les éléments nécessaires à l'affichage initial.</p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Mettre du lazy loading sur toutes les images</li>
+        <li><span class="tick">✗</span> Retarder une image importante visible immédiatement</li>
+        <li><span class="tick">✗</span> Chercher à charger le moins de ressources possible à tout prix</li>
+        <li><span class="tick">✗</span> Penser que lazy loading remplace l'optimisation du poids</li>
+        <li><span class="tick">✗</span> Ne pas vérifier le résultat réel sur la page</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Tu as un article de 2 500 mots avec 15 illustrations. Lorsque le visiteur arrive sur la page, seules les premières images sont visibles. Les autres se trouvent plus bas dans l'article. Sans chargement différé, le navigateur peut commencer à télécharger de nombreuses images alors qu'elles ne sont pas encore visibles. Avec un lazy loading correctement configuré, les images situées plus loin peuvent attendre avant d'être téléchargées.</p>
+      <div class="analogy-card">
+        💡 <strong>À retenir</strong> — Le lazy loading ne consiste pas à supprimer les images. Il consiste à <strong>les charger au moment où elles deviennent utiles.</strong>
+      </div>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Regarde tes images</p>
+            <p>Commence par identifier les images situées sous la ligne de flottaison, dans des articles longs, dans des galeries ou dans des listes importantes. Ce sont de bonnes candidates pour un chargement différé.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Identifie l'image principale</p>
+            <p>Une image immédiatement visible ne doit pas forcément être chargée en différé. Si elle participe à l'affichage initial de la page, la retarder peut être contre-productif.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie ton CMS</p>
+            <p>De nombreux CMS modernes proposent déjà du lazy loading natif ou via une extension. Avant d'installer un outil supplémentaire, vérifie donc ce que ton CMS propose déjà.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Évite les configurations agressives</p>
+            <p>Ne cherche pas à retarder absolument tout. Le but est de <strong>charger plus intelligemment</strong>, pas de rendre l'affichage incomplet.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Teste</p>
+            <p>Recharge la page et observe les ressources dans les outils développeur de ton navigateur. L'objectif est de vérifier que le lazy loading produit réellement le résultat attendu.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Lazy loading</td><td>Chargement différé d'une ressource jusqu'à ce qu'elle devienne nécessaire</td></tr>
+        <tr><td>Chargement différé</td><td>Autre manière de parler du lazy loading</td></tr>
+        <tr><td>Ligne de flottaison</td><td>Partie visible d'une page avant de faire défiler</td></tr>
+        <tr><td>Ressource</td><td>Élément chargé par le navigateur</td></tr>
+        <tr><td>Above the fold</td><td>Zone visible immédiatement à l'arrivée sur une page</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/4</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Quel est le principe du lazy loading ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Charger certaines ressources plus tard, lorsqu'elles deviennent nécessaires</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Supprimer toutes les images</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Bloquer Googlebot</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Empêcher les images de s'afficher sur mobile</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Le lazy loading consiste à différer le chargement de certaines ressources jusqu'au moment où elles deviennent nécessaires.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Faut-il appliquer le lazy loading à toutes les images ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement sur WordPress</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement sur mobile</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Certaines images importantes pour l'affichage initial doivent être chargées immédiatement.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Quelle image est une bonne candidate au lazy loading ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Une image située tout en bas d'un long article</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> L'image principale visible immédiatement</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Le logo en haut de la page</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Une image indispensable à l'affichage initial</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Une image située plus bas peut attendre avant d'être chargée puisqu'elle n'est pas immédiatement visible.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Quel est l'objectif principal du lazy loading ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Charger toutes les images plus rapidement</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Supprimer les images inutiles</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">C</span> Charger certaines ressources au moment où elles deviennent nécessaires</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Remplacer la compression des images</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Le lazy loading permet de différer certaines ressources afin d'éviter de tout charger immédiatement.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">4<span>/4</span></p>
+          <p>Parfait ! Tu comprends comment charger intelligemment les ressources.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <a href="../chapitre-5/" class="btn btn-primary">Chapitre suivant →</a>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Tu sais maintenant quoi charger et <strong>quand le charger</strong>. Le lazy loading permet de différer certaines ressources qui ne sont pas immédiatement nécessaires.</p>
+      <p>Mais il existe une autre technique essentielle : éviter de télécharger à nouveau des ressources que le navigateur possède déjà. C'est le rôle de la <strong>mise en cache.</strong></p>
+      <div class="next-card">
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Le cache : pourquoi ton navigateur peut éviter de tout recharger</h3>
+          </div>
+          <a href="../chapitre-5/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>

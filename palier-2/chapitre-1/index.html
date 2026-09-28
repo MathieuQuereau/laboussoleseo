@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Que sont les Core Web Vitals ? Découvre simplement le LCP, l'INP et le CLS et comment ces indicateurs permettent d'évaluer l'expérience utilisateur d'un site.">
+<title>Core Web Vitals : comprendre les indicateurs de performance web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 2 — La webperformance</a> <span>/</span>
+    <span>Chapitre 1</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Les Core Web Vitals expliqués simplement</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~10 min</span>
+          <span>🧩 Prérequis : Aucun</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 2 · Chapitre 1 sur 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Quand un site te fait attendre</h3>
+      <p>Tu cliques sur un site. La page commence à s'afficher. Tu attends. Puis encore un peu. Tu commences à te demander si ton clic a bien fonctionné. Et finalement, tu quittes le site. Tu viens de vivre un problème de <strong>performance web</strong>.</p>
+      <p>Un site performant n'est pas seulement un site qui affiche rapidement une page. Il doit aussi pouvoir <strong>réagir correctement à tes actions</strong> et <strong>rester stable pendant son chargement</strong>. Google s'intéresse donc à plusieurs aspects de cette expérience grâce à des indicateurs appelés les <strong>Core Web Vitals</strong>. Le nom peut sembler compliqué. Mais le principe est finalement assez simple : <strong>mesurer certains éléments qui influencent la qualité de l'expérience vécue par un visiteur sur une page web.</strong></p>
+      <p>Dans ce chapitre, nous allons voir les trois indicateurs principaux à connaître : <strong>LCP, INP et CLS</strong>.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce que sont les Core Web Vitals</li>
+        <li><span class="tick">✓</span> À quoi servent le LCP, l'INP et le CLS</li>
+        <li><span class="tick">✓</span> Pourquoi ces indicateurs sont importants</li>
+        <li><span class="tick">✓</span> Comment savoir si ton site présente de bonnes performances</li>
+        <li><span class="tick">✓</span> Quelles erreurs peuvent dégrader l'expérience de tes visiteurs</li>
+        <li><span class="tick">✓</span> Pourquoi un site peut être rapide mais malgré tout désagréable à utiliser</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Les Core Web Vitals, c'est quoi ?</h3>
+      <p>Les <strong>Core Web Vitals</strong> sont un ensemble d'indicateurs utilisés pour mesurer certains aspects de l'expérience utilisateur sur une page web. Aujourd'hui, trois indicateurs principaux sont à connaître : <strong>LCP, INP et CLS</strong>.</p>
+      <p>Pas besoin de retenir immédiatement leurs noms compliqués. Le plus important est d'abord de comprendre <strong>ce que chacun cherche à mesurer</strong>.</p>
+      <p>On peut résumer les trois questions ainsi :</p>
+      <p><strong>LCP : est-ce que le contenu principal apparaît suffisamment vite ?</strong></p>
+      <p><strong>INP : est-ce que la page réagit correctement quand j'interagis avec elle ?</strong></p>
+      <p><strong>CLS : est-ce que la page reste stable pendant son chargement ?</strong></p>
+      <p>Ces trois indicateurs permettent donc de regarder la performance sous des angles différents.</p>
+
+      <h3>Le LCP : à quelle vitesse le contenu principal apparaît ?</h3>
+      <p><strong>LCP</strong> signifie <em>Largest Contentful Paint</em>. Il cherche notamment à mesurer le temps nécessaire pour afficher le principal élément de contenu visible dans la fenêtre du navigateur. Cela peut par exemple être une grande image, un titre important ou un bloc principal de contenu.</p>
+      <p>En résumé : <strong>« Combien de temps faut-il avant que je voie réellement le contenu principal de la page ? »</strong></p>
+      <p>Si ton visiteur arrive sur une page et doit attendre longtemps avant de voir son contenu principal, l'expérience peut rapidement devenir frustrante.</p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine que tu entres dans un restaurant : le LCP correspond au temps nécessaire avant que ton plat principal arrive sur la table. Si tu attends très longtemps sans rien voir arriver, tu risques de commencer à t'impatienter.
+      </div>
+
+      <h3>L'INP : est-ce que la page réagit correctement ?</h3>
+      <p><strong>INP</strong> signifie <em>Interaction to Next Paint</em>. Cet indicateur concerne la <strong>réactivité de la page lorsqu'un utilisateur interagit avec elle</strong>. Tu cliques sur un bouton, tu ouvres un menu, tu remplis un formulaire, tu appuies sur un élément interactif. Si le site met beaucoup de temps à réagir, l'expérience devient désagréable. L'INP cherche justement à mesurer cette réactivité.</p>
+      <p>La question à retenir est donc : <strong>« Lorsque j'interagis avec la page, est-ce qu'elle réagit correctement ? »</strong></p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Toujours dans le restaurant : l'INP correspond au temps que met le serveur à réagir lorsque tu lui demandes quelque chose. Tu poses une question ou tu demandes de l'eau : tu t'attends à ce qu'il réagisse rapidement.
+      </div>
+
+      <h3>Le CLS : est-ce que la page bouge pendant son chargement ?</h3>
+      <p><strong>CLS</strong> signifie <em>Cumulative Layout Shift</em>. Cette fois, on s'intéresse à la <strong>stabilité visuelle de la page</strong>. Imagine que tu veux cliquer sur un bouton. Tu places ton doigt. Et au dernier moment, une image se charge au-dessus du bouton. Le bouton descend. Tu cliques… Mais tu viens finalement de cliquer sur autre chose. C'est un <strong>déplacement inattendu de la mise en page</strong>. Le CLS mesure ce type d'instabilité.</p>
+      <p>La question à retenir est donc : <strong>« Est-ce que les éléments restent à leur place pendant que la page se charge ? »</strong></p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Toujours dans le restaurant : le CLS, c'est comme si ta table changeait de place pendant que tu es en train de manger. Tu avais posé ton verre quelque part et, soudain, tout se déplace. Ce n'est pas très confortable.
+      </div>
+
+      <h3>Trois indicateurs, trois problèmes différents</h3>
+      <p>Tu peux maintenant retenir une idée très simple :</p>
+      <p><strong>LCP → affichage du contenu principal</strong></p>
+      <p><strong>INP → réactivité aux interactions</strong></p>
+      <p><strong>CLS → stabilité de la page</strong></p>
+      <p>Les trois problèmes sont différents. Une page peut donc afficher rapidement son contenu mais mal réagir aux clics, être réactive mais déplacer constamment ses éléments, ou rester stable mais mettre longtemps à afficher son contenu principal.</p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Croire que les Core Web Vitals signifient simplement que le site doit être rapide</li>
+        <li><span class="tick">✗</span> Regarder uniquement le LCP</li>
+        <li><span class="tick">✗</span> Oublier la réactivité de la page</li>
+        <li><span class="tick">✗</span> Négliger les déplacements inattendus des éléments</li>
+        <li><span class="tick">✗</span> Chercher uniquement à obtenir une bonne note sans regarder l'expérience réelle</li>
+        <li><span class="tick">✗</span> Penser qu'un seul test suffit pour juger définitivement les performances</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Une page d'accueil qui cumule plusieurs problèmes</h3>
+      <p>Imagine une page d'accueil avec une grande image en haut, plusieurs scripts, une fenêtre de consentement, des polices externes et plusieurs animations. La page commence à s'afficher. Mais l'image principale met plusieurs secondes à apparaître. Pendant ce temps, un script lourd ralentit les interactions. Puis une bannière apparaît et pousse une partie du contenu vers le bas.</p>
+      <p>Tu peux alors avoir trois problèmes différents : <strong>LCP mauvais</strong> (le contenu principal apparaît trop tard), <strong>INP mauvais</strong> (la page réagit difficilement aux interactions), <strong>CLS mauvais</strong> (les éléments se déplacent pendant le chargement).</p>
+      <p>Le visiteur, lui, ne connaît aucun de ces termes. Il dira simplement : « Ce site est lent et pénible à utiliser. »</p>
+      <p>C'est justement tout l'intérêt des Core Web Vitals : <strong>décomposer cette expérience en plusieurs aspects mesurables.</strong></p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Teste ton site</p>
+            <p>Commence par utiliser <strong>PageSpeed Insights</strong>. Entre l'URL d'une page importante. Ne teste pas uniquement ta page d'accueil. Tu peux également tester une page de contenu, une page commerciale ou une fiche produit si tu as un e-commerce. Les résultats peuvent varier d'une page à l'autre.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Regarde les trois indicateurs</p>
+            <p>Observe notamment LCP, INP et CLS. Ne cherche pas immédiatement à comprendre toutes les informations affichées par l'outil. Commence simplement par identifier les indicateurs qui posent éventuellement problème. L'objectif est de savoir <strong>où se situe le problème avant de chercher à le corriger</strong>.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Regarde les recommandations</p>
+            <p>PageSpeed Insights peut te proposer différentes pistes d'amélioration. Tu peux notamment rencontrer des recommandations concernant l'optimisation des images, la réduction du JavaScript, la suppression de certaines ressources inutiles, la réservation de l'espace nécessaire aux images ou l'amélioration du serveur. Ces recommandations ne signifient pas forcément qu'il faut tout appliquer immédiatement. Commence par comprendre le problème avant de modifier ton site.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Corrige une chose à la fois</p>
+            <p>Ne cherche pas à tout modifier simultanément. Commence par le problème qui semble avoir le plus d'impact. Par exemple, si une image très lourde ralentit fortement l'affichage du contenu principal, commence par travailler sur cette image. Tu pourras ensuite mesurer à nouveau le résultat.</p>
+            <div class="analogy-card">
+              💡 <strong>Bon réflexe</strong> — Une optimisation est beaucoup plus facile à comprendre lorsque tu sais quelle modification a produit quel effet.
+            </div>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Reteste</p>
+            <p>Après tes modifications, effectue un nouveau test. Compare les résultats avant et après. Mais attention : un test ponctuel ne représente pas nécessairement toute la réalité. Les performances peuvent varier selon l'appareil utilisé, la connexion réseau, les conditions de chargement ou la page testée. L'objectif n'est donc pas simplement de faire disparaître un mauvais résultat sur un test. Il faut chercher à <strong>améliorer réellement l'expérience des visiteurs.</strong></p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Core Web Vitals</td><td>Indicateurs mesurant certains aspects de l'expérience utilisateur</td></tr>
+        <tr><td>LCP</td><td>Indicateur lié à l'affichage du contenu principal</td></tr>
+        <tr><td>INP</td><td>Indicateur lié à la réactivité aux interactions</td></tr>
+        <tr><td>CLS</td><td>Indicateur lié aux déplacements inattendus de la mise en page</td></tr>
+        <tr><td>Performance web</td><td>Capacité d'un site à charger et à réagir efficacement</td></tr>
+        <tr><td>PageSpeed Insights</td><td>Outil permettant d'analyser les performances d'une page</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/5</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Que mesurent les Core Web Vitals ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Le nombre de visiteurs</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Certains aspects de l'expérience utilisateur</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Le nombre de pages d'un site</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Le nombre de backlinks</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Les Core Web Vitals permettent notamment d'observer l'affichage du contenu principal, la réactivité et la stabilité visuelle.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Que mesure principalement le LCP ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> La sécurité du site</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> L'affichage du contenu principal</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Le nombre de backlinks</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> La taille du sitemap</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le LCP s'intéresse notamment au temps nécessaire pour afficher le principal élément de contenu visible.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Quel indicateur concerne la réactivité ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> CLS</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> INP</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Sitemap</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> LCP</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> L'INP concerne la réactivité de la page lorsqu'un utilisateur interagit avec elle.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Que mesure le CLS ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Les déplacements inattendus de la mise en page</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> La vitesse du serveur</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Le nombre d'images</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Le nombre de visiteurs</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Le CLS s'intéresse à la stabilité visuelle de la page et aux déplacements inattendus de ses éléments.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 5 — Un site peut-il avoir plusieurs problèmes de performance différents ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Non</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Une page peut être lente à afficher, peu réactive et instable visuellement. C'est justement pour cela qu'il faut regarder les différents indicateurs.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">5<span>/5</span></p>
+          <p>Excellent ! Tu comprends maintenant que la performance web n'est pas qu'une affaire de vitesse : c'est aussi l'expérience globale.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <a href="../chapitre-2/" class="btn btn-primary">Chapitre suivant →</a>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Tu connais maintenant les <strong>Core Web Vitals</strong> et les trois indicateurs principaux à retenir :</p>
+      <p><strong>LCP → le contenu principal apparaît-il suffisamment vite ?</strong></p>
+      <p><strong>INP → la page réagit-elle correctement ?</strong></p>
+      <p><strong>CLS → la page reste-t-elle stable pendant son chargement ?</strong></p>
+      <p>Tu as également vu comment commencer à analyser les performances de ton site avec PageSpeed Insights. Mais derrière une page lente, on retrouve très souvent un élément que l'on sous-estime : <strong>les images.</strong></p>
+      <p>Une seule image trop lourde peut ralentir considérablement l'affichage d'une page. Dans le prochain chapitre, nous allons donc nous intéresser à un sujet très concret.</p>
+      <div class="next-card">
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Le poids des images et pourquoi ça ralentit ton site</h3>
+          </div>
+          <a href="../chapitre-2/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>

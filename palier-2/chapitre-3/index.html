@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre les différences entre JPEG, PNG, WebP et AVIF et comment choisir le bon format d'image pour améliorer les performances de ton site.">
+<title>WebP et AVIF : choisir les bons formats d'image pour son site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 2 — La webperformance</a> <span>/</span>
+    <span>Chapitre 3</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Les formats d'image modernes (WebP/AVIF)</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~9 min</span>
+          <span>🧩 Prérequis : Chapitre 2</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 2 · Chapitre 3 sur 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Le format d'une image, ça change vraiment la donne</h3>
+      <p>Tu as maintenant compris qu'une image trop lourde peut ralentir ton site. Mais une question arrive naturellement : <strong>« Comment faire pour avoir de belles images sans envoyer des fichiers énormes ? »</strong></p>
+      <p>La réponse passe notamment par le choix du format. Tu connais probablement le JPEG et le PNG. Mais le <strong>WebP</strong> et l'<strong>AVIF</strong> sont aujourd'hui des formats importants lorsqu'on s'intéresse à la performance web. Le format choisi peut en effet avoir un impact sur le poids du fichier et donc sur la quantité de données que ton visiteur doit télécharger.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Pourquoi le format d'une image compte</li>
+        <li><span class="tick">✓</span> Ce qu'est le WebP</li>
+        <li><span class="tick">✓</span> Ce qu'est l'AVIF</li>
+        <li><span class="tick">✓</span> Quelles sont les principales différences entre les formats</li>
+        <li><span class="tick">✓</span> Comment choisir le bon format pour ton site</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Un format d'image, c'est quoi ?</h3>
+      <p>Un format d'image est une manière d'organiser et de stocker les informations d'une image. Et tous les formats ne sont pas aussi efficaces selon le type d'image et l'utilisation que tu en fais.</p>
+
+      <h4>Le JPEG</h4>
+      <p>Le <strong>JPEG</strong> est un format très répandu. Il convient particulièrement aux photographies et aux images contenant beaucoup de détails et de couleurs. C'est un format que tu retrouveras encore très souvent sur les sites web.</p>
+
+      <h4>Le PNG</h4>
+      <p>Le <strong>PNG</strong> peut être intéressant lorsqu'on a besoin de transparence ou d'une qualité particulière sur certains éléments graphiques. En revanche, il peut devenir lourd lorsqu'il est utilisé pour de grandes photographies. Il n'est donc pas forcément le meilleur choix pour toutes les images.</p>
+
+      <h4>Le WebP</h4>
+      <p>Le <strong>WebP</strong> est un format moderne conçu pour proposer une bonne qualité avec un poids généralement réduit. Il est aujourd'hui largement pris en charge par les navigateurs. L'objectif est simple : obtenir une image visuellement satisfaisante tout en limitant la quantité de données à télécharger.</p>
+
+      <h4>L'AVIF</h4>
+      <p>L'<strong>AVIF</strong> est un format plus récent qui peut permettre d'obtenir des fichiers très compacts tout en conservant une bonne qualité. Il peut donc être intéressant lorsqu'on cherche à optimiser davantage certaines images. Mais attention : plus moderne ne signifie pas automatiquement meilleur dans tous les cas.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine quatre cartons pour transporter exactement le même objet. Certains sont énormes. D'autres sont parfaitement ajustés. Le contenu est identique, mais l'emballage change la place nécessaire dans le camion. Un format d'image joue en partie ce rôle. L'objectif est de transporter la même information visuelle avec le moins de données possible, tout en conservant une qualité satisfaisante.
+      </div>
+
+      <h3>Alors, quel format choisir ?</h3>
+      <p>Il n'existe pas un format unique qui serait systématiquement le meilleur. Le choix dépend notamment du type d'image, du niveau de qualité recherché, du poids obtenu après compression, des fonctionnalités dont tu as besoin et de ton CMS et de ton système d'optimisation.</p>
+      <p>Pour une photographie, le WebP ou l'AVIF peuvent être de très bonnes options. Pour certains éléments nécessitant une transparence particulière, d'autres formats peuvent rester pertinents.</p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser que l'AVIF est automatiquement meilleur dans tous les cas</li>
+        <li><span class="tick">✗</span> Convertir toutes les images sans vérifier le poids obtenu</li>
+        <li><span class="tick">✗</span> Comparer uniquement les formats sans regarder la qualité visuelle</li>
+        <li><span class="tick">✗</span> Oublier de vérifier que ton CMS gère correctement le format choisi</li>
+        <li><span class="tick">✗</span> Croire qu'un format moderne suffit à lui seul à rendre un site rapide</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Une photographie en trois formats différents</h3>
+      <p>Imagine que tu as une photographie destinée à une page d'accueil. Tu testes trois versions de la même image :</p>
+      <table class="jargon-table">
+        <tr><th>Format</th><th>Poids</th></tr>
+        <tr><td>JPEG</td><td>500 Ko</td></tr>
+        <tr><td>WebP</td><td>180 Ko</td></tr>
+        <tr><td>AVIF</td><td>130 Ko</td></tr>
+      </table>
+      <p>Si la qualité visuelle reste satisfaisante, les formats modernes permettent ici de réduire fortement la quantité de données téléchargées. Passer de 500 Ko à 180 Ko représente déjà une réduction importante. Et la version AVIF à 130 Ko permet ici d'aller encore plus loin.</p>
+      <p>Mais attention : ces chiffres sont uniquement un exemple. Le résultat dépend de l'image, de ses dimensions, de son contenu et des paramètres de compression utilisés. Il ne faut donc pas considérer ces chiffres comme une règle universelle.</p>
+      <div class="analogy-card">
+        💡 <strong>À retenir</strong> — Le meilleur format n'est pas forcément celui qui produit le fichier le plus petit. C'est celui qui offre un <strong>bon compromis entre poids, qualité visuelle et compatibilité</strong>.
+      </div>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie tes images importantes</p>
+            <p>Commence par les images qui apparaissent rapidement sur tes pages. Ce sont notamment les images visibles dès l'arrivée sur la page qui peuvent avoir un impact important sur le chargement initial.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Regarde leur format</p>
+            <p>Analyse quelques images de ton site. Tu peux trouver des fichiers JPEG, PNG, GIF, WebP ou AVIF. L'objectif n'est pas de tout modifier immédiatement. Commence par comprendre ce qui existe déjà.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Compare</p>
+            <p>Prends quelques images représentatives et convertis-les en WebP ou en AVIF. Compare ensuite le poids, la qualité et le rendu. Une image légèrement plus lourde mais visuellement parfaite peut parfois être préférable à une image très légère mais fortement dégradée.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Choisis le format adapté</p>
+            <p>Pour une photographie, le WebP ou l'AVIF peuvent être de très bonnes options. Pour certains éléments nécessitant une transparence particulière, d'autres formats peuvent rester pertinents. L'objectif n'est donc pas de remplacer systématiquement tous les formats existants.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Vérifie ton CMS</p>
+            <p>Ton CMS ou ton plugin d'optimisation peut parfois générer automatiquement des formats modernes. Cela peut te permettre d'optimiser tes images sans devoir convertir manuellement chaque fichier. Vérifie donc ce que ton système propose avant de commencer à tout faire à la main.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Contrôle le résultat</p>
+            <p>Ne juge pas uniquement le fichier sur ton ordinateur. Regarde également la qualité réelle affichée sur le site. Une image peut être légère et parfaitement correcte dans un cas, mais présenter des artefacts ou une dégradation visible dans un autre.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>JPEG</td><td>Format très courant, notamment pour les photographies</td></tr>
+        <tr><td>PNG</td><td>Format adapté à certains graphiques et à la transparence</td></tr>
+        <tr><td>WebP</td><td>Format d'image moderne conçu pour réduire le poids</td></tr>
+        <tr><td>AVIF</td><td>Format moderne permettant souvent une forte compression</td></tr>
+        <tr><td>Conversion</td><td>Transformation d'une image vers un autre format</td></tr>
+        <tr><td>Transparence</td><td>Possibilité d'avoir des zones sans arrière-plan visible</td></tr>
+        <tr><td>Compression</td><td>Technique permettant de réduire le poids d'un fichier</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/4</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Quel est l'intérêt principal du WebP et de l'AVIF ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Permettre notamment de réduire le poids des images</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Créer des pages automatiquement</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Remplacer les liens internes</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Les formats modernes peuvent permettre d'obtenir des fichiers plus légers tout en conservant une qualité visuelle satisfaisante.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Faut-il convertir absolument toutes les images en AVIF ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le choix dépend du contexte, de la qualité obtenue, du poids du fichier, de la compatibilité et des besoins du site.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Quel format est historiquement très courant pour les photographies ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> JPEG</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> XML</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> CSS</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Le JPEG est un format très répandu, notamment pour les photographies.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Quel est le meilleur critère pour choisir entre plusieurs formats ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Toujours choisir le fichier le plus petit</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Toujours choisir l'AVIF</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">C</span> Chercher le bon compromis entre poids, qualité et compatibilité</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Une image très légère n'est pas forcément intéressante si sa qualité devient mauvaise ou si le format pose un problème dans ton environnement.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">4<span>/4</span></p>
+          <p>Excellent ! Tu sais maintenant choisir le bon format pour optimiser tes images.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <a href="../chapitre-4/" class="btn btn-primary">Chapitre suivant →</a>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Tu sais maintenant qu'il ne suffit pas de réduire les dimensions ou le poids d'une image. Le <strong>format</strong> joue également un rôle important. Tu peux utiliser le WebP ou l'AVIF pour chercher un meilleur compromis entre qualité visuelle et poids du fichier.</p>
+      <p>Mais même avec des images parfaitement optimisées, tu n'es pas obligé de toutes les charger immédiatement. C'est justement le principe du <strong>lazy loading.</strong></p>
+      <div class="next-card">
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Le lazy loading : charger les images au bon moment</h3>
+          </div>
+          <a href="../chapitre-4/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>

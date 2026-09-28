@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est le TTFB, pourquoi le temps de réponse serveur peut ralentir ton site et comment identifier les principales causes d'un TTFB élevé.">
+<title>TTFB : comprendre le temps de réponse du serveur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 2 — La webperformance</a> <span>/</span>
+    <span>Chapitre 8</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Le temps de réponse serveur (TTFB), le coupable caché</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~9 min</span>
+          <span>🧩 Prérequis : Chapitre 7</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 2 · Chapitre 8 sur 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Quand le serveur est le problème</h3>
+      <p>Tu testes ton site. Les images sont optimisées. Le CSS est minifié. Le cache est configuré. Pourtant… La page met toujours du temps à commencer à s'afficher. Tu regardes les résultats. Et tu découvres quelque chose d'intéressant : <strong>le serveur met déjà beaucoup de temps à répondre.</strong> Bienvenue dans le monde du <strong>TTFB.</strong></p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce qu'est le TTFB</li>
+        <li><span class="tick">✓</span> Pourquoi le serveur peut être responsable d'une partie de la lenteur</li>
+        <li><span class="tick">✓</span> Quels éléments peuvent l'influencer</li>
+        <li><span class="tick">✓</span> Comment identifier un problème serveur</li>
+        <li><span class="tick">✓</span> Quand il faut demander de l'aide à son hébergeur ou à un développeur</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce que le TTFB ?</h3>
+      <p><strong>TTFB</strong> signifie <strong>Time to First Byte</strong>. On peut le traduire simplement par : <strong>« Combien de temps faut-il avant de recevoir le premier morceau de réponse du serveur ? »</strong></p>
+      <p>Lorsque tu demandes une page, plusieurs étapes peuvent se produire. Ton navigateur envoie une demande. Le serveur la reçoit. Il doit éventuellement exécuter du code, interroger une base de données, construire la réponse… Puis il commence enfin à répondre. Le TTFB s'intéresse notamment à cette première partie du trajet.</p>
+
+      <h3>Que se passe-t-il avant la première réponse ?</h3>
+      <p>Imaginons que tu demandes une page à ton site. Le navigateur envoie une requête. Le serveur doit alors traiter cette demande. Selon le fonctionnement du site, il peut devoir exécuter du code, interroger une base de données, récupérer certaines informations, construire la réponse ou vérifier certains éléments de cache. Ce n'est qu'ensuite qu'il commence à envoyer la réponse au navigateur.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le restaurant</strong> — Tu appelles un restaurant. Tu demandes : « Bonjour, est-ce que vous avez une table ? » Si quelqu'un répond immédiatement « Oui ! », le début de l'échange est rapide. Mais si personne ne répond pendant 10 secondes, même si le repas est ensuite préparé très rapidement, ton expérience commence mal. Le TTFB mesure en quelque sorte le temps avant cette première réponse.
+      </div>
+
+      <h3>Pourquoi le serveur peut-il être lent ?</h3>
+      <p>Un TTFB élevé n'a pas toujours une seule cause. Cela peut venir de l'hébergement, de la distance géographique, du temps de traitement côté serveur, d'une base de données lente, de plugins ou modules, d'une mauvaise configuration du cache ou d'une infrastructure trop sollicitée. Il faut donc éviter de conclure trop rapidement qu'un seul élément est responsable.</p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser qu'un TTFB élevé a forcément une seule cause</li>
+        <li><span class="tick">✗</span> Accuser immédiatement l'hébergeur sans analyser le reste</li>
+        <li><span class="tick">✗</span> Croire que l'optimisation des images suffit à résoudre un problème serveur</li>
+        <li><span class="tick">✗</span> Supprimer tous les plugins sans identifier ceux qui posent réellement problème</li>
+        <li><span class="tick">✗</span> Se baser sur une seule page pour conclure que tout le serveur est lent</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Un visiteur qui attend que le serveur réponde</h3>
+      <p>Ton visiteur demande : <code>https://monsite.fr/</code>. Le navigateur envoie la requête. Le serveur met <strong>1,5 seconde</strong> avant de commencer à répondre. Ensuite, les fichiers sont envoyés rapidement. Tu peux avoir optimisé parfaitement tes images et ton CSS. Mais si le serveur met déjà beaucoup de temps à répondre, tu pars avec un retard important.</p>
+      <div class="analogy-card">
+        💡 <strong>À retenir</strong> — Même si les ressources envoyées ensuite sont parfaitement optimisées, une réponse serveur lente peut déjà retarder le début du chargement. C'est pourquoi il est important de ne pas regarder uniquement le poids des images ou des fichiers CSS et JavaScript.
+      </div>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Mesure ton TTFB</p>
+            <p>Utilise un outil de performance comme PageSpeed Insights. Tu peux également utiliser les outils développeur du navigateur pour observer les temps réseau. L'objectif est d'avoir une première indication sur le temps nécessaire avant le début de la réponse du serveur.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Regarde si le problème est généralisé</p>
+            <p>Teste plusieurs pages. Si une seule page est lente, le problème peut venir de cette page. Si toutes les pages sont lentes au démarrage, le serveur ou l'infrastructure devient une piste importante. Cette comparaison est très utile pour orienter ton diagnostic.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie le cache</p>
+            <p>Un cache serveur correctement configuré peut éviter de reconstruire inutilement certaines pages. Vérifie donc si le cache est actif et s'il fonctionne correctement.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Regarde ton hébergement</p>
+            <p>Un hébergement très bon marché peut ne pas offrir les mêmes ressources qu'une infrastructure plus performante. Mais attention : le prix seul ne permet pas de conclure. Il faut regarder les performances réelles de ton infrastructure.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Regarde la base de données</p>
+            <p>Sur certains CMS, des requêtes nombreuses ou lourdes peuvent ralentir la génération d'une page. La base de données peut donc devenir une piste lorsque le serveur met du temps à construire une réponse.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Regarde les extensions</p>
+            <p>Sur WordPress par exemple, certains plugins peuvent ajouter beaucoup de traitements. Cela ne signifie pas qu'il faut supprimer tous les plugins. Il faut identifier ceux qui posent réellement problème.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">7</div>
+          <div>
+            <p class="step-title">Demande de l'aide si nécessaire</p>
+            <p>Si tu as optimisé la partie front-end mais que le serveur reste lent, il peut être temps de parler à ton hébergeur ou à un développeur. Tu n'as pas forcément besoin de résoudre seul un problème qui concerne une infrastructure ou un traitement technique avancé.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>TTFB</td><td>Temps nécessaire avant de recevoir le premier octet de la réponse du serveur</td></tr>
+        <tr><td>Serveur</td><td>Ordinateur qui héberge ou génère les ressources du site</td></tr>
+        <tr><td>Requête</td><td>Demande envoyée au serveur</td></tr>
+        <tr><td>Base de données</td><td>Système permettant notamment de stocker et récupérer les données du site</td></tr>
+        <tr><td>Hébergement</td><td>Service qui fournit l'infrastructure nécessaire pour faire fonctionner un site</td></tr>
+        <tr><td>Backend</td><td>Partie technique d'un site qui fonctionne côté serveur</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/5</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Que signifie TTFB ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Time to First Byte</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Total Traffic From Browser</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Technical Time For Backlinks</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Time To Find Backlinks</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> TTFB signifie Time to First Byte, c'est-à-dire le temps nécessaire avant de recevoir le premier octet de la réponse du serveur.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Que mesure principalement le TTFB ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Le temps avant le début de la réponse du serveur</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Le nombre de visiteurs</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Le poids total des images</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Le nombre de pages indexées</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Le TTFB s'intéresse notamment au temps nécessaire avant que le serveur commence à répondre à la requête.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Un TTFB élevé peut-il avoir plusieurs causes ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement si le site utilise WordPress</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement si les images sont lourdes</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Il peut notamment être lié au serveur, au traitement de la page, au cache, à la base de données ou à l'infrastructure.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Si toutes les pages d'un site ont un TTFB élevé, que faut-il regarder ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> L'infrastructure et le fonctionnement côté serveur</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Uniquement les balises H1</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Uniquement les backlinks</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Uniquement les images</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Si le problème concerne de nombreuses pages, l'infrastructure et le fonctionnement côté serveur deviennent des pistes importantes à analyser.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 5 — Une bonne performance web consiste-t-elle uniquement à réduire le poids des images ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement pour les sites e-commerce</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement sur mobile</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Les images ne sont qu'un élément parmi d'autres. La performance dépend de toute la chaîne : serveur, code, ressources, chargement, affichage et interactions.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">5<span>/5</span></p>
+          <p>Bravo : tu viens de terminer le Palier 2 — La webperformance. Tu sais maintenant qu'optimiser un site, c'est plus que réduire le poids des images !</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <button type="button" class="btn btn-primary" disabled aria-disabled="true">Palier suivant — à venir</button>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Bravo : tu viens de terminer le <strong>Palier 2 — La webperformance</strong>.</p>
+      <p>Tu sais maintenant que la performance ne se résume pas à « Mon site met-il deux secondes à charger ? » Tu sais regarder les Core Web Vitals, le poids des images, les formats modernes, le lazy loading, le cache, la minification, le CDN et le temps de réponse serveur.</p>
+      <p>Tu comprends maintenant que la performance est une chaîne. Une image trop lourde, un fichier mal optimisé, un cache mal configuré, un serveur lent ou un mauvais chargement des ressources peuvent chacun avoir un impact sur l'expérience de l'utilisateur.</p>
+      <p>La prochaine étape consiste à s'intéresser aux éléments qui donnent aux moteurs de recherche des informations précises sur tes pages.</p>
+      <p><strong>Bienvenue dans le Palier 3 — Les balises et signaux techniques.</strong></p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-7/">← Chapitre 7 — Le CDN, c'est quoi et pour qui ?</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Palier suivant</div>
+            <h3>Palier 3 — Les balises et signaux techniques</h3>
+          </div>
+          <button type="button" class="btn btn-primary" disabled aria-disabled="true">À venir</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>

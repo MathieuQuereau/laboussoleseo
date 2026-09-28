@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre simplement ce qu'est la mise en cache, comment elle peut accélérer un site et pourquoi elle peut parfois afficher une ancienne version d'une page.">
+<title>Mise en cache : comprendre le cache et son rôle dans les performances web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 2 — La webperformance</a> <span>/</span>
+    <span>Chapitre 5</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>La mise en cache, expliquée simplement</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~9 min</span>
+          <span>🧩 Prérequis : Chapitre 4</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 2 · Chapitre 5 sur 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Réutiliser ce qu'on a déjà</h3>
+      <p>Tu visites un site. Tu fermes la page. Tu reviens quelques minutes plus tard. Et pourtant, certaines ressources peuvent être réutilisées sans être téléchargées exactement de la même manière qu'au premier passage. Pourquoi ?</p>
+      <p>Grâce notamment à la <strong>mise en cache</strong>. Le cache permet de conserver temporairement certaines ressources afin de pouvoir les réutiliser plus rapidement lorsqu'elles sont nécessaires à nouveau.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce qu'est un cache</li>
+        <li><span class="tick">✓</span> Pourquoi il peut accélérer un site</li>
+        <li><span class="tick">✓</span> Quels sont les principaux types de cache</li>
+        <li><span class="tick">✓</span> Pourquoi un site peut parfois afficher une ancienne version</li>
+        <li><span class="tick">✓</span> Comment vérifier simplement sa configuration</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce que la mise en cache ?</h3>
+      <p>La <strong>mise en cache</strong> consiste à conserver temporairement certaines ressources afin de pouvoir les réutiliser plus rapidement. Au lieu de refaire systématiquement certaines opérations ou de télécharger à nouveau certaines ressources, le système peut réutiliser ce qu'il possède déjà en cache.</p>
+      <p>Le cache peut se trouver à différents endroits. Par exemple : dans le navigateur, sur un serveur ou dans une infrastructure intermédiaire.</p>
+
+      <h3>Le cache navigateur</h3>
+      <p>Le navigateur peut conserver certaines ressources sur l'appareil du visiteur. Lorsqu'il revient sur le site, certaines ressources peuvent alors être réutilisées plutôt que téléchargées exactement comme lors de la première visite.</p>
+
+      <h3>Le cache serveur</h3>
+      <p>Un système de cache peut également fonctionner côté serveur. Dans ce cas, certaines ressources ou certains résultats peuvent être conservés afin d'éviter de refaire certaines opérations à chaque nouvelle demande.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Tu cuisines souvent du riz. Au lieu de ressortir la casserole, les ingrédients et tout le matériel à chaque repas, tu peux préparer une quantité suffisante à l'avance. Lorsque tu en as besoin, tu l'as déjà sous la main. Le cache fonctionne avec une logique comparable. Il évite de refaire inutilement certaines opérations.
+      </div>
+
+      <h3>Pourquoi un site peut-il sembler plus rapide ?</h3>
+      <p>Imaginons qu'un visiteur arrive sur ton site pour la première fois. Son navigateur doit récupérer différentes ressources. Lorsqu'il revient ensuite, certaines de ces ressources peuvent déjà être disponibles dans le cache. Le navigateur peut alors les réutiliser. Cela peut réduire certains téléchargements ou traitements et contribuer à accélérer le chargement du site.</p>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser que le cache signifie que toutes les ressources sont toujours conservées</li>
+        <li><span class="tick">✗</span> Oublier qu'une modification du site peut nécessiter une nouvelle version</li>
+        <li><span class="tick">✗</span> Croire que vider tous les caches est toujours la meilleure solution</li>
+        <li><span class="tick">✗</span> Ne pas vérifier les règles de cache après une modification importante</li>
+        <li><span class="tick">✗</span> Confondre cache navigateur et cache serveur</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Un visiteur qui revient sur le site</h3>
+      <p>Un visiteur arrive sur ton site. Son navigateur télécharge notamment le logo, une feuille CSS, certaines images et des fichiers JavaScript. Lorsqu'il revient, certaines ressources peuvent être récupérées depuis le cache au lieu d'être téléchargées intégralement à nouveau. Le site peut alors sembler plus rapide.</p>
+      <p>Mais imaginons maintenant que tu modifies ta feuille CSS. Si une ancienne version est encore conservée en cache, ton navigateur peut continuer à utiliser cette ancienne ressource. Tu peux alors avoir l'impression que ta modification n'a pas fonctionné.</p>
+      <p>C'est notamment pour cette raison que la gestion des versions et la purge des caches peuvent être importantes lors des mises à jour.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Vérifie si ton CMS propose du cache</p>
+            <p>Sur WordPress, de nombreuses solutions permettent de gérer le cache. Commence donc par vérifier ce qui est déjà disponible sur ton site avant d'ajouter une nouvelle solution.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Active une configuration adaptée</p>
+            <p>Le but est de conserver suffisamment longtemps les ressources qui changent peu. Il faut donc trouver une configuration adaptée au fonctionnement réel de ton site.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Pense aux fichiers qui changent</p>
+            <p>Une feuille CSS modifiée doit pouvoir être identifiée comme une nouvelle version. Cela permet d'éviter qu'un visiteur utilise indéfiniment une ancienne version d'un fichier.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Vérifie le cache serveur</p>
+            <p>Selon ton hébergement, un système de cache peut également fonctionner côté serveur. Il faut donc regarder ce que ton hébergeur ou ton infrastructure propose.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Purge le cache lorsque nécessaire</p>
+            <p>Après une modification importante, il peut être nécessaire de vider certains caches. Cela permet de demander au système de repartir avec des ressources actualisées. Attention toutefois : vider un cache ne doit pas devenir un réflexe systématique. Il faut surtout comprendre quel cache pose problème et pourquoi.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Teste depuis un environnement réel</p>
+            <p>Teste ton site avec une navigation normale et avec des outils de performance. Observe notamment le comportement lors du premier chargement puis lors des chargements suivants.</p>
+            <div class="analogy-card">
+              💡 <strong>À retenir</strong> — Le cache est là pour éviter de refaire inutilement certaines opérations. Mais il doit être configuré de manière cohérente avec les ressources qui évoluent sur ton site.
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Cache</td><td>Stockage temporaire permettant de réutiliser plus rapidement une ressource</td></tr>
+        <tr><td>Cache navigateur</td><td>Cache conservé sur l'appareil du visiteur</td></tr>
+        <tr><td>Cache serveur</td><td>Cache généré ou conservé côté serveur</td></tr>
+        <tr><td>Cache-Control</td><td>En-tête HTTP permettant notamment de définir des règles de cache</td></tr>
+        <tr><td>Purge</td><td>Action consistant à vider ou renouveler un cache</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/4</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Quel est le rôle principal du cache ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Réutiliser certaines ressources pour éviter des téléchargements inutiles</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Créer des backlinks</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Modifier automatiquement les textes</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Ajouter automatiquement des images</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Le cache permet de réutiliser certaines ressources afin d'éviter des téléchargements ou traitements inutiles.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Où peut se trouver un cache ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Dans le navigateur ou côté serveur</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Uniquement dans Google</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Uniquement dans le sitemap</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Uniquement dans le code HTML</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Un cache peut notamment être conservé dans le navigateur ou fonctionner côté serveur.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Pourquoi peut-on parfois voir une ancienne version d'une page ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Parce qu'une ancienne ressource peut encore être conservée en cache</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Parce que le SEO interdit les mises à jour</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Parce que le HTML ne peut pas être modifié</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Parce qu'un site ne peut être modifié qu'une seule fois</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Une ancienne ressource peut encore être conservée en cache et être réutilisée au lieu de récupérer immédiatement la nouvelle version.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Que peut-on faire après une modification importante si une ancienne version s'affiche encore ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Purger certains caches</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Supprimer toutes les pages du site</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Modifier le sitemap</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Désactiver définitivement JavaScript</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> La purge de certains caches peut permettre de renouveler les ressources conservées et de faire apparaître les modifications.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">4<span>/4</span></p>
+          <p>Excellent ! Tu comprends maintenant le rôle du cache dans la performance.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <a href="../chapitre-6/" class="btn btn-primary">Chapitre suivant →</a>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Le navigateur peut réutiliser les fichiers. Mais il doit quand même télécharger du code. Et si ce code contient énormément d'espaces, de commentaires ou de caractères inutiles ?</p>
+      <p>On peut parfois le réduire. C'est la <strong>minification.</strong></p>
+      <div class="next-card">
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>La minification : réduire le code sans changer son fonctionnement</h3>
+          </div>
+          <a href="../chapitre-6/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>
