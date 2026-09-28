@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est la balise meta title, à quoi elle sert en SEO et comment rédiger un titre efficace pour aider Google et les internautes à comprendre ta page.">
+<title>Balise meta title : définition, rôle et bonnes pratiques SEO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 3 — Les balises et signaux techniques</a> <span>/</span>
+    <span>Chapitre 1</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>La balise meta title : la porte d'entrée de ta page</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~7 min</span>
+          <span>🧩 Prérequis : Chapitre 0</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-3-bg);color:var(--palier-3)">🟢 Palier 3 · Chapitre 1 sur 6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Pourquoi le titre de ta page est la première impression que Google et les internautes reçoivent</h3>
+      <p>Tu tapes une recherche dans Google. Quelques résultats apparaissent. Tu regardes les titres. En une fraction de seconde, tu décides sur lequel tu vas cliquer.</p>
+      <p>Ce titre que tu vois dans les résultats de recherche est généralement lié à la balise <code>&lt;title&gt;</code> présente dans le code de la page. C'est l'un des premiers éléments qui permet à Google et aux internautes de comprendre de quoi parle ta page.</p>
+      <p>Et pourtant, beaucoup de sites utilisent le même titre partout, mettent une succession de mots-clés ou laissent un titre peu explicite. Dans ce chapitre, tu vas découvrir pourquoi cette petite balise est aussi importante pour ton SEO.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce qu'est une balise meta title</li>
+        <li><span class="tick">✓</span> Savoir où elle apparaît</li>
+        <li><span class="tick">✓</span> Comprendre son rôle pour Google et les internautes</li>
+        <li><span class="tick">✓</span> Faire la différence entre le title et le H1</li>
+        <li><span class="tick">✓</span> Rédiger un title clair et pertinent</li>
+        <li><span class="tick">✓</span> Éviter les erreurs les plus fréquentes</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce que la balise meta title ?</h3>
+      <p>La balise title est une information présente dans le code HTML d'une page. Elle indique le titre associé à cette page.</p>
+      <p>Dans le code, elle ressemble à ceci :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;title&gt;Balise meta title : définition et bonnes pratiques SEO&lt;/title&gt;</pre>
+      </div>
+      <p>Elle se trouve dans la partie <code>&lt;head&gt;</code> du document HTML. Tu ne la vois donc généralement pas comme un titre dans le contenu de la page.</p>
+      <p>Mais son contenu peut notamment être utilisé pour le titre affiché dans les résultats de recherche et dans l'onglet du navigateur. Google peut toutefois ajuster le titre affiché dans ses résultats en fonction du contenu de la page et du contexte de recherche.</p>
+
+      <h3>Le title dans les résultats Google</h3>
+      <p>Lorsque tu recherches quelque chose sur Google, chaque résultat possède généralement un titre particulièrement visible. Par exemple :</p>
+      <div class="analogy-card">
+        Formation SEO débutant : apprendre les bases du référencement
+      </div>
+      <p>En quelques mots, tu comprends le sujet de la page. Le title sert donc à fournir une première information sur le contenu.</p>
+
+      <h3>Le title ne sert pas uniquement à Google</h3>
+      <p>Il serait tentant de penser que le title est juste pour mettre des mots-clés et faire plaisir à Google. Ce serait une erreur.</p>
+      <p>Le title s'adresse aussi à l'utilisateur. Il doit lui permettre de comprendre rapidement ce qu'il va trouver derrière le résultat.</p>
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le titre sur la couverture d'un livre</strong> — Imagine que ta page soit un livre. Le contenu correspond aux pages du livre. Le title correspond au titre inscrit sur sa couverture. Il doit permettre de comprendre rapidement ce qu'on va trouver à l'intérieur.
+      </div>
+
+      <h3>Le title et le H1, ce n'est pas la même chose</h3>
+      <p>C'est une confusion très fréquente. Le <strong>title</strong> et le <strong>H1</strong> sont deux éléments différents.</p>
+      <p>Le title se trouve dans le code HTML et peut être utilisé pour le titre du résultat de recherche. Le H1 est le titre principal visible dans le contenu de la page. Ils peuvent être proches, mais ils n'ont pas besoin d'être strictement identiques.</p>
+      <p>Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📋 exemple.txt</div>
+        <pre>Title :
+Comment choisir ses chaussures de randonnée ? Guide pratique
+
+H1 :
+Comment bien choisir ses chaussures de randonnée ?</pre>
+      </div>
+      <p>Les deux parlent du même sujet, mais chacun répond à son contexte.</p>
+
+      <h3>Faut-il mettre le mot-clé principal dans le title ?</h3>
+      <p>Si ta page cible une requête importante, il est généralement pertinent d'indiquer clairement le sujet dans le title. Par exemple :</p>
+      <div class="analogy-card">
+        Formation SEO débutant : apprendre les bases du référencement
+      </div>
+      <p>Le sujet est immédiatement compréhensible. Mais attention. Cela ne signifie pas qu'il faut répéter le mot-clé plusieurs fois.</p>
+      <p>Un title comme :</p>
+      <div class="analogy-card">
+        Formation SEO débutant | SEO débutant | Formation SEO
+      </div>
+      <p>paraît artificiel. Le title doit avant tout être <strong>clair, pertinent et naturel</strong>.</p>
+
+      <h3>Google peut modifier ton title</h3>
+      <p>Même si tu renseignes une balise title, Google peut parfois afficher une formulation différente dans ses résultats. Tu ne contrôles donc pas toujours exactement le texte affiché. Ton objectif est plutôt de fournir à Google une indication claire et pertinente sur le contenu de ta page.</p>
+
+      <h3>Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Utiliser exactement le même title sur toutes les pages</li>
+        <li><span class="tick">✗</span> Mettre une succession de mots-clés</li>
+        <li><span class="tick">✗</span> Écrire un title qui ne correspond pas au contenu réel</li>
+        <li><span class="tick">✗</span> Penser que le title et le H1 sont forcément identiques</li>
+        <li><span class="tick">✗</span> Chercher à contrôler exactement ce que Google affichera</li>
+        <li><span class="tick">✗</span> Oublier le title d'une nouvelle page</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons que tu possèdes un site qui vend des chaussures de randonnée. Tu crées une page consacrée aux chaussures de randonnée pour femmes.</p>
+      <p>Un premier title pourrait être :</p>
+      <div class="analogy-card">
+        Chaussures
+      </div>
+      <p>C'est beaucoup trop vague. Tu pourrais écrire :</p>
+      <div class="analogy-card">
+        Chaussures randonnée femme
+      </div>
+      <p>C'est déjà plus précis. Mais tu peux aller plus loin :</p>
+      <div class="analogy-card">
+        Chaussures de randonnée femme : comment bien les choisir ?
+      </div>
+      <p>Cette formulation indique clairement le sujet. Ton H1 pourrait être :</p>
+      <div class="analogy-card">
+        Comment choisir ses chaussures de randonnée pour femme ?
+      </div>
+      <p>Le title et le H1 sont différents, mais cohérents. C'est ce que tu recherches : <strong>deux éléments différents qui racontent la même histoire</strong>.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Choisis une page à optimiser</p>
+            <p>Commence par une page importante : une page service, une fiche produit, une page catégorie, un article de blog ou une page qui cible une requête importante.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Identifie le sujet principal</p>
+            <p>Pose-toi cette question : « Si je devais expliquer cette page en quelques mots, que dirais-je ? » Cette réponse constitue la base de ton title.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Place le sujet principal naturellement</p>
+            <p>Si ta page cible une requête importante, fais apparaître le sujet dans le title lorsque cela s'intègre naturellement.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Donne une raison de cliquer</p>
+            <p>Tu peux préciser le type de contenu : Guide, Comparatif, Conseils, Tutoriel, Définition, Méthode ou Solutions.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Vérifie la cohérence</p>
+            <p>Demande-toi : « Si je clique sur ce résultat, est-ce que je trouve réellement ce que le title m'a promis ? » Si la réponse est non, il faut revoir le title ou le contenu.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Title</td><td>Titre HTML associé à une page web</td></tr>
+        <tr><td>H1</td><td>Titre principal visible dans le contenu d'une page</td></tr>
+        <tr><td>HTML</td><td>Langage utilisé pour structurer une page web</td></tr>
+        <tr><td>SERP</td><td>Page de résultats d'un moteur de recherche</td></tr>
+        <tr><td>Snippet</td><td>Bloc de résultat affiché dans un moteur de recherche</td></tr>
+        <tr><td>Mot-clé</td><td>Terme ou expression correspondant à une recherche</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — À quoi sert principalement la balise title ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> À définir le titre associé à une page web</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> À modifier automatiquement la vitesse du serveur</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> À créer les images de la page</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> À empêcher Google de visiter la page</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> La balise title définit le titre associé à une page et fournit une information importante aux moteurs de recherche et aux utilisateurs.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Le title et le H1 sont-ils la même chose ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui, ils doivent toujours être strictement identiques</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non, ce sont deux éléments différents</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Oui, mais uniquement sur WordPress</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Non, car le H1 n'est jamais visible</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le title et le H1 ont des rôles différents, même s'ils peuvent traiter du même sujet.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Faut-il répéter plusieurs fois le même mot-clé dans le title ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui, le plus possible</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, au moins trois fois</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, le title doit rester naturel et pertinent</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, si le site est récent</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Répéter artificiellement un mot-clé n'est pas une bonne pratique.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Google affiche-t-il toujours exactement le title renseigné ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui, sans exception</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, si le title contient un mot-clé</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, Google peut parfois ajuster le titre affiché</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Non, Google supprime toujours le title</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Google peut générer ou ajuster le titre affiché dans les résultats selon le contenu et le contexte.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Tu maîtrises maintenant les bases de la balise meta title. Tu sais comment elle fonctionne, pourquoi elle est importante et comment l'optimiser. C'est une fondation solide pour continuer ton apprentissage en SEO technique !</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-2/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Le title donne un nom à ta page. Mais il n'est pas seul dans le résultat de recherche. Juste en dessous, Google peut également afficher une description. C'est la <strong>meta description</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>La meta description : pourquoi elle compte</h3>
+          </div>
+          <button type="button" class="btn btn-primary" disabled aria-disabled="true">À venir</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
