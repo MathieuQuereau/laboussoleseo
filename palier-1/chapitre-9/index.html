@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Les balises Open Graph contrôlent comment une page s'affiche sur les réseaux sociaux. Découvre à quoi elles servent, pourquoi elles ne sont pas un facteur SEO direct et comment les configurer.">
+<title>Les balises Open Graph : réseaux sociaux, pas du SEO direct</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 1 — L'architecture technique</a> <span>/</span>
+    <span>Chapitre 9</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Les balises Open Graph : réseaux sociaux, pas du SEO direct</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 8</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 1 · Chapitre 9 sur 9</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Comment le réseau social sait quoi afficher ?</h3>
+      <p>Tu publies un article sur ton site. Tu copies son URL. Tu la colles dans LinkedIn. Et immédiatement, LinkedIn affiche le titre de l'article, une image, une description, parfois le nom du site. Tu t'es peut-être déjà demandé : « Comment le réseau social sait quoi afficher ? »</p>
+      <p>La réponse se trouve notamment dans les <strong>balises Open Graph</strong>. Et contrairement à ce que certains contenus SEO peuvent laisser entendre, Open Graph n'est pas un facteur de classement Google. Son objectif est ailleurs : <strong>contrôler la manière dont une page est présentée lorsqu'elle est partagée sur certaines plateformes.</strong></p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce que sont les balises Open Graph</li>
+        <li><span class="tick">✓</span> À quoi elles servent</li>
+        <li><span class="tick">✓</span> Les principales balises à connaître</li>
+        <li><span class="tick">✓</span> Comment elles influencent l'affichage d'un partage</li>
+        <li><span class="tick">✓</span> Pourquoi elles ne sont pas un facteur SEO direct</li>
+        <li><span class="tick">✓</span> Comment les vérifier sur ton site</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Open Graph, c'est quoi ?</h3>
+      <p>Open Graph est un protocole développé à l'origine par Facebook pour permettre aux pages web de fournir des informations destinées à leur affichage lors d'un partage. Ces informations sont placées dans le <code>&lt;head&gt;</code> de la page.</p>
+      <div class="example-card">
+        <div class="example-bar">
+          <span>📄 exemple-open-graph.html</span>
+        </div>
+        <pre>&lt;meta property="og:title" content="Comment apprendre le SEO ?"&gt;
+&lt;meta property="og:description" content="Un guide simple pour débuter en référencement naturel."&gt;
+&lt;meta property="og:image" content="https://www.exemple.fr/image.jpg"&gt;
+&lt;meta property="og:url" content="https://www.exemple.fr/guide-seo"&gt;</pre>
+      </div>
+      <p>Tu n'as pas besoin de connaître le code par cœur. Retient simplement : <strong>Open Graph indique notamment aux plateformes sociales quel titre, quelle image et quelle description utiliser lorsqu'une page est partagée.</strong></p>
+
+      <h3>Les principales balises</h3>
+      <h4>og:title</h4>
+      <p>Le titre qui peut être utilisé dans l'aperçu.</p>
+      <h4>og:description</h4>
+      <p>Une description courte de la page.</p>
+      <h4>og:image</h4>
+      <p>L'image utilisée dans l'aperçu.</p>
+      <h4>og:url</h4>
+      <p>L'URL de référence de la page.</p>
+      <h4>og:type</h4>
+      <p>Le type de contenu, par exemple <code>website</code> ou <code>article</code>.</p>
+
+      <h3>Open Graph et SEO : attention à la confusion</h3>
+      <p>C'est probablement le point le plus important du chapitre. Les balises Open Graph <strong>ne sont pas des facteurs de classement Google directs</strong>. Modifier <code>og:title</code> ne va pas faire monter mécaniquement ta page dans Google. Alors pourquoi s'en occuper ?</p>
+      <p>Parce qu'un bon aperçu social peut rendre un partage plus attractif. Et un partage peut contribuer à générer des visites, de la visibilité, des interactions et éventuellement des liens. Mais ces effets sont <strong>indirects</strong>.</p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Le SEO correspond à la manière dont ta maison est trouvée dans une ville. Open Graph correspond plutôt à la manière dont la maison apparaît sur une invitation que quelqu'un partage à ses amis. Ce n'est pas le même mécanisme.
+      </div>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Quand l'aperçu social fait la différence</h3>
+      <p>Tu partages cette URL : <code>https://www.exemple.fr/guide-seo</code>. Sans informations Open Graph correctement configurées, la plateforme peut récupérer automatiquement certains éléments de la page. Le résultat peut être une image peu pertinente, un mauvais titre, une description coupée ou un aperçu peu esthétique.</p>
+      <p>Avec des balises Open Graph correctement renseignées, tu peux fournir des informations spécialement pensées pour cet affichage. Le résultat est généralement beaucoup plus maîtrisé.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Choisis une page importante</p>
+            <p>Commence par ta page d'accueil, un article important, une page service ou une page que tu partages régulièrement.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Vérifie les balises</p>
+            <p>Affiche le code source de la page. Cherche <code>og:title</code>, <code>og:description</code>, <code>og:image</code> et <code>og:url</code>. Si tu utilises un CMS comme WordPress, ton extension SEO peut souvent gérer automatiquement ces balises.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie l'image</p>
+            <p>L'image est particulièrement importante. Elle doit être pertinente, avoir une bonne qualité, être suffisamment grande, ne pas être déformée et être adaptée au format des aperçus sociaux.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Teste un partage</p>
+            <p>Copie ton URL dans une plateforme qui génère un aperçu. Regarde le titre, l'image et la description. Si quelque chose ne correspond pas à ce que tu souhaites, retourne vérifier tes balises.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">N'utilise pas le title SEO comme unique logique</p>
+            <p>Ton <code>meta title</code> et ton <code>og:title</code> peuvent être identiques. Mais ils n'ont pas exactement le même objectif. Le premier participe notamment à la présentation de la page dans les moteurs. Le second est destiné aux aperçus sociaux compatibles.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Open Graph</td><td>Protocole permettant notamment de contrôler l'aperçu d'une page partagée</td></tr>
+        <tr><td>og:title</td><td>Titre utilisé pour l'aperçu social</td></tr>
+        <tr><td>og:description</td><td>Description de l'aperçu</td></tr>
+        <tr><td>og:image</td><td>Image utilisée dans l'aperçu</td></tr>
+        <tr><td>og:url</td><td>URL associée au contenu</td></tr>
+        <tr><td>Meta title</td><td>Titre HTML utilisé notamment par les moteurs et affiché dans les résultats</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/4</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — À quoi servent principalement les balises Open Graph ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> À accélérer un site</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> À contrôler notamment l'affichage d'une page lorsqu'elle est partagée sur les réseaux sociaux</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> À créer des backlinks</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> À indexer une page</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Open Graph permet de contrôler la présentation des pages lors de partages sociaux.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — og:image sert à quoi ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="true"><span class="letter">A</span> Définir l'image utilisée dans l'aperçu social</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">B</span> Modifier le logo Google</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Optimiser automatiquement les images du site</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Créer une image avec JavaScript</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> og:image permet de définir l'image qui apparaîtra dans l'aperçu social.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Open Graph est-il un facteur de classement Google direct ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement pour LinkedIn</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement pour Facebook</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Open Graph n'agit pas directement sur le classement Google.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 4 — Pourquoi Open Graph peut-il malgré tout être intéressant pour un site SEO ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Il garantit la première position</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Il peut améliorer la présentation des contenus lorsqu'ils sont partagés</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Il remplace les backlinks</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Il accélère le crawl</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Open Graph n'agit pas directement sur le classement, mais un meilleur partage peut contribuer indirectement à la visibilité et à l'acquisition de trafic.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">4<span>/4</span></p>
+          <p>Bravo : tu viens de terminer le premier palier consacré à l'architecture technique. Tu as appris à structurer, organiser et préparer un site pour le référencement.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <button type="button" class="btn btn-primary" disabled aria-disabled="true">Chapitre suivant — à venir</button>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Bravo : tu viens de terminer le premier palier consacré à <strong>l'architecture technique</strong>.</p>
+      <p>Tu sais maintenant comment organiser les pages, comment construire une logique thématique, comment créer un maillage interne, pourquoi le mobile-first compte, comment fonctionne un sitemap, pourquoi JavaScript peut compliquer certaines explorations, pourquoi HTTPS est indispensable, comment gérer la pagination et à quoi servent les balises Open Graph.</p>
+      <p>La maison commence à tenir debout.</p>
+      <p>Mais une maison rapide et agréable, c'est encore mieux. Parce qu'un site peut être parfaitement organisé… et mettre cinq secondes à afficher une page. Et là, l'utilisateur risque de partir avant même d'avoir lu ton contenu.</p>
+      <p>C'est le sujet du prochain palier :</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-8/">← Chapitre 8 — La pagination, pour les blogs et catalogues</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Palier suivant</div>
+            <h3>Palier 2 — La webperformance : rendre ton site rapide et agréable à utiliser</h3>
+          </div>
+          <button type="button" class="btn btn-primary" disabled aria-disabled="true">À venir</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>

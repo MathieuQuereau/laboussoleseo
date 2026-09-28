@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Qu'est-ce que la pagination ? Découvre comment organiser les pages paginées d'un blog ou catalogue et éviter les erreurs qui peuvent compliquer la navigation et le SEO.">
+<title>Pagination SEO : comprendre et organiser les pages paginées</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 1 — L'architecture technique</a> <span>/</span>
+    <span>Chapitre 8</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>La pagination, pour les blogs et catalogues</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~9 min</span>
+          <span>🧩 Prérequis : Chapitre 7</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag">🟢 Palier 1 · Chapitre 8 sur 9</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Quand une page ne suffit plus</h3>
+      <p>Tu arrives sur un blog et tu vois : « Articles 1 à 20 ». Puis, en bas de la page : « 1 · 2 · 3 · 4 · 5 · 6… ». Tu viens de rencontrer la <strong>pagination</strong>.</p>
+      <p>Tu la retrouves sur de nombreux sites : les blogs, les boutiques en ligne, les catalogues, les annuaires et les sites d'actualité. Le principe paraît simple : lorsqu'il y a trop de contenus pour tenir sur une seule page, on les répartit sur plusieurs pages. Et effectivement, c'est tout l'intérêt de la pagination.</p>
+      <p>Mais sur un site qui contient plusieurs centaines, voire plusieurs milliers de contenus, cette organisation mérite un peu d'attention. Pourquoi ? Parce qu'elle joue à la fois sur <strong>la navigation des visiteurs, l'organisation du site et la découverte des contenus par les moteurs de recherche</strong>. Alors, comment mettre en place une pagination propre et logique ?</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce qu'est la pagination</li>
+        <li><span class="tick">✓</span> Pourquoi elle est utilisée</li>
+        <li><span class="tick">✓</span> Comment elle fonctionne sur un site</li>
+        <li><span class="tick">✓</span> Comment organiser correctement les pages paginées</li>
+        <li><span class="tick">✓</span> Quelles erreurs éviter</li>
+        <li><span class="tick">✓</span> Pourquoi les anciennes recommandations autour de rel="next" et rel="prev" doivent être relativisées</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>La pagination, c'est quoi ?</h3>
+      <p>Imagine une bibliothèque avec 1 000 livres. Tu pourrais afficher les 1 000 livres sur une seule page. Mais tu obtiendrais rapidement une page interminable et difficile à parcourir.</p>
+      <p>Tu peux donc les répartir par groupes de 20 : Page 1 → livres 1 à 20, Page 2 → livres 21 à 40, Page 3 → livres 41 à 60, etc. C'est ça, la <strong>pagination</strong>.</p>
+      <p>Sur un blog, tu peux par exemple avoir : <code>/blog/</code> puis <code>/blog/page/2/</code> et <code>/blog/page/3/</code>. Sur un catalogue, tu peux également rencontrer : <code>/chaussures?page=2</code>. Le système peut donc prendre des formes différentes selon le site. Mais l'idée reste toujours la même : <strong>répartir un grand volume de contenus sur plusieurs pages pour faciliter leur consultation.</strong></p>
+
+      <h3>Pourquoi paginer ?</h3>
+      <p>La première raison est très simple : <strong>faciliter la navigation</strong>. Imagine une boutique qui contient 1 000 produits et qui essaie de tous les afficher sur une seule page. Tu risques rapidement d'avoir une page très longue, plus difficile à parcourir, moins agréable à utiliser et potentiellement plus lourde à charger.</p>
+      <p>La pagination permet de diviser cette grande quantité d'informations en plusieurs ensembles plus faciles à consulter. Mais attention : la pagination ne doit pas être pensée uniquement comme un découpage technique. Elle doit également permettre au visiteur de comprendre où il se trouve, ce qu'il consulte, comment accéder aux contenus suivants et comment revenir aux contenus précédents.</p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine un gros livre : plutôt que de mettre toutes les informations sur une seule feuille, tu les répartis sur plusieurs pages. La pagination fait exactement la même chose avec les contenus d'un site.
+      </div>
+
+      <h3>Une série de pages, pas une seule page coupée en morceaux</h3>
+      <p>Prenons un blog qui contient 300 articles. Si tu affiches 10 articles par page, tu obtiens : Page 1 → articles 1 à 10, Page 2 → articles 11 à 20, Page 3 → articles 21 à 30, etc. Chaque page correspond donc à <strong>un ensemble différent d'articles</strong>. La page 2 n'est pas simplement une copie de la page 1 avec quelques éléments déplacés. Elle donne accès à des contenus différents. C'est important pour comprendre la pagination : <strong>chaque page de la série a son propre rôle dans la navigation.</strong></p>
+      <div class="analogy-card">
+        💡 <strong>Analogie</strong> — Imagine les rayons d'une bibliothèque : chaque rayon contient une partie des livres. Tu ne considères pas le deuxième rayon comme une copie du premier simplement parce qu'ils font partie de la même bibliothèque.
+      </div>
+      <div class="pitfall">⚠️ Piège fréquent : croire que toutes les pages paginées sont inutiles pour le SEO. Ce n'est pas aussi simple. Une page paginée peut avoir une vraie utilité dans la structure d'un site lorsqu'elle permet d'organiser un grand volume de contenus et de faciliter leur découverte.</div>
+
+      <h3>⚠️ Les pièges à éviter</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Créer des pages paginées sans liens accessibles</li>
+        <li><span class="tick">✗</span> Rediriger toutes les pages vers la première</li>
+        <li><span class="tick">✗</span> Utiliser uniquement JavaScript pour la navigation sans alternative accessible</li>
+        <li><span class="tick">✗</span> Générer des centaines de pages inutiles</li>
+        <li><span class="tick">✗</span> Bloquer systématiquement toutes les pages paginées dans robots.txt</li>
+        <li><span class="tick">✗</span> Croire que rel="next" et rel="prev" sont encore des signaux Google centraux</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+
+      <h3>Un blog avec 300 articles</h3>
+      <p>Prenons un blog qui publie régulièrement des articles. Il possède 300 contenus et affiche 10 articles par page. L'organisation peut être : Page 1 → articles 1 à 10, Page 2 → articles 11 à 20, Page 3 → articles 21 à 30, etc. La navigation peut alors fonctionner comme ceci : <code>Page 1 → Page 2 → Page 3 → ... → Page 30</code>. Le visiteur peut avancer progressivement dans les anciens contenus. Il peut également revenir en arrière grâce à un lien « Précédent ».</p>
+
+      <h3>Et pour les moteurs de recherche ?</h3>
+      <p>Le principe général reste le même : <strong>les différentes pages doivent être accessibles et reliées de manière logique.</strong> Lorsqu'elles sont correctement reliées, cela permet notamment aux moteurs de découvrir les différentes pages de la série et les contenus qui y sont associés. La pagination participe donc à l'organisation globale du site.</p>
+      <div class="pitfall">⚠️ Piège fréquent : croire qu'une page paginée est forcément une mauvaise page SEO. Une page 2, une page 3 ou une page 15 n'est pas automatiquement un problème. La vraie question est plutôt : « Cette page a-t-elle une utilité dans la navigation et dans l'organisation des contenus du site ? » Si la réponse est oui, il n'y a pas de raison de considérer automatiquement la pagination comme un problème SEO.</div>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Vérifie ton système de pagination</p>
+            <p>Commence par utiliser ton site comme le ferait un visiteur. Sur ton blog ou ton catalogue, clique sur « Page suivante » puis « Page précédente ». Vérifie que les pages fonctionnent réellement. Tu dois pouvoir avancer dans les contenus et revenir en arrière sans rencontrer de lien cassé, de page inexistante, de résultat incohérent ou de blocage dans la navigation. Cette première vérification paraît évidente, mais elle permet déjà de repérer des problèmes très simples.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Vérifie les URLs</p>
+            <p>Chaque page paginée doit disposer d'une URL identifiable. Par exemple : <code>/blog/</code>, <code>/blog/page/2/</code>, <code>/blog/page/3/</code>. Ou avec un système utilisant des paramètres : <code>/chaussures?page=2</code>. Le format exact dépend de la manière dont ton site est construit. Il n'existe donc pas une seule bonne façon de créer les URLs de pagination. L'essentiel est surtout d'avoir un système <strong>cohérent, stable et compréhensible</strong>.</p>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie les liens entre les pages</p>
+            <p>Les pages paginées doivent être reliées entre elles de manière logique. Par exemple : <code>← Précédent | 1 | 2 | 3 | 4 | Suivant →</code>. Le visiteur comprend immédiatement comment avancer dans la série. À l'inverse, une pagination uniquement visuelle ou construite autour de comportements JavaScript complexes peut rendre la navigation plus difficile à traiter. Lorsque cela correspond au fonctionnement du site, privilégie donc des <strong>liens HTML accessibles</strong>.</p>
+            <div class="analogy-card">
+              💡 <strong>L'objectif est simple</strong> — Si un utilisateur peut comprendre comment passer de la page 2 à la page 3, les moteurs doivent également pouvoir découvrir ces relations de manière exploitable.
+            </div>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Ne canonialise pas automatiquement toutes les pages vers la première</p>
+            <p>C'est une erreur que l'on retrouve régulièrement. Imagine : <code>/blog/</code> et <code>/blog/page/2/</code>. Ces deux pages ne présentent pas nécessairement les mêmes contenus. La page 2 contient généralement des articles différents de ceux de la page 1. Il n'est donc pas pertinent de considérer automatiquement toutes les pages paginées comme de simples doublons de la première.</p>
+            <div class="pitfall">⚠️ Point important : les anciennes recommandations autour de rel="next" et rel="prev" doivent être relativisées. Google ne les utilise plus comme auparavant pour comprendre la pagination. Ne construis donc pas toute ta stratégie SEO autour de ces balises.</div>
+          </div>
+        </div>
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Pense d'abord à l'utilisateur</p>
+            <p>Avant de chercher à optimiser ta pagination pour les moteurs, commence par vérifier qu'elle est claire pour les visiteurs. Pose-toi trois questions simples : « Où suis-je ? », « Combien de pages existe-t-il ? », « Comment continuer ? ». Une pagination peut par exemple prendre cette forme : <code>← Précédent | 1 | 2 | 3 | 4 | Suivant →</code>. Tu peux également afficher davantage de pages lorsque cela est pertinent. L'objectif reste toujours le même : <strong>permettre à l'utilisateur de parcourir facilement le contenu.</strong></p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Pagination</td><td>Découpage d'un ensemble de contenus sur plusieurs pages</td></tr>
+        <tr><td>Page paginée</td><td>Page appartenant à une séquence de pages</td></tr>
+        <tr><td>Canonique</td><td>URL considérée comme principale lorsqu'il existe plusieurs URLs similaires</td></tr>
+        <tr><td>rel="next"</td><td>Ancien mécanisme utilisé pour indiquer la page suivante</td></tr>
+        <tr><td>rel="prev"</td><td>Ancien mécanisme utilisé pour indiquer la page précédente</td></tr>
+        <tr><td>Robots.txt</td><td>Fichier permettant de donner des directives d'exploration aux robots</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+      <div class="quiz-progress">
+        <span>Question 1/3</span>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question-title">Question 1 — Pourquoi utilise-t-on la pagination ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Pour cacher les contenus à Google</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Pour répartir un grand volume de contenus sur plusieurs pages</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Pour augmenter automatiquement le classement</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Pour remplacer le sitemap</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> La pagination permet de répartir un grand volume de contenus sur plusieurs pages afin de rendre la navigation plus simple.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 2 — Faut-il automatiquement mettre la page 1 comme canonique de toutes les pages paginées ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement sur les blogs</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement sur les boutiques</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Une page paginée peut contenir des contenus différents de ceux de la première page. Elle ne doit donc pas être considérée automatiquement comme un doublon.</span></div>
+      </div>
+
+      <div class="quiz-question" hidden>
+        <p class="question-title">Question 3 — Google utilise-t-il encore rel="next" et rel="prev" comme auparavant ?</p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+          <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement sur mobile</div>
+          <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement pour les gros sites</div>
+        </div>
+        <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Ces signaux ne sont plus utilisés par Google comme auparavant pour comprendre la pagination.</span></div>
+      </div>
+
+      <div class="quiz-score" hidden>
+        <div class="score-result">
+          <p class="score-num">3<span>/3</span></p>
+          <p>Parfait ! Tu maîtrises maintenant la pagination. Tu sais organiser tes contenus sans créer un maquis d'URLs.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" data-action="restart-quiz">↻ Refaire le quiz</button>
+        <a href="../chapitre-9/" class="btn btn-primary">Chapitre suivant →</a>
+      </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <p>Tu sais maintenant comment <strong>organiser un grand volume de contenus sans transformer ton site en une immense liste difficile à parcourir</strong>.</p>
+      <p>Tu as également vu que la pagination ne concerne pas uniquement l'utilisateur : elle participe aussi à la manière dont les contenus sont organisés et découverts sur le site.</p>
+      <p>Mais ton site ne vit pas uniquement dans les résultats de recherche. Lorsqu'un article est partagé sur Facebook, LinkedIn ou X, certaines informations peuvent apparaître automatiquement : un titre, une image, une description…</p>
+      <p>Ces informations sont notamment gérées grâce aux <strong>balises Open Graph</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-7/">← Chapitre 7 — Le HTTPS, un prérequis de confiance</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Les balises Open Graph : réseaux sociaux, pas du SEO direct</h3>
+          </div>
+          <a href="../chapitre-9/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+<script src="../../quiz.js"></script>
+</body>
+</html>
