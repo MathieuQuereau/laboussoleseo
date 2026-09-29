@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est le hreflang, comment il fonctionne et comment indiquer aux moteurs de recherche les différentes versions linguistiques ou régionales de tes pages.">
+<title>Hreflang : comprendre le SEO des sites multilingues</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 3 — Les balises et signaux techniques</a> <span>/</span>
+    <span>Chapitre 6</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Le hreflang, pour les sites multilingues</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 5</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-3-bg);color:var(--palier-3)">🟢 Palier 3 · Chapitre 6 sur 6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Gérer les différentes versions linguistiques de tes pages</h3>
+      <p>Imagine que ton entreprise possède un site en français et en anglais.</p>
+      <p>Tu as une page : https://exemple.fr/chaussures-randonnee et sa version anglaise : https://exemple.com/hiking-shoes. Les deux pages parlent du même produit. Mais elles s'adressent à des publics différents.</p>
+      <p>Comment indiquer aux moteurs de recherche qu'il existe plusieurs versions de cette même page ? C'est notamment le rôle du <strong>hreflang</strong>. Cette information permet d'indiquer les différentes variantes linguistiques ou régionales d'une page. Et dès que tu travailles sur un site multilingue, cette notion devient particulièrement importante.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce qu'est le hreflang</li>
+        <li><span class="tick">✓</span> Savoir pourquoi il est utile sur un site multilingue</li>
+        <li><span class="tick">✓</span> Comprendre la différence entre langue et région</li>
+        <li><span class="tick">✓</span> Lire une balise hreflang</li>
+        <li><span class="tick">✓</span> Comprendre <code>x-default</code></li>
+        <li><span class="tick">✓</span> Éviter les erreurs les plus fréquentes</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce que le hreflang ?</h3>
+      <p>Le hreflang est une annotation qui permet d'indiquer aux moteurs de recherche les différentes versions linguistiques ou régionales d'une page.</p>
+      <p>Google recommande notamment d'utiliser ces annotations lorsqu'un site possède plusieurs versions d'une page destinées à différentes langues ou régions.</p>
+      <p>Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;link rel="alternate" hreflang="fr" href="https://exemple.fr/page" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://example.com/page" /&gt;</pre>
+      </div>
+      <p>Cela indique qu'il existe une version française et une version anglaise de la page.</p>
+
+      <h3>Pourquoi en a-t-on besoin ?</h3>
+      <p>Imagine que Google dispose de deux pages : Page A en français et Page B en anglais. Sans information supplémentaire, le moteur doit comprendre par lui-même la relation entre ces versions. Le hreflang fournit un signal explicite.</p>
+
+      <h3>Analogie — Le panneau indicateur</h3>
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le panneau indicateur</strong> — Imagine une gare internationale. Tu as plusieurs trains : Paris → Français, London → English, Madrid → Español. Le hreflang joue un peu le rôle des panneaux qui indiquent : « Cette direction correspond à tel public. »
+      </div>
+
+      <h3>Le code de langue</h3>
+      <p>Le premier élément important est le code utilisé dans <code>hreflang</code>. Par exemple : <code>fr</code> pour le français ou <code>en</code> pour l'anglais.</p>
+      <p>Tu peux également combiner une langue avec une région. Par exemple : <code>en-GB</code> pour l'anglais destiné au Royaume-Uni et <code>en-US</code> pour l'anglais destiné aux États-Unis. Cela permet de distinguer des variantes régionales.</p>
+
+      <h3>Langue et région, ce n'est pas la même chose</h3>
+      <p>Imagine deux pages : Français pour la France et Français pour la Belgique. La langue est identique. Mais le contenu peut être différent : monnaie, livraison, adresse, produits disponibles, informations commerciales, expressions utilisées.</p>
+      <p>Le hreflang peut donc aussi servir à distinguer des versions régionales.</p>
+
+      <h3>Les versions doivent se référencer mutuellement</h3>
+      <p>C'est un point très important. Si ta page française indique qu'elle possède une version anglaise, la page anglaise doit également indiquer la version française.</p>
+      <p>Google recommande que chaque version liste elle-même ainsi que les autres variantes.</p>
+      <p>Par exemple :</p>
+      <p><strong>Page française :</strong></p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;link rel="alternate" hreflang="fr" href="https://exemple.fr/page" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://example.com/page" /&gt;</pre>
+      </div>
+      <p><strong>Page anglaise :</strong></p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;link rel="alternate" hreflang="fr" href="https://exemple.fr/page" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://example.com/page" /&gt;</pre>
+      </div>
+
+      <h3><code>x-default</code></h3>
+      <p>Tu peux également rencontrer <code>x-default</code>. Cette valeur permet d'indiquer une version par défaut pour les utilisateurs qui ne correspondent pas aux versions explicitement définies.</p>
+      <p>Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;link rel="alternate" hreflang="x-default" href="https://example.com/page" /&gt;</pre>
+      </div>
+
+      <h3>Le hreflang ne traduit pas ta page</h3>
+      <p>C'est important. Ajouter <code>hreflang="en"</code> ne transforme pas une page française en anglais. Le contenu doit réellement exister dans la langue correspondante. Le hreflang sert à <strong>indiquer la relation entre les différentes versions</strong>.</p>
+
+      <h3>Le hreflang ne détecte pas automatiquement la langue</h3>
+      <p>Autre nuance importante : Google indique que le hreflang n'est pas utilisé pour détecter directement la langue d'une page. Le moteur utilise ses propres systèmes pour déterminer la langue du contenu. Le hreflang sert surtout à lui signaler les variantes que tu souhaites associer.</p>
+
+      <h3>Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Utiliser le hreflang sur un site qui n'a qu'une seule version linguistique sans raison</li>
+        <li><span class="tick">✗</span> Indiquer une mauvaise URL</li>
+        <li><span class="tick">✗</span> Oublier de faire référence à la page elle-même</li>
+        <li><span class="tick">✗</span> Créer des annotations qui ne sont pas réciproques</li>
+        <li><span class="tick">✗</span> Confondre langue et région</li>
+        <li><span class="tick">✗</span> Croire que hreflang traduit automatiquement une page</li>
+        <li><span class="tick">✗</span> Utiliser des codes de langue incorrects</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons une entreprise qui vend des chaussures en France, au Royaume-Uni et aux États-Unis.</p>
+      <p>Elle possède trois versions :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 urls.txt</div>
+        <pre>https://exemple.fr/chaussures-randonnee
+https://example.co.uk/hiking-shoes
+https://example.com/hiking-shoes</pre>
+      </div>
+      <p>La version française peut contenir :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;link rel="alternate" hreflang="fr-FR" href="https://exemple.fr/chaussures-randonnee" /&gt;
+&lt;link rel="alternate" hreflang="en-GB" href="https://example.co.uk/hiking-shoes" /&gt;
+&lt;link rel="alternate" hreflang="en-US" href="https://example.com/hiking-shoes" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://example.com/hiking-shoes" /&gt;</pre>
+      </div>
+      <p>L'objectif est de permettre aux moteurs de comprendre qu'il existe plusieurs variantes adaptées à différents publics.</p>
+      <p>Google précise que les annotations peuvent être ajoutées via le HTML, les en-têtes HTTP ou un sitemap. Ces méthodes sont considérées comme équivalentes pour Google.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Liste les versions de tes pages</p>
+            <p>Commence par identifier : la version française, la version anglaise, la version espagnole, les éventuelles variantes régionales.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Identifie les codes adaptés</p>
+            <p>Par exemple : <code>fr</code>, <code>en</code>, <code>es</code>, <code>de</code>. Ou avec une région lorsque c'est nécessaire : <code>fr-FR</code>, <code>fr-CA</code>, <code>en-US</code>, <code>en-GB</code>.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Fais correspondre les URL</p>
+            <p>Chaque version doit pointer vers la bonne URL.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Ajoute les annotations</p>
+            <p>Tu peux notamment utiliser le <code>&lt;head&gt;</code> de tes pages :</p>
+            <p><code>&lt;link rel="alternate" hreflang="fr" href="https://exemple.fr/page" /&gt;</code></p>
+            <p><code>&lt;link rel="alternate" hreflang="en" href="https://example.com/page" /&gt;</code></p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Vérifie la réciprocité</p>
+            <p>Si la version française référence l'anglaise, vérifie que l'anglaise référence également la française.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Vérifie les URL</p>
+            <p>Les URL doivent être complètes et pointer vers les bonnes pages.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">7</div>
+          <div>
+            <p class="step-title">Évite les systèmes inutilement complexes</p>
+            <p>Google permet plusieurs méthodes : balises HTML, en-têtes HTTP, sitemap. Choisis une méthode que tu peux réellement maintenir correctement.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Hreflang</td><td>Annotation indiquant les variantes linguistiques ou régionales d'une page</td></tr>
+        <tr><td>Locale</td><td>Combinaison d'une langue et éventuellement d'une région ciblée</td></tr>
+        <tr><td>fr-FR</td><td>Français destiné à la France</td></tr>
+        <tr><td>en-US</td><td>Anglais destiné aux États-Unis</td></tr>
+        <tr><td>en-GB</td><td>Anglais destiné au Royaume-Uni</td></tr>
+        <tr><td>x-default</td><td>Version par défaut pour les utilisateurs qui ne correspondent pas aux variantes définies</td></tr>
+        <tr><td>Multilingue</td><td>Site proposant plusieurs langues</td></tr>
+        <tr><td>Internationalisation</td><td>Adaptation d'un site à plusieurs langues ou marchés</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — À quoi sert principalement le hreflang ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> À traduire automatiquement une page</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> À indiquer les différentes versions linguistiques ou régionales d'une page</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> À accélérer un site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> À empêcher Google d'explorer une page</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le hreflang permet d'indiquer aux moteurs les différentes variantes linguistiques ou régionales d'une page.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Que signifie en-GB ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Français pour la Belgique</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Anglais pour le Royaume-Uni</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Anglais pour les États-Unis</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Espagnol pour le Royaume-Uni</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> <code>en-GB</code> correspond à l'anglais ciblant le Royaume-Uni.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Une page française doit-elle référencer sa propre version avec hreflang ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Non</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Oui, chaque version doit notamment se référencer elle-même</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement si elle possède plus de trois langues</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Uniquement sur WordPress</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Google recommande que chaque version liste elle-même ainsi que les autres variantes.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Le hreflang traduit-il automatiquement une page ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, uniquement en anglais</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, il indique simplement la relation entre les différentes versions</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, si <code>x-default</code> est utilisé</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Le hreflang ne traduit pas le contenu. Il indique aux moteurs quelles versions linguistiques ou régionales existent.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Excellent ! Tu maîtrises maintenant le hreflang et tu sais comment gérer les versions multilingues de tes pages. Tu termines ainsi le Palier 3 avec une compréhension solide des balises et signaux techniques essentiels.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../../palier-4/chapitre-1/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu viens de terminer le premier grand tour d'horizon des <strong>balises et signaux techniques</strong>.</p>
+      <p>Tu sais maintenant comment donner un titre clair à une page avec le <strong>title</strong>, présenter son contenu avec la <strong>meta description</strong>, donner des consignes d'exploration avec <strong>robots.txt</strong>, décrire plus précisément ton contenu grâce aux <strong>données structurées</strong>, comprendre le nouveau sujet du <strong>llms.txt</strong>, et gérer les différentes versions linguistiques avec <strong>hreflang</strong>.</p>
+      <p>Tu commences donc à voir une idée essentielle du SEO technique : <strong>Le référencement ne consiste pas uniquement à écrire du contenu. Il faut aussi aider les machines à comprendre, explorer et interpréter ce contenu.</strong></p>
+      <p>Dans le prochain palier, nous allons pouvoir aller plus loin et nous intéresser à la manière dont Google découvre, explore et indexe les pages d'un site.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-5/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Palier suivant</div>
+            <h3>Palier 4 — Statuts de page et redirections</h3>
+          </div>
+          <button type="button" class="btn btn-primary" disabled aria-disabled="true">À venir</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>

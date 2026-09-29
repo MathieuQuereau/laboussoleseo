@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est le fichier robots.txt, à quoi il sert pour l'exploration d'un site et comment éviter les erreurs qui peuvent bloquer des pages importantes.">
+<title>Robots.txt : définition, rôle et bonnes pratiques SEO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 3 — Les balises et signaux techniques</a> <span>/</span>
+    <span>Chapitre 3</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Le fichier robots.txt expliqué simplement</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 2</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-3-bg);color:var(--palier-3)">🟢 Palier 3 · Chapitre 3 sur 6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Comment dire aux robots quelles zones de ton site explorer</h3>
+      <p>Imagine que Google arrive sur ton site. Il commence à explorer tes pages. Mais ton site contient peut-être des centaines ou des milliers d'URL.</p>
+      <p>Est-ce qu'il doit tout parcourir ? Certaines zones sont-elles inutiles à explorer ? Peux-tu lui donner des consignes ? C'est notamment le rôle du <strong>robots.txt</strong>.</p>
+      <p>Ce petit fichier texte permet de communiquer des règles d'exploration aux robots. Mais attention : il ne fait pas tout. Et surtout, il ne doit pas être confondu avec un système de sécurité ou un moyen garanti de supprimer une page des résultats.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce qu'est un robots.txt</li>
+        <li><span class="tick">✓</span> Savoir où il se trouve</li>
+        <li><span class="tick">✓</span> Comprendre son rôle dans l'exploration</li>
+        <li><span class="tick">✓</span> Comprendre User-agent, Disallow et Allow</li>
+        <li><span class="tick">✓</span> Faire la différence entre exploration et indexation</li>
+        <li><span class="tick">✓</span> Éviter les erreurs de configuration</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce qu'un robots.txt ?</h3>
+      <p>Le robots.txt est un fichier texte généralement placé à la racine du site. Il est accessible à une adresse comme :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 url.txt</div>
+        <pre>https://www.exemple.fr/robots.txt</pre>
+      </div>
+      <p>Il contient des règles destinées aux robots qui explorent le site. Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 robots.txt</div>
+        <pre>User-agent: *
+Disallow: /admin/</pre>
+      </div>
+      <p>Ici, la règle indique que tous les robots concernés par <code>*</code> ne doivent pas explorer le chemin <code>/admin/</code>.</p>
+
+      <h3>Qu'est-ce qu'un robot ?</h3>
+      <p>Un robot, ou crawler, est un programme qui parcourt le Web. Google utilise notamment <strong>Googlebot</strong>. Il découvre des URL, suit des liens et explore des contenus.</p>
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le visiteur dans un immeuble</strong> — Imagine ton site comme un immeuble. Le robot est un visiteur. Le robots.txt lui donne certaines consignes : « Tu peux explorer ces zones, mais évite celles-ci. »
+      </div>
+
+      <h3>Explorer et indexer sont deux choses différentes</h3>
+      <p>C'est essentiel. <strong>Explorer</strong>, c'est visiter une URL. <strong>Indexer</strong>, c'est enregistrer une page dans l'index du moteur de recherche afin qu'elle puisse éventuellement être proposée dans les résultats.</p>
+      <p>Le robots.txt sert principalement à gérer l'exploration. Il ne faut donc pas l'utiliser comme si c'était un bouton : « Ne mets jamais cette page dans Google. »</p>
+      <p>Une URL bloquée par robots.txt peut notamment rester connue du moteur si d'autres pages font des liens vers elle.</p>
+
+      <h3>User-agent</h3>
+      <p>Cette directive permet d'indiquer à quel robot s'appliquent les règles. Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 robots.txt</div>
+        <pre>User-agent: *</pre>
+      </div>
+      <p>Le <code>*</code> signifie que la règle concerne tous les robots. Tu peux également cibler un robot spécifique :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 robots.txt</div>
+        <pre>User-agent: Googlebot</pre>
+      </div>
+
+      <h3>Disallow</h3>
+      <p>Cette directive permet d'indiquer un chemin que le robot ne doit pas explorer. Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 robots.txt</div>
+        <pre>User-agent: *
+Disallow: /admin/</pre>
+      </div>
+
+      <h3>Allow</h3>
+      <p><code>Allow</code> permet, dans certaines configurations, de réautoriser un chemin malgré une règle plus générale. Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 robots.txt</div>
+        <pre>User-agent: *
+Disallow: /images/
+Allow: /images/logo.png</pre>
+      </div>
+      <p>Le principe est simple : <code>Disallow</code> indique ce que tu souhaites bloquer à l'exploration et <code>Allow</code> peut permettre une exception.</p>
+
+      <h3>Le robots.txt n'est pas une protection</h3>
+      <p>C'est extrêmement important. Si tu écris :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 robots.txt</div>
+        <pre>Disallow: /espace-prive/</pre>
+      </div>
+      <p>tu n'as pas sécurisé cette zone. Le fichier robots.txt est public. Il ne doit jamais servir à protéger des données confidentielles. Pour protéger une zone privée, il faut utiliser un véritable système d'authentification et de contrôle d'accès.</p>
+
+      <h3>Une erreur peut bloquer ton site</h3>
+      <p>Imagine cette règle :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 robots.txt</div>
+        <pre>User-agent: *
+Disallow: /</pre>
+      </div>
+      <p>Elle demande aux robots concernés de ne pas explorer l'ensemble du site. Une erreur de ce type peut donc avoir des conséquences importantes.</p>
+
+      <h3>Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Utiliser robots.txt comme un système de sécurité</li>
+        <li><span class="tick">✗</span> Croire qu'un Disallow garantit la non-indexation d'une URL</li>
+        <li><span class="tick">✗</span> Bloquer accidentellement l'ensemble du site</li>
+        <li><span class="tick">✗</span> Copier un fichier robots.txt sans comprendre ses règles</li>
+        <li><span class="tick">✗</span> Modifier une règle importante sans la tester</li>
+        <li><span class="tick">✗</span> Confondre exploration et indexation</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons un site e-commerce contenant :</p>
+      <div class="example-card">
+        <div class="example-bar">🌳 arborescence.txt</div>
+        <pre>/
+├── produits/
+├── categories/
+├── blog/
+├── panier/
+├── compte/
+└── recherche/</pre>
+      </div>
+      <p>Le propriétaire peut vouloir empêcher l'exploration de certaines zones fonctionnelles. Il pourrait avoir :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 robots.txt</div>
+        <pre>User-agent: *
+Disallow: /panier/
+Disallow: /compte/</pre>
+      </div>
+      <p>Les produits, catégories et articles restent alors concernés par l'exploration normale. Attention : les URL <code>/panier/</code> et <code>/compte/</code> ne deviennent pas secrètes pour autant.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Consulte ton fichier</p>
+            <p>Va sur : https://tonsite.fr/robots.txt</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Identifie les robots concernés</p>
+            <p>Regarde les lignes <code>User-agent</code>.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Identifie les zones bloquées</p>
+            <p>Cherche les lignes <code>Disallow</code>.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Vérifie les pages importantes</p>
+            <p>Assure-toi qu'une règle générale ne bloque pas accidentellement tes articles, tes produits, tes pages services, tes catégories ou tes ressources importantes.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Ne confonds pas robots.txt et noindex</p>
+            <p>Si ton objectif est la non-indexation d'une page, ne pars pas automatiquement sur robots.txt. L'exploration et l'indexation sont deux problématiques différentes.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Teste toute modification</p>
+            <p>Une modification du robots.txt doit être faite avec prudence.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Robots.txt</td><td>Fichier qui donne des consignes d'exploration aux robots</td></tr>
+        <tr><td>Crawler</td><td>Programme qui parcourt des pages web</td></tr>
+        <tr><td>Googlebot</td><td>Robot utilisé par Google pour explorer le Web</td></tr>
+        <tr><td>User-agent</td><td>Identification du robot concerné par une règle</td></tr>
+        <tr><td>Disallow</td><td>Directive indiquant qu'un chemin ne doit pas être exploré</td></tr>
+        <tr><td>Allow</td><td>Directive permettant une exception à une règle d'exploration</td></tr>
+        <tr><td>Exploration</td><td>Visite d'une URL par un robot</td></tr>
+        <tr><td>Indexation</td><td>Enregistrement d'une page dans l'index d'un moteur</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — À quoi sert principalement le robots.txt ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> À sécuriser les données privées</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> À donner des consignes d'exploration aux robots</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> À créer automatiquement des pages</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> À accélérer le serveur</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le robots.txt sert principalement à communiquer des règles d'exploration aux robots.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Que signifie Disallow: / ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Autoriser uniquement la page d'accueil</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Demander au robot concerné de ne pas explorer le site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Supprimer le site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Bloquer les internautes</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> <code>/</code> représente la racine du site et la règle demande au robot de ne pas explorer le site.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Le robots.txt garantit-il qu'une URL ne sera jamais indexée ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, si elle contient un H1</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, exploration et indexation sont différentes</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, uniquement sur WordPress</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Le robots.txt concerne principalement l'exploration et ne garantit pas la non-indexation d'une URL.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Le robots.txt peut-il sécuriser une page privée ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, avec plusieurs Disallow</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, uniquement en HTTPS</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Le robots.txt est public et ne constitue pas un mécanisme de sécurité.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Excellent ! Tu comprends maintenant le rôle du robots.txt et ses limites. Tu sais comment l'utiliser correctement sans confondre exploration et indexation.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-4/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu sais maintenant comment communiquer certaines consignes aux robots. Mais il existe un autre moyen de leur donner des informations beaucoup plus précises.</p>
+      <p>Au lieu de simplement dire : « Cette page existe. » Tu peux également leur fournir des informations structurées sur ce qu'elle contient. Par exemple : « Ceci est un produit. Il coûte 49 €. Il est disponible. Il possède telle image et telle référence. »</p>
+      <p>C'est le rôle des <strong>données structurées</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-2/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Les données structurées (schema.org)</h3>
+          </div>
+          <a href="../chapitre-4/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>

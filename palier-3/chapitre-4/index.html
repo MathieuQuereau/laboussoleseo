@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce que sont les données structurées Schema.org, à quoi elles servent pour les moteurs de recherche et comment les utiliser pour mieux décrire le contenu de tes pages.">
+<title>Données structurées Schema.org : comprendre le principe simplement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 3 — Les balises et signaux techniques</a> <span>/</span>
+    <span>Chapitre 4</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Les données structurées (schema.org)</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 3</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-3-bg);color:var(--palier-3)">🟢 Palier 3 · Chapitre 4 sur 6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Comment expliquer précisément aux moteurs ce que représentent les informations de ta page</h3>
+      <p>Imagine que tu présentes une recette à quelqu'un. Tu peux simplement lui dire : « Voici une recette de gâteau au chocolat. »</p>
+      <p>Ou tu peux lui donner beaucoup plus d'informations : « C'est une recette. Elle prend 45 minutes. Elle contient 8 ingrédients. Elle est notée 4,8 sur 5. »</p>
+      <p>Pour un humain, le contexte est évident. Pour une machine, c'est beaucoup moins simple. Une page web est remplie de texte, de liens, d'images et de blocs différents. Comment lui expliquer précisément ce que représentent ces informations ? C'est notamment le rôle des <strong>données structurées</strong>.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce que sont les données structurées</li>
+        <li><span class="tick">✓</span> Comprendre ce qu'est Schema.org</li>
+        <li><span class="tick">✓</span> Découvrir le principe du balisage JSON-LD</li>
+        <li><span class="tick">✓</span> Comprendre pourquoi les données structurées intéressent Google</li>
+        <li><span class="tick">✓</span> Identifier quelques types courants</li>
+        <li><span class="tick">✓</span> Savoir comment vérifier ton balisage</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce qu'une donnée structurée ?</h3>
+      <p>Une donnée structurée est une manière standardisée de fournir des informations sur une page et de préciser ce que représentent certains éléments.</p>
+      <p>Google explique que les données structurées l'aident notamment à comprendre le contenu d'une page et peuvent permettre à certaines pages d'être éligibles à des fonctionnalités enrichies dans les résultats.</p>
+      <p>Par exemple, sur une fiche produit, tu peux indiquer : le nom du produit, son prix, sa disponibilité, sa marque, sa référence, ses avis lorsqu'ils sont réellement présents. La machine dispose alors d'informations beaucoup plus structurées.</p>
+
+      <h3>Qu'est-ce que Schema.org ?</h3>
+      <p><strong>Schema.org</strong> est un vocabulaire utilisé pour décrire différents types d'informations. Il propose notamment des types comme :</p>
+      <div class="analogy-card">
+        Article · Product · Organization · LocalBusiness · Recipe · Event
+      </div>
+      <p>L'idée est de parler un langage structuré que les machines peuvent comprendre.</p>
+
+      <h3>JSON-LD : une façon courante de l'utiliser</h3>
+      <p>Les données structurées peuvent être exprimées de plusieurs manières. Le format <strong>JSON-LD</strong> est aujourd'hui très utilisé. Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Comprendre le SEO simplement"
+}
+&lt;/script&gt;</pre>
+      </div>
+      <p>Tu n'as pas besoin de connaître tout le code par cœur. Retire surtout l'idée suivante : les données structurées ajoutent des informations compréhensibles par les machines sur le contenu de ta page.</p>
+
+      <h3>Les données structurées ne remplacent pas le contenu</h3>
+      <p>Attention. Tu ne peux pas écrire dans ton Schema.org quelque chose qui n'existe pas réellement sur la page simplement pour essayer d'obtenir un résultat enrichi. Le balisage doit correspondre au contenu réel et respecter les consignes applicables.</p>
+
+      <h3>Les données structurées peuvent permettre des résultats enrichis</h3>
+      <p>Certaines données structurées peuvent rendre une page éligible à des fonctionnalités particulières dans les résultats. Par exemple, Google documente des formats pour les produits, les articles, certaines pages de questions-réponses et d'autres types de contenus.</p>
+      <p>Mais attention : <strong>Éligible ne signifie pas garanti.</strong> Ajouter des données structurées ne signifie pas automatiquement que Google affichera un résultat enrichi.</p>
+
+      <h3>Analogie — L'étiquette sur une boîte</h3>
+      <div class="analogy-card">
+        💡 <strong>Analogie — L'étiquette sur une boîte</strong> — Imagine une boîte contenant un produit. À l'intérieur, il y a le produit. Sur la boîte, tu peux ajouter une étiquette : Produit : chaussures, Marque : X, Taille : 42, Prix : 89 €. Le contenu de la boîte ne change pas. Mais l'étiquette aide une machine ou une personne à comprendre rapidement ce qu'elle contient. Les données structurées jouent un rôle similaire pour une page web.
+      </div>
+
+      <h3>Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Ajouter des données structurées qui ne correspondent pas au contenu</li>
+        <li><span class="tick">✗</span> Croire qu'un balisage garantit un résultat enrichi</li>
+        <li><span class="tick">✗</span> Ajouter tous les types Schema.org possibles sans raison</li>
+        <li><span class="tick">✗</span> Copier du code sans comprendre ce qu'il décrit</li>
+        <li><span class="tick">✗</span> Oublier de tester le balisage</li>
+        <li><span class="tick">✗</span> Utiliser des informations fausses ou invisibles uniquement pour les moteurs</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons une fiche produit :</p>
+      <div class="analogy-card">
+        Chaussures de randonnée X · 89 € · En stock · Note : 4,7/5 · 128 avis
+      </div>
+      <p>Tu peux utiliser des données structurées adaptées au produit pour aider les moteurs à comprendre que :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">•</span> Il s'agit d'un produit</li>
+        <li><span class="tick">•</span> Son nom est « Chaussures de randonnée X »</li>
+        <li><span class="tick">•</span> Son prix est 89 €</li>
+        <li><span class="tick">•</span> Il est disponible</li>
+        <li><span class="tick">•</span> Des informations d'évaluation existent</li>
+      </ul>
+      <p>Google dispose alors d'un cadre beaucoup plus explicite pour interpréter ces informations. Cela peut rendre la page éligible à certaines présentations enrichies lorsqu'elle respecte les conditions applicables.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie le type de contenu</p>
+            <p>Demande-toi ce qu'est réellement ta page : Article, Produit, Organisation, Entreprise locale, Recette, Événement</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Choisis le type Schema.org pertinent</p>
+            <p>Ne choisis pas un type uniquement parce qu'il semble intéressant pour le SEO. Choisis celui qui correspond réellement au contenu.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Utilise un outil ou ton CMS</p>
+            <p>Si tu n'es pas développeur, ton CMS ou une extension SEO peut parfois générer automatiquement une partie des données structurées.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Vérifie le balisage</p>
+            <p>Google recommande notamment d'utiliser son <strong>Rich Results Test</strong> pour vérifier les données structurées concernées et corriger les erreurs importantes.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Vérifie la cohérence</p>
+            <p>Compare les informations structurées avec le contenu réel de la page. Si ta page indique 89 € mais que tes données structurées indiquent 79 €, il y a un problème.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Ne cherche pas à tout baliser</p>
+            <p>Toutes les pages n'ont pas besoin de données structurées complexes. L'objectif est de fournir des informations utiles et pertinentes.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Données structurées</td><td>Informations organisées selon un format permettant aux machines de mieux comprendre un contenu</td></tr>
+        <tr><td>Schema.org</td><td>Vocabulaire utilisé pour décrire différents types d'entités et de contenus</td></tr>
+        <tr><td>JSON-LD</td><td>Format couramment utilisé pour intégrer des données structurées dans une page</td></tr>
+        <tr><td>Rich result</td><td>Présentation enrichie pouvant apparaître dans les résultats de recherche</td></tr>
+        <tr><td>Balisage</td><td>Ajout d'informations structurées à un contenu</td></tr>
+        <tr><td>Entité</td><td>Personne, entreprise, produit, lieu ou autre élément identifiable</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — À quoi servent principalement les données structurées ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> À aider les machines à mieux comprendre le contenu d'une page</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> À remplacer tout le contenu d'une page</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> À accélérer automatiquement le serveur</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> À empêcher Google d'explorer une page</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Les données structurées fournissent des informations standardisées permettant notamment aux moteurs de mieux comprendre le contenu.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Qu'est-ce que Schema.org ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Un outil de mesure de vitesse</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Un vocabulaire utilisé pour décrire des contenus et des entités</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Un CMS</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Un fichier de sécurité</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Schema.org fournit un vocabulaire permettant de décrire différents types de contenus et d'entités.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Les données structurées garantissent-elles un résultat enrichi ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, si elles sont en JSON-LD</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, elles peuvent rendre une page éligible sans garantir l'affichage</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, uniquement pour les produits</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Le balisage peut rendre une page éligible à certaines fonctionnalités, mais leur affichage n'est pas garanti.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Que faut-il faire après avoir ajouté des données structurées ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Ne plus toucher à la page</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Les vérifier et tester leur conformité</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Ajouter davantage de mots-clés</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Bloquer la page dans robots.txt</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Il faut vérifier que le balisage est valide et cohérent avec le contenu de la page.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Bravo ! Tu comprends maintenant les données structurées et leur rôle dans l'écosystème SEO. Tu sais quand et comment les utiliser pour mieux décrire ton contenu.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-5/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu viens de découvrir une manière de mieux décrire ton contenu aux machines. Mais les moteurs de recherche ne sont plus les seuls systèmes capables de parcourir ton site.</p>
+      <p>Les assistants et agents utilisant l'intelligence artificielle consultent eux aussi de plus en plus le Web. Et depuis quelques années, une proposition attire particulièrement l'attention dans l'écosystème technique : le fichier <strong>llms.txt</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-3/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Le fichier llms.txt, la nouveauté pour les IA</h3>
+          </div>
+          <a href="../chapitre-5/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>

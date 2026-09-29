@@ -875,11 +875,12 @@ section { padding: 60px 0; }
   font-family: "Cascadia Code", Consolas, monospace;
   font-size: 0.86rem;
   color: var(--brand-dark);
-  overflow-x: auto;
   background: var(--surface);
   max-width: 100%;
   box-sizing: border-box;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .practice-block {

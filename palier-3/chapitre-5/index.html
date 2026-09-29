@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est le fichier llms.txt, pourquoi il a été proposé pour aider les IA à comprendre les sites web et ce qu'il faut réellement savoir sur son utilisation.">
+<title>Llms.txt : comprendre le fichier pour les IA simplement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 3 — Les balises et signaux techniques</a> <span>/</span>
+    <span>Chapitre 5</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Le fichier llms.txt, la nouveauté pour les IA</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 4</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-3-bg);color:var(--palier-3)">🟢 Palier 3 · Chapitre 5 sur 6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Aider les intelligences artificielles à mieux comprendre ton site</h3>
+      <p>Jusqu'ici, on a beaucoup parlé de Google. Mais le Web est en train de changer. Les utilisateurs posent de plus en plus leurs questions à des assistants utilisant l'intelligence artificielle.</p>
+      <p>Ils demandent : « Quelle solution choisir ? » « Comment faire ceci ? » « Quels sont les meilleurs outils pour faire cela ? » Et derrière ces réponses, des systèmes automatisés doivent comprendre et exploiter des informations présentes sur les sites web.</p>
+      <p>Mais une page web est principalement pensée pour un humain. Elle contient une navigation, des menus, des boutons, des images, du JavaScript et parfois beaucoup d'éléments qui ne sont pas essentiels à la compréhension du contenu. C'est dans ce contexte qu'a été proposé le fichier <strong>llms.txt</strong>. Attention toutefois : le llms.txt est une <strong>proposition récente</strong>, et non une norme équivalente à robots.txt reconnue de manière universelle par tous les moteurs et systèmes d'IA. La spécification évolue encore.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce qu'est un fichier llms.txt</li>
+        <li><span class="tick">✓</span> Comprendre pourquoi il a été proposé</li>
+        <li><span class="tick">✓</span> Faire la différence entre robots.txt et llms.txt</li>
+        <li><span class="tick">✓</span> Découvrir ce qu'on peut y trouver</li>
+        <li><span class="tick">✓</span> Comprendre ses limites actuelles</li>
+        <li><span class="tick">✓</span> Savoir comment envisager son utilisation</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce que llms.txt ?</h3>
+      <p>Le llms.txt est une proposition visant à fournir aux agents et aux systèmes d'IA une version plus facilement exploitable des informations importantes d'un site. Le fichier est généralement placé à la racine du domaine :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 url.txt</div>
+        <pre>https://www.exemple.fr/llms.txt</pre>
+      </div>
+      <p>L'idée est de créer un point d'entrée simple contenant notamment des informations et des liens vers les contenus importants du site. La proposition a été créée par Jeremy Howard en 2024 et continue d'évoluer. La version publiée actuellement sur le site de la proposition a encore été modifiée en 2026.</p>
+
+      <h3>Pourquoi avoir besoin d'un tel fichier ?</h3>
+      <p>Imagine que tu demandes à quelqu'un : « Apprends-moi tout ce qu'il faut savoir sur cette entreprise. » Tu pourrais lui donner directement 500 pages de site. Mais il lui serait beaucoup plus simple d'avoir une liste : Présentation, Documentation, Produits, Tarifs, FAQ, Guides importants.</p>
+      <p>Le llms.txt cherche à jouer un rôle comparable.</p>
+
+      <h3>Analogie — Le sommaire destiné à une IA</h3>
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le sommaire destiné à une IA</strong> — Imagine ton site comme un énorme livre. Le visiteur humain peut naviguer grâce aux menus. Mais un agent automatisé pourrait bénéficier d'un sommaire spécialement conçu pour lui. Le llms.txt cherche justement à fournir ce type de point d'entrée.
+      </div>
+
+      <h3>Quelle différence avec robots.txt ?</h3>
+      <p>La confusion est facile. Mais les objectifs sont différents.</p>
+      <p><strong>robots.txt :</strong> « Voici des règles concernant l'exploration de mon site. »</p>
+      <p><strong>llms.txt :</strong> « Voici des informations et des liens qui peuvent aider un agent ou un système d'IA à comprendre mon site. »</p>
+      <p>Le robots.txt existe depuis longtemps et est largement utilisé dans le fonctionnement de l'exploration du Web. Le llms.txt, lui, est une proposition beaucoup plus récente.</p>
+
+      <h3>Que peut contenir un llms.txt ?</h3>
+      <p>La proposition prévoit notamment une structure permettant de présenter le site et de fournir des liens vers des ressources importantes. L'idée est de privilégier des informations utiles et facilement exploitables. Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 llms.txt</div>
+        <pre># La boussole SEO
+
+> Un site pédagogique pour comprendre le SEO simplement.
+
+## Guides
+
+- [Guide SEO débutant](https://www.exemple.fr/guide-seo)
+- [Guide SEO technique](https://www.exemple.fr/seo-technique)
+
+## Ressources
+
+- [Glossaire SEO](https://www.exemple.fr/glossaire)
+- [FAQ](https://www.exemple.fr/faq)</pre>
+      </div>
+      <p>L'objectif n'est pas de recopier tout le site. Il s'agit plutôt de créer une porte d'entrée structurée vers les ressources importantes.</p>
+
+      <h3>Est-ce un nouveau facteur SEO ?</h3>
+      <p>Attention à ne pas aller trop vite. Le llms.txt ne doit pas être présenté comme un nouveau facteur de classement Google. Ce n'est pas parce que tu ajoutes un fichier llms.txt que ton site va automatiquement mieux se positionner. Son intérêt se situe davantage dans la relation entre les sites web et les systèmes d'IA ou agents qui peuvent exploiter ces informations.</p>
+
+      <h3>Est-ce obligatoire ?</h3>
+      <p>Non. Il ne s'agit pas d'un fichier obligatoire pour publier un site. Tu peux avoir un site parfaitement fonctionnel et visible sans llms.txt. Son adoption et son interprétation restent encore évolutives.</p>
+
+      <h3>Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Présenter llms.txt comme une norme universelle déjà adoptée par toutes les IA</li>
+        <li><span class="tick">✗</span> Le présenter comme un facteur de classement Google</li>
+        <li><span class="tick">✗</span> Croire qu'il remplace robots.txt</li>
+        <li><span class="tick">✗</span> Y recopier tout le contenu du site</li>
+        <li><span class="tick">✗</span> Ajouter des informations qui ne correspondent pas réellement au site</li>
+        <li><span class="tick">✗</span> Penser que sa présence garantit qu'une IA utilisera ton contenu</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons que tu possèdes un site de documentation pour un logiciel. Ton site contient : 300 pages de documentation, 50 tutoriels, 20 pages de référence, une FAQ, une page de tarifs et une présentation du produit.</p>
+      <p>Un agent qui cherche à comprendre ton logiciel pourrait bénéficier d'un point d'entrée indiquant les ressources principales. Ton llms.txt pourrait présenter les ressources importantes :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 llms.txt</div>
+        <pre># Mon logiciel
+
+> Documentation officielle du logiciel.
+
+## Documentation
+
+- [Installation](https://exemple.fr/docs/installation)
+- [Configuration](https://exemple.fr/docs/configuration)
+- [API](https://exemple.fr/docs/api)
+
+## Ressources
+
+- [FAQ](https://exemple.fr/faq)
+- [Tarifs](https://exemple.fr/tarifs)
+- [Tutoriels](https://exemple.fr/tutoriels)</pre>
+      </div>
+      <p>L'idée est simple : « Si tu veux comprendre ce site, commence ici. »</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie tes contenus essentiels</p>
+            <p>Liste les ressources qu'un humain devrait consulter pour comprendre ton activité.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Organise-les par catégories</p>
+            <p>Tu peux par exemple utiliser : Documentation, Guides, Produits, Services, FAQ, Ressources</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Crée ton fichier</p>
+            <p>Le fichier doit être accessible à la racine de ton domaine : https://tonsite.fr/llms.txt</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Reste simple</p>
+            <p>Ne transforme pas le fichier en deuxième site. Son intérêt vient justement de sa capacité à fournir une entrée claire et concise.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Vérifie les liens</p>
+            <p>Tous les liens présents doivent fonctionner et pointer vers les bonnes ressources.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Suis l'évolution de la proposition</p>
+            <p>Le llms.txt étant encore un sujet en évolution, ses usages peuvent changer. Évite donc de présenter aujourd'hui ses bénéfices comme des garanties.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>LLM</td><td>Modèle d'intelligence artificielle capable notamment de comprendre et générer du langage</td></tr>
+        <tr><td>Agent</td><td>Système capable d'utiliser des informations et parfois des outils pour accomplir une tâche</td></tr>
+        <tr><td>llms.txt</td><td>Proposition de fichier permettant de fournir un point d'entrée structuré vers les informations importantes d'un site pour les systèmes d'IA</td></tr>
+        <tr><td>robots.txt</td><td>Fichier donnant des consignes d'exploration aux robots</td></tr>
+        <tr><td>Prompt</td><td>Instruction ou demande donnée à un système d'IA</td></tr>
+        <tr><td>Documentation</td><td>Ensemble de ressources expliquant un produit, un service ou un sujet</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — Qu'est-ce que le fichier llms.txt ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Un fichier destiné à accélérer un site</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Une proposition visant à aider les systèmes d'IA à exploiter les informations importantes d'un site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Un remplacement obligatoire du robots.txt</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Un fichier qui bloque Google</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> llms.txt est une proposition destinée à fournir aux agents et systèmes d'IA un point d'entrée vers les informations importantes d'un site.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Quelle est la différence principale entre robots.txt et llms.txt ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Ils ont exactement le même rôle</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> robots.txt concerne l'exploration, tandis que llms.txt vise à faciliter l'accès à des informations pour les systèmes d'IA</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> llms.txt sert uniquement aux images</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> robots.txt sert uniquement aux internautes</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Les deux fichiers répondent à des objectifs différents.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Le llms.txt est-il actuellement une norme universelle obligatoire pour les sites ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, depuis 2025</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, il s'agit d'une proposition encore en évolution</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, uniquement pour les sites français</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> La proposition évolue encore et son adoption n'est pas universelle.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Que doit-on privilégier dans un llms.txt ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Tous les textes du site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Une liste de mots-clés</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Les informations et ressources importantes du site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Des données privées</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> L'objectif est de fournir un point d'entrée clair vers les ressources importantes.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Excellent ! Tu comprends maintenant le rôle du llms.txt et ses limites actuelles. Tu sais en quoi il diffère de robots.txt et comment l'envisager pour ton site.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-6/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu viens de découvrir un sujet récent du SEO et du Web : la manière dont les sites peuvent fournir des informations plus facilement exploitables par les systèmes d'intelligence artificielle.</p>
+      <p>Mais le SEO technique ne concerne pas uniquement les robots et les IA. Il concerne aussi les internautes. Et lorsqu'un même site existe dans plusieurs langues ou pour plusieurs régions, il faut être capable d'indiquer aux moteurs quelle version correspond à quel public.</p>
+      <p>C'est exactement le rôle du <strong>hreflang</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-4/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Le hreflang, pour les sites multilingues</h3>
+          </div>
+          <a href="../chapitre-6/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
