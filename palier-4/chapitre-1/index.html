@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est une erreur 404, pourquoi elle apparaît, quel impact elle peut avoir sur ton site et comment corriger les erreurs 404 utiles pour le SEO.">
+<title>Erreur 404 : comprendre, identifier et corriger une page introuvable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 4 — Statuts de page et redirections</a> <span>/</span>
+    <span>Chapitre 1</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Les erreurs 404 : comprendre et corriger</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Aucun prérequis</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-4-bg);color:var(--palier-4)">🟢 Palier 4 · Chapitre 1 sur 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Distinguer les erreurs 404 à corriger des erreurs 404 normales</h3>
+      <p>Tu cliques sur un lien. Tu arrives sur une page. Mais au lieu de trouver ce que tu cherchais, tu vois : « Erreur 404 — Page introuvable ». Pas très agréable. Tu peux alors revenir en arrière ou fermer la page.</p>
+      <p>Mais une erreur 404 ne concerne pas uniquement l'expérience de l'utilisateur. Elle fait aussi partie du fonctionnement normal d'un site web. Une page peut être supprimée. Une URL peut être modifiée. Un ancien lien peut continuer à circuler. Une faute de frappe peut également créer une URL qui n'existe pas.</p>
+      <p>Dans toutes ces situations, le serveur peut répondre avec un <strong>code HTTP 404</strong>. Alors, faut-il corriger toutes les erreurs 404 de ton site ? Pas forcément. Dans ce chapitre, tu vas apprendre à comprendre ce statut et surtout à distinguer les 404 normales des 404 qui méritent réellement ton attention.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce qu'est une erreur 404</li>
+        <li><span class="tick">✓</span> Comprendre pourquoi elle apparaît</li>
+        <li><span class="tick">✓</span> Faire la différence entre une URL supprimée et une URL déplacée</li>
+        <li><span class="tick">✓</span> Identifier les 404 importantes</li>
+        <li><span class="tick">✓</span> Savoir quand une redirection peut être utile</li>
+        <li><span class="tick">✓</span> Éviter les erreurs fréquentes lorsqu'on corrige des 404</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce qu'une erreur 404 ?</h3>
+      <p>Une erreur 404 correspond à un statut HTTP indiquant que la ressource demandée n'a pas été trouvée à l'URL demandée.</p>
+      <p>Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 url.txt</div>
+        <pre>https://exemple.fr/ancien-article</pre>
+      </div>
+      <p>Tu demandes cette URL au serveur. Mais si aucune page ne correspond à cette adresse, le serveur peut répondre : <code>404 Not Found</code>. Le navigateur peut alors afficher une page personnalisée expliquant que la page n'existe pas.</p>
+
+      <h3>Pourquoi une page devient-elle 404 ?</h3>
+      <p>Il existe plusieurs raisons. Une page peut avoir été supprimée. L'URL peut avoir été modifiée. Un produit peut avoir disparu. Un article peut avoir été déplacé. Un lien interne peut contenir une erreur. Une personne peut aussi avoir simplement tapé une mauvaise URL. Une 404 n'est donc pas forcément le signe d'un problème grave.</p>
+
+      <h3>Une 404 n'est pas toujours une erreur à corriger</h3>
+      <p>C'est un point très important. Tu pourrais découvrir des dizaines ou même des centaines d'URL 404 dans les outils d'analyse de ton site. Cela ne signifie pas automatiquement que ton site est « cassé ». Certaines URL n'existent tout simplement plus et n'ont aucune raison d'être conservées.</p>
+      <p>Par exemple : <code>/article-invente-par-un-visiteur</code>. Cette URL n'a probablement aucune utilité. Tu n'as pas forcément besoin de créer une redirection juste pour faire disparaître cette 404.</p>
+
+      <h3>Quand une 404 devient-elle intéressante ?</h3>
+      <p>Imagine que tu avais une page : <code>/chaussures-randonnee</code>. Puis tu la supprimes ou changes son URL. Quelques mois plus tard, plusieurs pages de ton site continuent à faire un lien vers cette ancienne adresse. Les visiteurs cliquent. Ils arrivent sur une 404. Dans ce cas, il y a un problème concret à résoudre.</p>
+      <p>Tu peux notamment : corriger les liens internes, restaurer la page, ou mettre en place une redirection vers une page pertinente.</p>
+
+      <h3>Analogie — Une adresse qui n'existe plus</h3>
+      <div class="analogy-card">
+        💡 <strong>Analogie — Une adresse qui n'existe plus</strong> — Imagine que quelqu'un se rende à une ancienne adresse postale. La maison n'existe plus. Il arrive devant un terrain vide. C'est un peu ce qui se passe avec une 404. L'adresse existe dans le lien, mais la ressource n'est plus disponible à cet endroit. Si tu sais que la maison a simplement déménagé, tu peux indiquer la nouvelle adresse. C'est justement le rôle d'une redirection.
+      </div>
+
+      <h3>La page 404 peut être personnalisée</h3>
+      <p>Une erreur 404 n'a pas besoin d'afficher un message froid du type : « Page introuvable ». Tu peux créer une page utile qui propose : un lien vers l'accueil, un moteur de recherche interne, les principales catégories, des articles populaires, une explication simple. L'objectif est de permettre à l'utilisateur de poursuivre sa navigation.</p>
+
+      <h3>Une 404 n'est pas une redirection</h3>
+      <p>C'est important de bien distinguer les deux. Une 404 dit en quelque sorte : « Cette URL ne correspond pas à une ressource disponible. » Une redirection dit : « Cette URL a changé, va plutôt à cette autre adresse. » Ce sont deux situations différentes.</p>
+
+      <h3>Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Rediriger systématiquement toutes les 404 vers la page d'accueil</li>
+        <li><span class="tick">✗</span> Penser que toutes les 404 sont mauvaises pour le SEO</li>
+        <li><span class="tick">✗</span> Laisser des liens internes importants pointer vers des 404</li>
+        <li><span class="tick">✗</span> Créer des redirections vers des pages sans rapport</li>
+        <li><span class="tick">✗</span> Supprimer une page sans réfléchir à ses liens et à son trafic</li>
+        <li><span class="tick">✗</span> Confondre une 404 avec une redirection</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons un blog qui possède cette URL :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 url.txt</div>
+        <pre>/blog/guide-seo-debutant</pre>
+      </div>
+      <p>L'article est ensuite supprimé. Plusieurs anciens articles contiennent encore un lien vers cette adresse.</p>
+      <p>Un utilisateur clique sur le lien. Il arrive sur : « 404 — Page introuvable ». Tu as alors plusieurs possibilités.</p>
+
+      <h3>Première possibilité — L'article n'a plus aucune utilité</h3>
+      <p>Tu peux laisser l'URL retourner une 404. Mais tu dois vérifier qu'il n'existe pas de liens internes importants qui continuent à pointer vers elle.</p>
+
+      <h3>Deuxième possibilité — Un nouvel article traite du même sujet</h3>
+      <p>Tu as créé : <code>/blog/guide-seo-debutant-2026</code>. Tu peux alors envisager une redirection de l'ancienne URL vers cette nouvelle page si elle constitue réellement une alternative pertinente.</p>
+
+      <h3>Troisième possibilité — L'article existe toujours mais l'URL a changé</h3>
+      <p>Dans ce cas, la redirection devient particulièrement logique. L'ancienne adresse doit envoyer l'utilisateur vers la nouvelle.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie tes URL en 404</p>
+            <p>Tu peux utiliser les outils d'analyse de ton site, ton CMS ou les outils pour webmasters afin d'identifier les URL qui renvoient un statut 404.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Cherche les liens qui pointent encore vers ces URL</p>
+            <p>Une 404 qui n'est référencée nulle part n'a pas la même importance qu'une 404 vers laquelle ton site fait encore régulièrement des liens.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie l'historique de la page</p>
+            <p>Pose-toi quelques questions : « Cette page existait-elle avant ? », « Pourquoi a-t-elle disparu ? », « Possédait-elle du trafic ? », « Des liens externes pointent-ils vers elle ? »</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Choisis la bonne action</p>
+            <p>Selon la situation, tu peux : restaurer la page, corriger les liens internes, mettre en place une redirection pertinente, ou laisser la 404 si l'URL n'a plus de raison d'exister.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Évite la redirection systématique vers l'accueil</p>
+            <p>Une erreur fréquente consiste à envoyer toutes les anciennes URL vers la page d'accueil. Cela peut être peu utile pour l'utilisateur. Si l'ancienne page concernait les chaussures de randonnée, rediriger vers une page d'accueil générale n'est pas forcément pertinent.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Vérifie après correction</p>
+            <p>Une fois la correction effectuée, teste l'ancienne URL. Vérifie qu'elle renvoie bien le statut attendu et que les liens internes ont été mis à jour.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>404</td><td>Statut HTTP indiquant qu'une ressource n'a pas été trouvée à l'URL demandée</td></tr>
+        <tr><td>URL</td><td>Adresse permettant d'accéder à une ressource sur le Web</td></tr>
+        <tr><td>HTTP</td><td>Protocole utilisé pour les échanges entre navigateur et serveur</td></tr>
+        <tr><td>Redirection</td><td>Mécanisme qui envoie une URL vers une autre</td></tr>
+        <tr><td>Lien interne</td><td>Lien qui pointe vers une autre page du même site</td></tr>
+        <tr><td>Page 404</td><td>Page affichée lorsqu'une URL demandée ne correspond pas à une ressource disponible</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — Que signifie une erreur 404 ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Le serveur est définitivement hors service</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> La ressource demandée n'a pas été trouvée à l'URL demandée</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Google a supprimé le site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> La page est forcément interdite aux moteurs</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Une réponse 404 indique que la ressource demandée n'a pas été trouvée à cette URL.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Faut-il obligatoirement corriger toutes les 404 ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui, toutes les 404 sont mauvaises</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, sinon Google pénalise le site</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, certaines 404 sont normales et peuvent être conservées</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, en les redirigeant toutes vers l'accueil</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Une URL qui n'a plus de raison d'exister peut parfaitement retourner une 404.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Quand une redirection peut-elle être pertinente ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> Lorsqu'une ancienne URL a été remplacée par une nouvelle page pertinente</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Pour toutes les URL inventées par les visiteurs</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Pour empêcher Google d'explorer le site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Pour accélérer le serveur</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Une redirection est notamment pertinente lorsqu'une ressource a été déplacée vers une nouvelle URL pertinente.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Pourquoi éviter de rediriger toutes les 404 vers la page d'accueil ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Parce que la page d'accueil ne peut jamais recevoir de redirection</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Parce que la destination peut ne pas être pertinente pour l'utilisateur</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Parce que Google bloque automatiquement la page d'accueil</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Parce qu'une redirection ne peut fonctionner qu'entre deux domaines</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Une redirection doit idéalement conduire vers une destination cohérente avec l'ancienne URL.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Excellent ! Tu comprends maintenant les erreurs 404 et tu sais comment les traiter intelligemment selon le contexte de ton site.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-2/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu sais maintenant ce qu'est une 404 et surtout pourquoi toutes les 404 ne doivent pas être traitées de la même manière.</p>
+      <p>Mais imaginons maintenant une autre situation. Tu as une ancienne page qui existe toujours, mais son adresse a changé. Tu veux que les visiteurs qui utilisent l'ancienne URL arrivent automatiquement sur la nouvelle. Et tu veux également indiquer aux moteurs que la page a été déplacée.</p>
+      <p>C'est exactement le rôle de la <strong>redirection 301</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../../palier-3/chapitre-6/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Les redirections 301 expliquées simplement</h3>
+          </div>
+          <a href="../chapitre-2/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>

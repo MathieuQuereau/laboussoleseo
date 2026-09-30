@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est une URL canonique, pourquoi la balise canonical est utile lorsque plusieurs URL présentent un contenu similaire et comment l'utiliser correctement.">
+<title>URL canonique : comprendre la balise canonical simplement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 4 — Statuts de page et redirections</a> <span>/</span>
+    <span>Chapitre 3</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Les URLs canoniques : à quoi ça sert ?</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 2</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-4-bg);color:var(--palier-4)">🟢 Palier 4 · Chapitre 3 sur 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Indiquer la version principale quand plusieurs URL donnent accès au même contenu</h3>
+      <p>Imagine que ton site propose une fiche produit. Tu peux accéder à cette fiche avec : <code>https://exemple.fr/chaussures</code>. Mais ton site possède aussi des URL avec des paramètres : <code>https://exemple.fr/chaussures?couleur=rouge</code> ou <code>https://exemple.fr/chaussures?tri=prix</code> ou encore <code>https://exemple.fr/chaussures?utm_source=newsletter</code>.</p>
+      <p>Pour l'utilisateur, il s'agit toujours de la même fiche produit. Mais pour un moteur de recherche, ce sont des URL différentes. Alors quelle URL doit être considérée comme la version principale ?</p>
+      <p>C'est précisément le problème auquel répond la <strong>balise canonical</strong>.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce qu'est une URL canonique</li>
+        <li><span class="tick">✓</span> Comprendre pourquoi plusieurs URL peuvent désigner un contenu similaire</li>
+        <li><span class="tick">✓</span> Savoir comment fonctionne la balise <code>rel="canonical"</code></li>
+        <li><span class="tick">✓</span> Faire la différence entre canonical et redirection 301</li>
+        <li><span class="tick">✓</span> Comprendre les erreurs fréquentes</li>
+        <li><span class="tick">✓</span> Vérifier la canonical d'une page</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce qu'une URL canonique ?</h3>
+      <p>Une URL canonique est l'URL que tu considères comme la version principale d'un contenu lorsque plusieurs URL peuvent donner accès à des contenus identiques ou très similaires.</p>
+      <p>La balise correspondante ressemble à ceci :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;link rel="canonical" href="https://exemple.fr/chaussures" /&gt;</pre>
+      </div>
+      <p>Elle se trouve généralement dans la partie <code>&lt;head&gt;</code> de la page. Elle indique notamment aux moteurs : « Parmi les différentes URL qui peuvent représenter ce contenu, voici celle que je considère comme la principale. » Google précise que les signaux canoniques permettent notamment d'indiquer la version préférée d'une page parmi plusieurs URL similaires, mais que la canonical constitue un <strong>signal</strong>, et non une garantie absolue de la version qui sera retenue.</p>
+
+      <h3>Pourquoi plusieurs URL peuvent-elles exister ?</h3>
+      <p>Cela arrive très souvent. Les paramètres d'URL peuvent créer différentes variantes : <code>/produit</code>, <code>/produit?couleur=rouge</code>, <code>/produit?taille=42</code>. Un site e-commerce peut également utiliser des URL de tri, de filtrage ou de suivi. Le contenu principal peut rester identique ou très proche.</p>
+
+      <h3>Analogie — Plusieurs chemins vers la même maison</h3>
+      <div class="analogy-card">
+        💡 <strong>Analogie — Plusieurs chemins vers la même maison</strong> — Imagine une maison. Tu peux y arriver par plusieurs routes. La maison reste la même. Pour un moteur de recherche, plusieurs URL peuvent parfois jouer ce rôle : plusieurs chemins permettent d'accéder à un contenu similaire. La canonical revient à dire : « Cette adresse est celle que je considère comme l'adresse principale. »
+      </div>
+
+      <h3>La canonical n'est pas une redirection</h3>
+      <p>C'est probablement la confusion la plus fréquente. Une <strong>redirection 301</strong> envoie réellement l'utilisateur d'une URL vers une autre. Avec une <strong>canonical</strong>, l'utilisateur reste sur l'URL qu'il a demandée. La page indique simplement aux moteurs quelle URL est considérée comme la version principale.</p>
+
+      <h3>La canonical n'empêche pas une page d'être explorée</h3>
+      <p>Une autre erreur fréquente consiste à penser : « Si je mets une canonical vers une autre page, Google ne visitera plus cette URL. » Ce n'est pas le rôle de la canonical. La canonical sert à indiquer une préférence entre plusieurs URL. Elle ne remplace pas le robots.txt. Elle ne remplace pas non plus une redirection.</p>
+
+      <h3>La canonical peut être auto-référente</h3>
+      <p>Une page peut indiquer comme canonical sa propre URL. La page indique alors : « Cette URL est elle-même la version canonique. » C'est une configuration très courante.</p>
+
+      <h3>La canonical doit pointer vers une URL pertinente</h3>
+      <p>Si une page concerne les chaussures de randonnée, il ne faut pas mettre comme canonical une page consacrée aux ordinateurs simplement parce que tu veux « concentrer le SEO ». La canonical doit correspondre au contenu concerné.</p>
+
+      <h3>Google peut choisir une autre URL</h3>
+      <p>Même si tu définis une canonical, Google peut parfois sélectionner une autre URL comme canonique. Pourquoi ? Parce que la canonical est un signal parmi d'autres. Google analyse notamment les contenus, les redirections, les liens internes et d'autres éléments pour déterminer la version qu'il considère comme principale.</p>
+
+      <h3>Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Confondre canonical et redirection 301</li>
+        <li><span class="tick">✗</span> Mettre une canonical vers une page sans rapport</li>
+        <li><span class="tick">✗</span> Bloquer une URL dans robots.txt en pensant que cela suffit pour gérer sa canonicalisation</li>
+        <li><span class="tick">✗</span> Mettre plusieurs URL canoniques contradictoires</li>
+        <li><span class="tick">✗</span> Utiliser systématiquement la page d'accueil comme canonical</li>
+        <li><span class="tick">✗</span> Penser que Google est obligé de suivre ta canonical</li>
+        <li><span class="tick">✗</span> Oublier de vérifier les URL canoniques après une migration ou une modification du site</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons une boutique en ligne. Tu as cette page :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 url.txt</div>
+        <pre>https://exemple.fr/chaussures-randonnee</pre>
+      </div>
+      <p>Mais différents paramètres peuvent produire :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 urls.txt</div>
+        <pre>https://exemple.fr/chaussures-randonnee?couleur=rouge
+https://exemple.fr/chaussures-randonnee?tri=prix</pre>
+      </div>
+      <p>Tu considères que l'URL principale est :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.html</div>
+        <pre>&lt;link rel="canonical" href="https://exemple.fr/chaussures-randonnee" /&gt;</pre>
+      </div>
+      <p>L'idée est d'indiquer aux moteurs quelle URL représente la version principale du contenu. Mais attention. Si les variantes de filtrage proposent réellement des contenus différents et doivent elles-mêmes être indexées, la situation doit être étudiée plus précisément. La canonical n'est pas une solution automatique à tous les problèmes de paramètres.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie les pages potentiellement similaires</p>
+            <p>Cherche notamment : les URL avec paramètres, les variantes de produits, les anciennes versions d'URL, les pages accessibles par plusieurs chemins, les versions avec ou sans certains paramètres de suivi.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Détermine l'URL principale</p>
+            <p>Pose-toi cette question : « Quelle URL représente réellement la version principale de ce contenu ? »</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie la balise canonical</p>
+            <p>Dans le code HTML de la page, cherche : <code>&lt;link rel="canonical" href="..." /&gt;</code></p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Vérifie que l'URL est cohérente</p>
+            <p>La canonical doit pointer vers une URL pertinente et accessible. Évite de pointer vers une URL qui renvoie une erreur ou qui redirige inutilement.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Vérifie les liens internes</p>
+            <p>Si tu veux qu'une URL soit considérée comme principale, tes liens internes doivent autant que possible pointer directement vers cette URL.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Vérifie après une migration</p>
+            <p>Une modification de structure peut modifier automatiquement les canonical. Après une refonte ou une migration, vérifie toujours leur cohérence.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">7</div>
+          <div>
+            <p class="step-title">Ne considère pas la canonical comme une garantie</p>
+            <p>Une canonical est une indication importante. Mais les moteurs peuvent retenir une autre URL lorsqu'ils disposent de signaux différents ou considèrent qu'une autre version est plus appropriée.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Canonical</td><td>URL considérée comme la version principale d'un contenu parmi plusieurs URL similaires</td></tr>
+        <tr><td>Balise canonical</td><td>Balise HTML utilisant <code>rel="canonical"</code> pour indiquer l'URL préférée</td></tr>
+        <tr><td>URL canonique</td><td>URL considérée comme principale pour un contenu</td></tr>
+        <tr><td>Contenu dupliqué</td><td>Contenu identique ou très similaire accessible via plusieurs URL</td></tr>
+        <tr><td>Paramètre d'URL</td><td>Élément ajouté à une URL pour transmettre une information ou modifier une requête</td></tr>
+        <tr><td>Signal</td><td>Information prise en compte par un moteur pour analyser une page ou une URL</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — À quoi sert principalement une balise canonical ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> À indiquer l'URL considérée comme principale parmi plusieurs URL similaires</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> À rediriger automatiquement les visiteurs</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> À bloquer les robots</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> À supprimer une page</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> La canonical indique aux moteurs quelle URL tu considères comme la version principale d'un contenu.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Quelle est la différence entre une canonical et une redirection 301 ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Elles ont exactement le même fonctionnement</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Une 301 envoie l'utilisateur vers une autre URL, tandis que la canonical indique une préférence aux moteurs</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> La canonical bloque les internautes</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> La 301 sert uniquement aux images</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Une redirection 301 change la destination de l'utilisateur, tandis que la canonical fournit principalement un signal aux moteurs.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Google est-il obligé de respecter la canonical renseignée ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui, toujours</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, si elle est dans le <code>&lt;head&gt;</code></div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, Google peut sélectionner une autre URL canonique</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, uniquement sur les sites e-commerce</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> La canonical constitue un signal et Google peut retenir une autre URL lorsqu'il considère qu'elle est plus appropriée.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Une canonical vers la page d'accueil est-elle une solution universelle ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, pour toutes les pages supprimées</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, la canonical doit correspondre au contenu concerné</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, pour les sites de moins de 100 pages</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Une canonical doit pointer vers une version pertinente du même contenu ou d'un contenu très similaire.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Excellent ! Tu maîtrises maintenant les URL canoniques et tu sais comment les utiliser pour gérer correctement les contenus similaires sur ton site.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../../palier-5/chapitre-1/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu viens de terminer un autre morceau important du SEO technique.</p>
+      <p>Tu sais maintenant faire la différence entre trois situations :</p>
+      <p><strong>404 :</strong> « Cette URL ne correspond pas à une ressource disponible. »</p>
+      <p><strong>301 :</strong> « Cette ancienne URL a été déplacée vers une nouvelle adresse. »</p>
+      <p><strong>Canonical :</strong> « Plusieurs URL peuvent représenter ce contenu, mais voici celle que je considère comme principale. »</p>
+      <p>Ces trois notions sont proches dans la pratique, mais elles répondent à des problèmes différents. Et c'est justement ce qui rend le SEO technique intéressant : <strong>Il ne suffit pas de savoir utiliser un outil. Il faut comprendre quelle information envoyer aux moteurs selon la situation.</strong></p>
+      <p>Dans le prochain palier, nous pourrons aller plus loin dans le fonctionnement des moteurs de recherche et nous intéresser à un sujet fondamental : <strong>comment Google découvre, explore et indexe les pages de ton site.</strong></p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-2/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Palier suivant</div>
+            <h3>🟡 Palier 5 — Le SEO de contenu</h3>
+          </div>
+          <button type="button" class="btn btn-primary" disabled aria-disabled="true">À venir</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>

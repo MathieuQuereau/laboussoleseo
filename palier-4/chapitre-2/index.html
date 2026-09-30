@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre ce qu'est une redirection 301, quand l'utiliser, comment elle fonctionne et quelles erreurs éviter pour préserver la navigation et le SEO de ton site.">
+<title>Redirection 301 : comprendre son fonctionnement simplement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟢 Palier 4 — Statuts de page et redirections</a> <span>/</span>
+    <span>Chapitre 2</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Les redirections 301 expliquées simplement</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 1</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-4-bg);color:var(--palier-4)">🟢 Palier 4 · Chapitre 2 sur 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Accompagner le changement permanent d'une URL</h3>
+      <p>Tu as une ancienne URL : <code>/blog/ancien-article</code>. Mais tu veux maintenant utiliser : <code>/blog/nouvel-article</code>.</p>
+      <p>Tu pourrais simplement supprimer l'ancienne page. Mais que se passe-t-il lorsqu'un internaute utilise encore l'ancienne adresse ? Il tombe sur une erreur 404. Et si Google ou d'autres sites possèdent encore des liens vers l'ancienne URL ? Ces liens continuent également à pointer vers une adresse qui n'est plus la bonne.</p>
+      <p>C'est là qu'une <strong>redirection 301</strong> peut être utile. Elle permet d'indiquer que l'ancienne URL a été déplacée de manière permanente vers une nouvelle adresse.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce qu'est une redirection 301</li>
+        <li><span class="tick">✓</span> Savoir quand l'utiliser</li>
+        <li><span class="tick">✓</span> Comprendre ce qui se passe lorsqu'un utilisateur visite l'ancienne URL</li>
+        <li><span class="tick">✓</span> Comprendre son intérêt pour le SEO</li>
+        <li><span class="tick">✓</span> Éviter les chaînes et boucles de redirections</li>
+        <li><span class="tick">✓</span> Savoir vérifier une redirection</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce qu'une redirection 301 ?</h3>
+      <p>Une redirection 301 est une réponse HTTP indiquant qu'une ressource a été déplacée de manière permanente vers une autre URL.</p>
+      <p>Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.txt</div>
+        <pre>Ancienne URL : /blog/ancien-article
+            ↓
+           301
+            ↓
+Nouvelle URL : /blog/nouvel-article</pre>
+      </div>
+      <p>Lorsqu'un utilisateur demande l'ancienne adresse, le serveur lui indique qu'il doit aller vers la nouvelle. Le navigateur suit alors la redirection.</p>
+
+      <h3>Pourquoi « 301 » ?</h3>
+      <p>Le nombre <code>301</code> correspond au code de statut HTTP utilisé pour signaler un déplacement permanent. Tu peux rencontrer d'autres codes de redirection, comme <code>302</code>, qui correspond à une redirection temporaire. Dans ce chapitre, concentre-toi surtout sur la 301 : <strong>301 = déplacement permanent</strong>.</p>
+
+      <h3>Analogie — Le déménagement</h3>
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le déménagement</strong> — Imagine une entreprise qui déménage. Elle quitte « 10 rue des Lilas » pour s'installer « 25 rue des Roses ». Elle peut simplement disparaître de l'ancienne adresse. Mais elle peut aussi laisser un message : « Nous avons déménagé. Retrouvez-nous au 25 rue des Roses. » La redirection 301 joue un rôle similaire. Elle indique : « Cette ancienne adresse a changé. Voici la nouvelle. »
+      </div>
+
+      <h3>Quand utiliser une 301 ?</h3>
+      <p>Une redirection 301 peut être pertinente lorsqu'une URL change définitivement. Par exemple : modification de la structure des URL, changement de nom d'un article, suppression d'une page remplacée par une autre pertinente, migration d'un domaine, passage d'une ancienne URL vers une nouvelle version.</p>
+
+      <h3>La 301 ne sert pas à tout</h3>
+      <p>Tu ne dois pas créer une 301 simplement parce qu'une URL existe. Si une page n'a aucune nouvelle destination pertinente, une 404 peut parfois être la bonne réponse. La question à te poser est : « Existe-t-il une nouvelle URL qui remplace réellement cette ancienne ressource ? » Si oui, une redirection peut être pertinente.</p>
+
+      <h3>Les redirections ont un intérêt SEO</h3>
+      <p>Lorsqu'une page est déplacée, une redirection correctement mise en place permet notamment aux moteurs de comprendre la relation entre l'ancienne et la nouvelle URL. Google indique que les redirections permanentes peuvent être utilisées pour signaler qu'une page a changé d'adresse et pour transférer les signaux associés à l'ancienne URL vers la nouvelle, sous réserve des conditions et de la configuration du site. L'idée importante à retenir : <strong>Une redirection 301 permet d'accompagner proprement un changement d'URL.</strong></p>
+
+      <h3>Attention aux chaînes de redirections</h3>
+      <p>Imagine :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.txt</div>
+        <pre>URL A
+  ↓
+ 301
+URL B
+  ↓
+ 301
+URL C</pre>
+      </div>
+      <p>Tu as créé une <strong>chaîne de redirections</strong>. Le navigateur doit passer par plusieurs étapes avant d'arriver à la destination finale. Lorsque c'est possible, mieux vaut généralement faire une redirection directe de l'URL A vers l'URL C.</p>
+
+      <h3>Attention aux boucles de redirection</h3>
+      <p>Une situation encore plus problématique :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 code.txt</div>
+        <pre>URL A
+  ↓
+URL B
+  ↓
+URL A</pre>
+      </div>
+      <p>Le navigateur tourne en rond. C'est une <strong>boucle de redirection</strong>. La page ne peut alors pas être correctement chargée.</p>
+
+      <h3>Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Rediriger toutes les anciennes URL vers la page d'accueil</li>
+        <li><span class="tick">✗</span> Créer des chaînes de redirections inutiles</li>
+        <li><span class="tick">✗</span> Créer des boucles de redirection</li>
+        <li><span class="tick">✗</span> Utiliser une 301 alors qu'aucune nouvelle page pertinente n'existe</li>
+        <li><span class="tick">✗</span> Oublier de mettre à jour les liens internes</li>
+        <li><span class="tick">✗</span> Multiplier les redirections au fil des années sans nettoyer les anciennes</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons un article :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 url.txt</div>
+        <pre>/blog/seo-pour-debutant</pre>
+      </div>
+      <p>Tu décides de modifier son URL :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 url.txt</div>
+        <pre>/blog/guide-seo-debutant</pre>
+      </div>
+      <p>Tu mets en place une redirection 301 :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 redirection.txt</div>
+        <pre>/blog/seo-pour-debutant
+            ↓
+           301
+            ↓
+/blog/guide-seo-debutant</pre>
+      </div>
+      <p>Un internaute qui utilise l'ancienne URL arrive alors sur la nouvelle. Les moteurs disposent également d'un signal indiquant que le déplacement est permanent. Tu peux ensuite mettre à jour les liens internes pour qu'ils pointent directement vers la nouvelle URL.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie l'ancienne URL</p>
+            <p>Note précisément l'adresse qui doit disparaître.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Identifie la nouvelle URL</p>
+            <p>Choisis la page qui remplace réellement l'ancienne. Elle doit être pertinente.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Crée la redirection 301</p>
+            <p>Selon ton environnement, tu peux utiliser : une extension SEO, le système de gestion des redirections de ton hébergeur, la configuration du serveur, une solution adaptée à ton CMS.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Teste l'ancienne URL</p>
+            <p>Ouvre l'ancienne adresse. Elle doit conduire vers la nouvelle URL.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Mets à jour tes liens internes</p>
+            <p>Même si la redirection fonctionne, il est préférable que tes propres liens pointent directement vers la nouvelle URL.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Vérifie les chaînes</p>
+            <p>Si une ancienne URL redirige déjà vers une autre URL, vérifie que tu ne crées pas inutilement plusieurs étapes.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">7</div>
+          <div>
+            <p class="step-title">Surveille après migration</p>
+            <p>Après une modification importante des URL, vérifie les erreurs et les redirections dans tes outils SEO et d'analyse.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>301</td><td>Redirection HTTP indiquant qu'une ressource a été déplacée de manière permanente</td></tr>
+        <tr><td>302</td><td>Redirection généralement utilisée lorsqu'un déplacement est temporaire</td></tr>
+        <tr><td>URL source</td><td>Ancienne adresse qui déclenche la redirection</td></tr>
+        <tr><td>URL cible</td><td>Nouvelle adresse vers laquelle la redirection conduit</td></tr>
+        <tr><td>Chaîne de redirections</td><td>Suite de plusieurs redirections avant d'arriver à la destination finale</td></tr>
+        <tr><td>Boucle de redirection</td><td>Situation dans laquelle les URL se redirigent les unes vers les autres sans atteindre de destination finale</td></tr>
+        <tr><td>Migration</td><td>Changement important affectant notamment les URL, le domaine ou la structure d'un site</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — Que signifie le code HTTP 301 ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Page introuvable</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Déplacement permanent</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Accès interdit</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Serveur indisponible</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le code 301 indique qu'une ressource a été déplacée de manière permanente.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Quand une redirection 301 est-elle particulièrement pertinente ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> Lorsqu'une page a été déplacée vers une nouvelle URL pertinente</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Pour toutes les URL inexistantes</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Pour sécuriser une page</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Pour accélérer une image</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> La 301 est notamment utilisée lorsqu'une ressource a changé définitivement d'adresse.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Qu'est-ce qu'une chaîne de redirections ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> Plusieurs URL qui se redirigent successivement avant d'atteindre la destination finale</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Plusieurs pages identiques</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Une liste de liens internes</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Un fichier robots.txt</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Une chaîne correspond à plusieurs redirections successives avant d'arriver à la destination finale.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Pourquoi éviter de créer inutilement des chaînes de redirections ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> Parce qu'elles peuvent ajouter des étapes inutiles avant d'atteindre la page finale</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Parce qu'elles empêchent toujours l'indexation</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Parce qu'une URL ne peut jamais être redirigée deux fois</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Parce qu'elles suppriment automatiquement les pages</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Il est préférable, lorsque c'est possible, de rediriger directement l'ancienne URL vers la destination finale.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Excellent ! Tu maîtrises maintenant les redirections 301 et tu sais comment les utiliser de manière pertinente pour accompagner les changements d'URL de ton site.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-3/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu sais maintenant comment accompagner le déplacement permanent d'une page.</p>
+      <p>Mais il existe une autre situation très fréquente. Imagine que deux URL différentes donnent accès à un contenu identique ou très similaire. Par exemple : <code>https://exemple.fr/produit</code> et <code>https://exemple.fr/produit?couleur=rouge</code>.</p>
+      <p>Comment indiquer aux moteurs quelle URL doit être considérée comme la version principale ?</p>
+      <p>C'est là qu'intervient la <strong>balise canonical</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-1/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Les URLs canoniques, à quoi ça sert ?</h3>
+          </div>
+          <a href="../chapitre-3/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
