@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Comprends ce qu'est le duplicate content en SEO, comment identifier les contenus dupliqués et choisir entre fusion, redirection 301, canonical ou réécriture.">
+<title>Duplicate content SEO : comprendre et éviter le contenu dupliqué</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟡 Palier 5 — Le SEO de contenu</a> <span>/</span>
+    <span>Chapitre 10</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Le duplicate content, à éviter absolument</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~13 min</span>
+          <span>🧩 Prérequis : Chapitre 9</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-5-bg);color:var(--palier-5)">🟡 Palier 5 · Chapitre 10 sur 10</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Deux pages identiques, est-ce vraiment grave ?</h3>
+      <p>Tu as deux pages sur ton site. Et elles contiennent exactement le même texte. Tu te demandes : « Est-ce que Google va me pénaliser ? » C'est une question très fréquente.</p>
+      <p>Le contenu dupliqué est souvent présenté comme une sorte de catastrophe SEO. On entend parfois qu'il suffit de publier deux pages similaires pour risquer de faire chuter tout son site dans les résultats de recherche. Mais la réalité est plus nuancée.</p>
+      <p>Avoir deux contenus identiques ou très similaires ne signifie pas automatiquement que ton site va être pénalisé. En revanche, multiplier les pages similaires peut créer des problèmes. Les moteurs de recherche doivent déterminer quelles versions afficher, les visiteurs peuvent tomber sur des pages qui leur apportent peu de valeur supplémentaire et tu peux finir par gérer plusieurs URL qui remplissent exactement le même rôle.</p>
+      <p>La bonne approche n'est donc pas de supprimer toutes les pages qui se ressemblent. C'est de comprendre <strong>pourquoi cette duplication existe et si chaque page a réellement une raison d'être</strong>.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce qu'est le duplicate content</li>
+        <li><span class="tick">✓</span> Identifier les principales situations de contenu dupliqué</li>
+        <li><span class="tick">✓</span> Comprendre pourquoi il peut apparaître</li>
+        <li><span class="tick">✓</span> Faire la différence entre duplication interne et externe</li>
+        <li><span class="tick">✓</span> Choisir une solution adaptée à la situation</li>
+        <li><span class="tick">✓</span> Éviter les erreurs fréquentes liées au contenu dupliqué</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Qu'est-ce que le duplicate content ?</h3>
+      <p>Le <strong>duplicate content</strong>, ou contenu dupliqué, désigne une situation dans laquelle un contenu identique ou très similaire est accessible à plusieurs endroits. Cette duplication peut concerner plusieurs pages d'un même site ou des pages publiées sur des sites différents.</p>
+      <p>Elle peut apparaître pour différentes raisons :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Plusieurs URL affichent le même contenu</li>
+        <li><span class="tick">✓</span> Deux pages d'un site reprennent exactement les mêmes textes</li>
+        <li><span class="tick">✓</span> Des paramètres d'URL créent différentes versions d'une même page</li>
+        <li><span class="tick">✓</span> Des variantes techniques rendent un contenu accessible à plusieurs adresses</li>
+        <li><span class="tick">✓</span> Un contenu est copié d'une page ou d'un site vers un autre</li>
+      </ul>
+      <p>Attention, deux pages qui abordent le même sujet ne sont pas nécessairement des contenus dupliqués. Tu peux très bien avoir un article sur la recherche de mots-clés et un autre sur l'intention de recherche. Ces sujets sont liés, mais les pages ont des objectifs différents.</p>
+      <p>Le problème apparaît surtout lorsque plusieurs versions proposent un contenu identique ou très proche, sans différence suffisamment utile pour justifier leur existence.</p>
+
+      <h3>Le contenu dupliqué peut être involontaire</h3>
+      <p>Imagine une boutique en ligne qui vend des chaussures de randonnée. Une catégorie est accessible à cette adresse : <code>/chaussures-randonnee</code>. Mais le site propose aussi une URL avec un paramètre : <code>/chaussures-randonnee?couleur=rouge</code>.</p>
+      <p>Selon le fonctionnement de la boutique, la seconde URL peut afficher une version filtrée de la première. Une grande partie du contenu peut donc être identique, même si les produits affichés diffèrent légèrement.</p>
+      <p>Cette situation n'est pas nécessairement le résultat d'une tentative de manipulation des moteurs de recherche. Elle peut simplement provenir du fonctionnement technique du site : filtres, paramètres d'URL, versions différentes d'une même page ou système de gestion de contenu.</p>
+      <p>C'est pour cette raison qu'il faut éviter de tirer des conclusions trop rapidement. Lorsque tu repères deux URL similaires, commence par vérifier ce qu'elles affichent réellement et pourquoi elles existent. Tu pourras ensuite déterminer si la duplication pose un problème et quelle solution envisager.</p>
+
+      <h3>Le contenu dupliqué n'est pas automatiquement une pénalité</h3>
+      <p>C'est une nuance essentielle. Le simple fait d'avoir du contenu identique ou similaire sur plusieurs URL ne signifie pas automatiquement que Google va pénaliser ton site.</p>
+      <p>Dans certaines situations, plusieurs URL peuvent représenter des variantes légitimes d'un même contenu. Les moteurs de recherche doivent alors déterminer quelle version est la plus appropriée à présenter dans les résultats.</p>
+      <p>La duplication peut néanmoins compliquer la gestion du référencement. Par exemple, si plusieurs pages répondent à la même intention et proposent quasiment les mêmes informations, il peut être difficile de déterminer quelle page tu souhaites réellement mettre en avant. Tu risques également de consacrer du temps à maintenir plusieurs pages qui n'apportent pas de valeur distincte.</p>
+      <p>L'objectif n'est donc pas de supprimer toute ressemblance entre tes contenus. Il est de veiller à ce que tes pages aient un rôle clair et que les différentes versions d'un même contenu soient gérées correctement.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie — Deux livres identiques dans une bibliothèque</strong> — Imagine une bibliothèque avec deux exemplaires strictement identiques du même livre. Ce n'est pas forcément un problème. Une bibliothèque peut avoir plusieurs exemplaires d'un ouvrage parce que plusieurs personnes souhaitent l'emprunter. Mais imagine maintenant que le catalogue enregistre ces exemplaires de manière incohérente, ou qu'il présente plusieurs fiches différentes pour un même ouvrage sans raison claire. Le bibliothécaire peut alors avoir plus de difficulté à gérer son catalogue et à présenter correctement les informations. C'est un peu l'idée derrière certaines problématiques de duplication. La présence de plusieurs versions n'est pas nécessairement problématique en elle-même. Ce qui compte, c'est de comprendre leur rôle et de les organiser correctement.
+      </div>
+
+      <h3>Le duplicate content interne</h3>
+      <p>Le duplicate content interne apparaît lorsque plusieurs pages d'un même site proposent un contenu identique ou très similaire.</p>
+      <p>Imagine que ton site possède ces deux URL : <code>/page-a</code> et <code>/page-b</code>. Si elles affichent exactement le même texte et répondent au même besoin, tu dois te demander pourquoi tu conserves deux pages distinctes.</p>
+      <p>Peut-être qu'une page est une ancienne version de l'autre. Peut-être qu'une erreur de configuration a créé un doublon. Ou peut-être que les deux URL correspondent à des variantes techniques d'une même page.</p>
+      <p>Dans certains cas, une seule page pourrait suffire. Dans d'autres, les deux versions peuvent avoir une utilité particulière. Avant de supprimer quoi que ce soit, vérifie donc le rôle de chaque page, son utilité pour les visiteurs et les éventuels liens qui pointent vers elle.</p>
+
+      <h3>Le duplicate content externe</h3>
+      <p>Le duplicate content externe apparaît lorsqu'un contenu identique ou très similaire est accessible sur plusieurs sites. Par exemple, tu publies un article sur ton site, puis le même texte est repris intégralement sur un autre site.</p>
+      <p>Cette situation peut soulever des questions sur l'originalité du contenu et sur la manière dont les différentes versions seront traitées par les moteurs de recherche.</p>
+      <p>Elle peut avoir différentes origines : une republication volontaire, une reprise de contenu par un partenaire ou une copie effectuée sans ton autorisation. Dans tous les cas, il faut examiner le contexte avant de décider quoi faire.</p>
+      <p>Si tu republies volontairement un article ailleurs, demande-toi notamment quel est l'objectif de cette publication et comment les deux versions doivent être gérées.</p>
+      <p>Si un autre site a copié ton contenu sans autorisation, la situation est différente : tu peux chercher à comprendre l'étendue de la copie et déterminer si une démarche est nécessaire.</p>
+
+      <h3>Plusieurs solutions peuvent exister</h3>
+      <p>Il n'existe pas une seule solution universelle au contenu dupliqué. La réponse dépend de la raison pour laquelle plusieurs versions existent et de ce que tu souhaites conserver. Tu peux notamment envisager :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> <span><strong>Fusionner les contenus</strong> lorsque plusieurs pages poursuivent le même objectif et que leur regroupement permet de créer une page plus utile</span></li>
+        <li><span class="tick">✓</span> <span><strong>Supprimer une page inutile</strong> lorsqu'elle n'a plus de raison d'exister et qu'aucune autre solution n'est nécessaire</span></li>
+        <li><span class="tick">✓</span> <span><strong>Mettre en place une redirection 301</strong> lorsqu'une URL doit être remplacée de manière permanente par une autre page pertinente</span></li>
+        <li><span class="tick">✓</span> <span><strong>Utiliser une balise canonical</strong> lorsque plusieurs URL représentent des versions similaires d'un même contenu et qu'une URL principale doit être indiquée</span></li>
+        <li><span class="tick">✓</span> <span><strong>Réécrire les contenus</strong> lorsque plusieurs pages ont des objectifs distincts mais proposent actuellement des textes trop similaires</span></li>
+        <li><span class="tick">✓</span> <span><strong>Conserver certaines variantes</strong> lorsqu'elles répondent à un besoin réel, comme des filtres ou des déclinaisons utiles d'une catégorie</span></li>
+      </ul>
+      <p>Ces solutions ne sont pas interchangeables. Une canonical ne remplace pas systématiquement une redirection. Une suppression n'est pas toujours nécessaire. Et réécrire deux textes ne résout pas forcément un problème causé par la configuration des URL.</p>
+      <p>La première étape consiste donc toujours à comprendre la situation avant de choisir une solution technique ou éditoriale.</p>
+
+      <h3>⚠️ Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser que toute duplication entraîne automatiquement une pénalité</li>
+        <li><span class="tick">✗</span> Créer volontairement de nombreuses pages presque identiques sans objectif distinct</li>
+        <li><span class="tick">✗</span> Copier intégralement des contenus sans apporter de valeur propre</li>
+        <li><span class="tick">✗</span> Utiliser une canonical comme solution universelle à tous les problèmes</li>
+        <li><span class="tick">✗</span> Conserver plusieurs pages identiques sans raison claire</li>
+        <li><span class="tick">✗</span> Supprimer une page sans vérifier son rôle, ses liens et son utilité</li>
+        <li><span class="tick">✗</span> Réécrire des contenus uniquement pour modifier quelques mots sans clarifier leur objectif</li>
+        <li><span class="tick">✗</span> Confondre deux pages qui traitent du même sujet avec deux pages qui proposent réellement le même contenu</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imagine une boutique en ligne qui vend des chaussures de randonnée. Elle possède trois pages :</p>
+      <div class="example-card">
+        <div class="example-bar">🔗 urls.txt</div>
+<pre>/chaussures-randonnee
+/chaussures-randonnee-homme
+/chaussures-randonnee-femme</pre>
+      </div>
+      <p>Les trois pages utilisent exactement le même texte :</p>
+      <div class="example-card">
+        <div class="example-bar">📄 texte-categorie.txt</div>
+<pre>Découvrez notre sélection de chaussures de randonnée pour tous vos besoins. Retrouvez des modèles confortables, résistants et adaptés à vos sorties en plein air.</pre>
+      </div>
+      <p>Le texte est assez général. Il ne permet pas vraiment de comprendre ce qui distingue les trois catégories.</p>
+      <p>Avant de chercher une solution technique, pose-toi une question simple : <strong>« Pourquoi ces trois pages existent-elles ? »</strong></p>
+
+      <h3>Cas 1 — Les trois pages répondent au même besoin</h3>
+      <p>Imaginons que les trois URL affichent exactement les mêmes produits et les mêmes informations, sans distinction particulière. Dans ce cas, tu peux te demander si les trois pages sont réellement nécessaires.</p>
+      <p>Si elles remplissent le même rôle, regrouper les contenus ou simplifier la structure du site peut être pertinent.</p>
+      <p>Si l'une des URL doit disparaître au profit d'une autre, une redirection permanente peut être adaptée, à condition que la page de destination corresponde bien au besoin initial.</p>
+
+      <h3>Cas 2 — Les pages répondent à des besoins différents</h3>
+      <p>Imaginons maintenant que les catégories homme et femme proposent des sélections de produits distinctes. Les trois pages peuvent alors avoir une raison d'exister.</p>
+      <p>Le problème n'est plus simplement leur nombre, mais le fait que leurs textes ne reflètent pas leurs différences.</p>
+      <p>Tu peux enrichir chaque page avec des informations adaptées à sa sélection : types de modèles disponibles, caractéristiques des produits, critères de choix ou conseils pertinents pour les visiteurs.</p>
+      <p>Tu ne dois pas inventer des différences artificielles. L'objectif est de décrire ce que chaque catégorie propose réellement et d'aider l'utilisateur à choisir.</p>
+
+      <div class="analogy-card">
+        🎯 <strong>Ce qu'il faut retenir</strong> — Tu ne dois pas chercher à supprimer toutes les pages qui se ressemblent. Tu dois comprendre si elles ont un objectif distinct, si elles apportent une valeur propre et si leur coexistence est justifiée. C'est cette analyse qui te permettra de choisir entre une fusion, une redirection, une canonical, une réécriture ou le maintien des pages existantes.
+      </div>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie les pages similaires</p>
+            <p>Commence par repérer les pages qui semblent proposer le même contenu. Tu peux examiner les pages importantes de ton site, comparer leurs textes ou utiliser un outil d'audit capable d'identifier des URL présentant des contenus très proches. Si tu possèdes une boutique en ligne, regarde notamment les catégories, les fiches produits, les pages de filtres et les variantes d'URL. Sur un site éditorial, examine plutôt les articles qui traitent de sujets très proches ou les anciennes versions de contenus qui auraient été conservées. Ne conclus pas trop vite à un problème de duplication à partir de quelques phrases identiques. Des éléments communs comme un menu, un pied de page ou un texte de présentation récurrent peuvent apparaître sur de nombreuses pages sans que leur contenu principal soit dupliqué. L'objectif est d'identifier les situations qui méritent une analyse plus approfondie.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Comprends pourquoi les pages existent</p>
+            <p>Une fois les pages similaires identifiées, cherche l'origine de la duplication. Est-elle volontaire ou accidentelle ? Est-elle liée à une configuration technique ? Provient-elle d'un ancien contenu qui a été conservé après une mise à jour ? Par exemple, si deux URL affichent la même catégorie de produits, vérifie si l'une d'elles provient d'un filtre, d'un paramètre ou d'une autre fonctionnalité du site. Si deux articles reprennent le même texte, regarde s'il s'agit d'un doublon créé par erreur ou de deux contenus qui devaient initialement répondre à des questions différentes. Cette étape est importante, car deux situations qui se ressemblent à première vue peuvent nécessiter des solutions différentes.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Vérifie l'utilité de chaque page</p>
+            <p>Pour chaque page concernée, pose-toi cette question : « Cette page répond-elle à un besoin différent ou apporte-t-elle une valeur particulière ? » Examine son objectif, les informations qu'elle propose et les personnes auxquelles elle s'adresse. Une page de catégorie dédiée aux chaussures de randonnée pour femmes peut être utile si elle présente une sélection spécifique et aide les visiteurs à faire leur choix. En revanche, une deuxième page qui reprend exactement les mêmes produits, le même texte et le même objectif peut être superflue. Ne juge donc pas uniquement la similarité des textes. Regarde également le rôle de la page dans la navigation et dans le parcours de l'utilisateur.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Fusionne les contenus lorsque c'est pertinent</p>
+            <p>Si deux pages répondent exactement au même besoin et apportent peu de valeur distincte, une fusion peut être une bonne solution. Tu peux alors rassembler les informations utiles dans une seule page, organiser les explications et supprimer les répétitions. Prenons deux articles qui expliquent les bases de la recherche de mots-clés avec des paragraphes presque identiques. Si les deux contenus poursuivent le même objectif, les regrouper peut permettre de créer un article plus clair et plus complet. En revanche, si l'un traite du choix des mots-clés et l'autre de l'analyse de leur difficulté, il peut être préférable de conserver deux pages distinctes, à condition que chacune réponde clairement à son propre besoin. Si tu décides de fusionner des pages, réfléchis aussi au devenir des anciennes URL. Une redirection peut être nécessaire lorsqu'une page est remplacée par une autre qui reprend son rôle.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Mets en place une redirection si nécessaire</p>
+            <p>Lorsqu'une ancienne page doit disparaître au profit d'une nouvelle URL, une redirection 301 peut permettre d'orienter les visiteurs et les moteurs de recherche vers la nouvelle adresse. Mais attention : la destination doit être pertinente. Si tu supprimes une ancienne fiche produit, rediriger systématiquement tous les visiteurs vers la page d'accueil n'est pas forcément une bonne solution. Une catégorie ou un produit équivalent peut être plus adapté, selon la situation. Avant de mettre en place la redirection, vérifie donc que la nouvelle page reprend le besoin ou la fonction de l'ancienne. Après sa mise en place, teste l'ancienne URL pour confirmer qu'elle mène bien à la destination prévue. La redirection ne doit pas servir à masquer une duplication sans comprendre son origine. Elle accompagne une décision sur l'organisation du site.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Utilise une canonical dans les situations adaptées</p>
+            <p>La balise canonical permet d'indiquer aux moteurs de recherche quelle URL est considérée comme la version principale parmi plusieurs pages identiques ou similaires. Imaginons qu'une catégorie de produits soit accessible par plusieurs URL à cause de paramètres techniques. Tu peux avoir besoin d'indiquer quelle version représente la référence principale. La canonical peut alors être un signal utile. Mais elle ne supprime pas les autres URL et ne constitue pas une redirection. Les moteurs de recherche peuvent également tenir compte d'autres signaux lorsqu'ils déterminent quelle version retenir. Ne l'utilise donc pas comme une solution automatique à tous les problèmes de contenu dupliqué. Avant de l'ajouter, vérifie que les pages concernées sont bien des variantes du même contenu et que le choix de l'URL principale correspond à la manière dont tu souhaites organiser ton site.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">7</div>
+          <div>
+            <p class="step-title">Crée du contenu réellement différent lorsque les objectifs diffèrent</p>
+            <p>Parfois, la meilleure solution consiste simplement à mieux différencier les pages. Si deux contenus répondent à des besoins distincts, ils peuvent être conservés, même s'ils abordent un sujet commun. Tu dois alors clarifier le rôle de chaque page et développer les informations qui lui sont propres. Reprenons les catégories de chaussures de randonnée. La page générale peut aider à découvrir l'ensemble de la gamme et à choisir un modèle selon son usage. Les catégories homme et femme peuvent présenter leurs sélections respectives, les caractéristiques des produits disponibles et les conseils utiles pour comparer les modèles. Tu n'as pas besoin de réécrire chaque phrase pour qu'elle soit totalement différente. Tu dois surtout t'assurer que chaque page apporte les informations attendues et justifie son existence. Enfin, vérifie régulièrement tes pages après une refonte, une modification d'URL ou une réorganisation de tes contenus.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="measure-card">
+        <div class="icon">💡</div>
+        <p><strong>À retenir :</strong> avant de supprimer, rediriger ou réécrire une page, comprends pourquoi elle existe. La bonne solution dépend de son objectif, de son contenu et de son rôle dans ton site.</p>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Duplicate content</td><td>Contenu identique ou très similaire accessible à plusieurs endroits</td></tr>
+        <tr><td>Duplication interne</td><td>Contenu dupliqué entre plusieurs pages d'un même site</td></tr>
+        <tr><td>Duplication externe</td><td>Contenu identique ou similaire présent sur plusieurs sites</td></tr>
+        <tr><td>Canonical</td><td>Indication de l'URL considérée comme principale parmi plusieurs versions similaires</td></tr>
+        <tr><td>Redirection 301</td><td>Redirection permanente d'une URL vers une autre</td></tr>
+        <tr><td>Contenu original</td><td>Contenu créé ou apportant une valeur propre à une page</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — Qu'est-ce que le duplicate content ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Une page contenant uniquement des images</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Un contenu identique ou très similaire accessible à plusieurs endroits</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Une page sans balise H1</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Un contenu trop court</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le duplicate content désigne notamment des contenus identiques ou très similaires présents à plusieurs endroits.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Le contenu dupliqué entraîne-t-il automatiquement une pénalité ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui, toujours</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, dès qu'il y a deux pages identiques</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, la duplication n'entraîne pas automatiquement une pénalité</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Oui, uniquement sur les blogs</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> La présence de contenu dupliqué n'implique pas automatiquement une pénalité. Il faut analyser le contexte et la manière dont les pages sont utilisées.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Que faire lorsque deux pages ont exactement le même objectif et le même contenu ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Créer dix autres pages identiques</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Évaluer s'il est pertinent de les fusionner ou d'en conserver une seule</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Répéter davantage le mot-clé</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Ajouter uniquement des images</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Lorsque plusieurs pages ont le même objectif sans raison particulière, simplifier la structure peut être pertinent.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Quelle solution peut être utilisée lorsqu'une ancienne page doit être remplacée par une nouvelle ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> Une redirection 301 peut être pertinente</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Ajouter davantage de contenu identique</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Créer une deuxième page d'accueil</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Supprimer tous les liens internes</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Lorsqu'une ancienne URL est remplacée de manière permanente par une nouvelle page pertinente, une redirection 301 peut accompagner ce changement.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Félicitations ! Tu sais maintenant analyser un cas de duplicate content et choisir entre fusion, redirection, canonical ou réécriture. Tu as terminé le Palier 5 !</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <button type="button" class="btn btn-primary" disabled aria-disabled="true">Palier suivant — à venir</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu viens de terminer le dernier chapitre de ce palier. Tu as maintenant les principales bases pour construire une véritable stratégie de <strong>SEO de contenu</strong>.</p>
+      <p>Tu sais :</p>
+      <ul>
+        <li>Chercher des mots-clés</li>
+        <li>Lire leur volume de recherche et leur difficulté</li>
+        <li>Comprendre l'intention de recherche</li>
+        <li>Enrichir un contenu avec un vocabulaire pertinent</li>
+        <li>Structurer un article pour faciliter la lecture</li>
+        <li>Utiliser correctement les balises Hn</li>
+        <li>Créer un maillage interne cohérent</li>
+        <li>Rédiger une introduction efficace</li>
+        <li>Adapter la longueur au sujet</li>
+        <li>Comprendre les problématiques liées au duplicate content</li>
+      </ul>
+      <p>Et surtout, tu peux retenir une idée essentielle : <strong>Le SEO de contenu ne consiste pas à écrire pour Google. Il consiste à créer le bon contenu, pour la bonne recherche, avec la bonne structure et au bon moment.</strong></p>
+      <p>Le mot-clé n'est qu'un point de départ. Le volume de recherche n'est qu'un indicateur. La longueur n'est pas un objectif en soi. Et les outils ne remplacent jamais la compréhension du lecteur.</p>
+      <p>À partir de maintenant, lorsque tu créeras un contenu, pose-toi toujours cette question : <strong>« Est-ce que cette page répond vraiment au besoin de la personne qui vient d'effectuer cette recherche ? »</strong></p>
+      <p>Si la réponse est oui, tu es déjà en train de raisonner comme un SEO de contenu.</p>
+      <p><strong>Fin du Palier 5 — Le SEO de contenu</strong></p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-9/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Palier suivant</div>
+            <h3>Palier 6 — Le SEO de popularité</h3>
+          </div>
+          <button type="button" class="btn btn-primary" disabled aria-disabled="true">À venir</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
