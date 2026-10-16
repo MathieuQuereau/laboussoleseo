@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre comment fonctionnent les balises Hn en SEO, à quoi servent les H1, H2 et H3 et comment construire une hiérarchie de titres claire dans tes contenus.">
+<title>Balises Hn SEO : comprendre H1, H2 et H3 simplement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟡 Palier 5 — Le SEO de contenu</a> <span>/</span>
+    <span>Chapitre 6</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Les balises Hn expliquées simplement</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~8 min</span>
+          <span>🧩 Prérequis : Chapitre 5</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-5-bg);color:var(--palier-5)">🟡 Palier 5 · Chapitre 6 sur 10</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Un titre, c'est juste du texte en plus gros ?</h3>
+      <p>Tu rédiges un article. Tu ajoutes un gros titre. Puis un autre. Puis encore un autre. Tu changes simplement la taille et le gras du texte. Visuellement, cela peut sembler fonctionner.</p>
+      <p>Mais en réalité, les titres HTML ont une fonction plus précise. Les balises <strong>Hn</strong> permettent de structurer le contenu d'une page.</p>
+      <p>Et comprendre cette structure va t'aider à construire des contenus plus clairs.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre ce que sont les balises Hn</li>
+        <li><span class="tick">✓</span> Faire la différence entre H1, H2 et H3</li>
+        <li><span class="tick">✓</span> Construire une hiérarchie logique</li>
+        <li><span class="tick">✓</span> Utiliser les titres pour structurer ton contenu</li>
+        <li><span class="tick">✓</span> Éviter les erreurs fréquentes</li>
+        <li><span class="tick">✓</span> Comprendre pourquoi un H2 n'est pas simplement un gros texte</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Que signifie Hn ?</h3>
+      <p>Le « H » signifie <strong>Heading</strong>, c'est-à-dire titre ou en-tête. Les niveaux vont de :</p>
+      <div class="example-card">
+        <div class="example-bar">⚙️ niveaux-hn.txt</div>
+<pre>H1
+│
+H2
+│
+H3
+│
+H4
+│
+H5
+│
+H6</pre>
+      </div>
+      <p>Dans la majorité des contenus éditoriaux, tu utiliseras principalement H1, H2 et H3. Ces différents niveaux permettent de montrer comment les parties de ton contenu sont organisées entre elles.</p>
+
+      <h3>Le H1 représente le sujet principal</h3>
+      <p>Le H1 correspond généralement au titre principal de la page. Par exemple : <strong>H1 : Comment choisir ses chaussures de randonnée ?</strong> Il donne immédiatement le sujet principal du contenu.</p>
+      <p>Le lecteur doit pouvoir comprendre, simplement en regardant ce titre, de quoi parle la page. Le H1 constitue donc le point de départ de ta structure.</p>
+
+      <h3>Les H2 organisent les grandes parties</h3>
+      <p>Une fois ton sujet principal défini, tu peux le découper en grandes parties. Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">🧭 plan-h2.txt</div>
+<pre>H2 : Définir son type de randonnée
+H2 : Choisir la bonne semelle
+H2 : Vérifier l'imperméabilité</pre>
+      </div>
+      <p>Chaque H2 représente une grande partie du contenu. Tu peux donc passer progressivement du sujet général aux différents aspects que tu souhaites expliquer.</p>
+
+      <h3>Les H3 détaillent les H2</h3>
+      <p>Certaines parties peuvent ensuite avoir besoin d'être approfondies. Tu peux alors utiliser des H3. Par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">🧭 plan-h3.txt</div>
+<pre>H2 : Choisir la bonne semelle
+  H3 : Semelle pour terrain sec
+  H3 : Semelle pour terrain humide
+  H3 : Semelle pour terrain montagneux</pre>
+      </div>
+      <p>Le H3 dépend donc logiquement du H2 qui le précède. Il sert à détailler une partie déjà identifiée.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le plan d'un livre</strong> — Imagine : Livre → Chapitre → Sous-chapitre → Sous-partie. Les Hn fonctionnent de manière similaire. Le H1 représente le sujet principal. Les H2 représentent les grandes parties. Les H3 permettent de détailler ces parties. Tu peux ainsi construire progressivement une structure qui aide le lecteur à comprendre comment les différentes informations sont liées.
+      </div>
+
+      <h3>Les Hn ne servent pas uniquement à modifier la taille du texte</h3>
+      <p>C'est une erreur fréquente. Tu peux avoir envie de transformer une phrase en gros texte simplement parce que tu souhaites qu'elle soit plus visible. Mais un titre HTML n'est pas uniquement une question d'apparence.</p>
+      <p>Si tu veux simplement agrandir un texte, utilise du CSS. Une balise H2 doit correspondre à un véritable titre ou sous-titre.</p>
+      <p>Par exemple, ceci peut être un H2 : <strong>Comment choisir la bonne semelle ?</strong> Alors que cette phrase n'a pas forcément besoin d'être transformée en H2 : « Pense également à vérifier la semelle avant de choisir tes chaussures. »</p>
+      <p>Le premier annonce une partie du contenu. Le second fait simplement partie d'un paragraphe.</p>
+
+      <h3>La hiérarchie doit rester cohérente</h3>
+      <p>Les niveaux de titres doivent suivre une logique. Évite par exemple :</p>
+      <div class="example-card">
+        <div class="example-bar">❌ hierarchie-incoherente.txt</div>
+<pre>H1
+H3
+H2
+H4</pre>
+      </div>
+      <p>sans logique particulière. Une structure plus cohérente serait :</p>
+      <div class="example-card">
+        <div class="example-bar">✅ hierarchie-coherente.txt</div>
+<pre>H1
+  H2
+    H3
+  H2
+    H3</pre>
+      </div>
+      <p>Tu dois pouvoir comprendre la relation entre les différents niveaux simplement en regardant la structure.</p>
+
+      <h3>⚠️ Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Utiliser les Hn uniquement pour agrandir du texte</li>
+        <li><span class="tick">✗</span> Multiplier les H1 sans raison</li>
+        <li><span class="tick">✗</span> Passer directement de H2 à H4 sans logique</li>
+        <li><span class="tick">✗</span> Mettre des mots-clés artificiellement dans tous les titres</li>
+        <li><span class="tick">✗</span> Créer des titres qui n'apportent aucune information</li>
+        <li><span class="tick">✗</span> Penser que la balise H1 suffit à positionner une page</li>
+        <li><span class="tick">✗</span> Utiliser un niveau de titre uniquement parce qu'il possède une apparence visuelle qui te plaît</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Tu écris un guide : <strong>H1 : Comment créer un potager ?</strong> Puis tu peux organiser ton contenu de cette manière :</p>
+      <div class="example-card">
+        <div class="example-bar">🧭 plan-potager.txt</div>
+<pre>H1 : Comment créer un potager ?
+  H2 : Choisir l'emplacement
+  H2 : Préparer le sol
+  H2 : Choisir les légumes
+    H3 : Les légumes faciles pour débuter
+    H3 : Les légumes à planter au printemps
+  H2 : Entretenir son potager</pre>
+      </div>
+      <p>La structure est immédiatement compréhensible. Tu sais quel est le sujet principal. Tu vois les grandes parties. Et tu comprends quelles informations appartiennent à quelle partie.</p>
+      <p>Le H1 présente le sujet général. Les H2 organisent les grandes étapes. Les H3 permettent d'aller plus loin dans une partie précise.</p>
+      <p>Tu pourrais même lire uniquement les titres et comprendre déjà le parcours proposé au lecteur. C'est justement l'un des intérêts d'une bonne hiérarchie.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Définis ton H1</p>
+            <p>Commence par identifier clairement le sujet principal de ta page. Par exemple : <strong>Comment créer un potager ?</strong> Ton H1 doit permettre au lecteur de comprendre immédiatement ce qu'il va trouver sur la page. Évite de chercher à le rendre artificiellement compliqué pour y placer plusieurs mots-clés. Le plus important est qu'il corresponde réellement au sujet traité.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Liste les grandes parties</p>
+            <p>Une fois ton sujet principal défini, demande-toi : <strong>« Quelles sont les grandes étapes ou grandes idées nécessaires pour répondre à cette question ? »</strong> Pour un guide consacré à la création d'un potager, tu peux avoir : choisir l'emplacement, préparer le sol, choisir les légumes, planifier les plantations, entretenir le potager. Ces grandes idées peuvent ensuite devenir tes H2.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Identifie les sous-parties</p>
+            <p>Certaines grandes parties peuvent être suffisamment complexes pour nécessiter plusieurs sous-parties. C'est à ce moment-là que les H3 peuvent être utiles. Par exemple : <strong>H2 : Choisir les légumes</strong>. Tu peux ensuite créer : <strong>H3 : Les légumes faciles pour débuter</strong> et <strong>H3 : Les légumes à planter au printemps</strong>. Le H3 vient donc préciser le contenu du H2. Si une partie ne nécessite aucun découpage supplémentaire, il n'est pas nécessaire d'ajouter des H3.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Vérifie la hiérarchie</p>
+            <p>Relis maintenant tes titres et vérifie que leur niveau correspond bien à leur place dans le contenu. Par exemple :</p>
+            <div class="example-card">
+              <div class="example-bar">🧭 verification-hierarchie.txt</div>
+<pre>H1 : Comment créer un potager ?
+H2 : Choisir l'emplacement
+H2 : Préparer le sol
+H2 : Choisir les légumes
+H3 : Les légumes faciles pour débuter
+H3 : Les légumes à planter au printemps
+H2 : Entretenir son potager</pre>
+            </div>
+            <p>La structure est logique. Les H3 appartiennent au H2 « Choisir les légumes ». Ils ne deviennent pas soudainement des sous-parties de « Entretenir son potager ».</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Relis uniquement les titres</p>
+            <p>Voici une méthode très simple pour vérifier ton plan. Cache le texte de ton article et lis uniquement le H1, les H2, les H3. Tu dois déjà pouvoir comprendre la logique générale du contenu. Si tu lis uniquement les titres et que tu ne comprends pas le sujet ou la progression, ton plan mérite probablement d'être retravaillé. Cette méthode permet également de repérer rapidement les parties qui semblent manquer ou celles qui sont mal placées.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Vérifie leur utilité</p>
+            <p>Enfin, demande-toi si chaque titre correspond réellement à une partie du contenu. Un bon titre doit annoncer une information que le lecteur va effectivement retrouver juste après. Évite donc les titres ajoutés uniquement pour placer un mot-clé ou pour créer artificiellement davantage de sections. Par exemple : <strong>H2 : Chaussures de randonnée</strong> n'apporte pas forcément beaucoup d'informations. Alors que : <strong>H2 : Comment choisir ses chaussures de randonnée ?</strong> annonce clairement ce que le lecteur va trouver dans cette partie.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="measure-card">
+        <div class="icon">💡</div>
+        <p><strong>À retenir :</strong> les balises Hn ne servent pas simplement à modifier l'apparence du texte. Elles permettent surtout de <strong>construire une hiérarchie claire entre les différentes parties d'un contenu</strong>.</p>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>H1</td><td>Titre principal d'une page</td></tr>
+        <tr><td>H2</td><td>Titre d'une grande partie du contenu</td></tr>
+        <tr><td>H3</td><td>Sous-partie d'un H2</td></tr>
+        <tr><td>Heading</td><td>Terme anglais utilisé pour désigner un titre HTML</td></tr>
+        <tr><td>Hiérarchie</td><td>Organisation des titres selon différents niveaux</td></tr>
+        <tr><td>HTML</td><td>Langage utilisé pour structurer le contenu d'une page Web</td></tr>
+        <tr><td>CSS</td><td>Langage utilisé notamment pour gérer l'apparence visuelle d'une page Web</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — Que signifie le H dans H1, H2 ou H3 ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Hyperlink</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Heading</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Hosting</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Homepage</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> H signifie Heading, c'est-à-dire un titre ou en-tête en HTML.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Quel rôle joue généralement le H1 ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> Présenter le sujet principal de la page</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Créer une redirection</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Ajouter une image</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Bloquer Google</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Le H1 sert généralement à présenter le sujet principal de la page.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — À quoi servent les H2 ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> À remplacer toutes les balises HTML</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> À organiser les grandes parties du contenu</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> À créer des liens externes</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> À accélérer la page</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Les H2 permettent notamment de structurer les grandes parties d'un contenu.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Que faut-il éviter avec les balises Hn ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Les utiliser pour structurer le contenu</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Créer une hiérarchie logique</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Les utiliser uniquement pour modifier la taille visuelle du texte</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Utiliser des H3 pour détailler un H2</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Les balises Hn servent à structurer le contenu, tandis que l'apparence visuelle doit être gérée avec le CSS.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Parfait ! Tu sais maintenant construire une hiérarchie H1, H2, H3 cohérente et utiliser les titres pour structurer tes contenus, pas pour les décorer.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-7/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu sais maintenant comment construire une structure claire avec les Hn.</p>
+      <p>Mais ton contenu ne doit pas fonctionner comme une île isolée. Il doit être connecté aux autres pages de ton site. Ces connexions peuvent aider ton lecteur à découvrir d'autres contenus utiles. C'est le rôle du <strong>maillage interne</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-5/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Le maillage interne côté rédaction</h3>
+          </div>
+          <a href="../chapitre-7/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
