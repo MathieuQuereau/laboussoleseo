@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre la différence entre les liens follow et nofollow, à quoi sert l'attribut nofollow et comment comprendre leur rôle dans une stratégie SEO.">
+<title>Liens follow et nofollow : comprendre la différence simplement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟡 Palier 6 — Le SEO de popularité</a> <span>/</span>
+    <span>Chapitre 4</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Liens follow vs nofollow expliqués simplement</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~7 min</span>
+          <span>🧩 Prérequis : Chapitre 3</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-6-bg);color:var(--palier-6)">🟡 Palier 6 · Chapitre 4 sur 6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Follow ou nofollow : lequel vaut le plus ?</h3>
+      <p>Tu analyses un backlink. Ton outil te dit : <strong>Nofollow</strong>. Tu regardes un autre lien : <strong>Follow</strong>. Tu te demandes alors : « Lequel est le meilleur ? »</p>
+      <p>La réponse n'est pas aussi simple. Ces deux notions permettent surtout de comprendre <strong>comment un lien est qualifié</strong>.</p>
+      <p>Et contrairement à une idée reçue, un lien nofollow n'est pas simplement un « mauvais backlink ».</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ce qu'est un lien follow</li>
+        <li><span class="tick">✓</span> Ce qu'est un lien nofollow</li>
+        <li><span class="tick">✓</span> À quoi sert l'attribut nofollow</li>
+        <li><span class="tick">✓</span> Quelle différence entre les deux</li>
+        <li><span class="tick">✓</span> Pourquoi un lien nofollow peut malgré tout être intéressant</li>
+        <li><span class="tick">✓</span> Comment éviter les fausses conclusions sur les backlinks</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Un lien est d'abord un lien</h3>
+      <p>Prenons : <strong>Découvre notre guide SEO</strong>. C'est un lien qui permet de passer d'une page à une autre.</p>
+      <p>Certains liens peuvent être accompagnés d'attributs qui donnent des indications supplémentaires sur leur nature. L'un des plus connus est : <code>rel="nofollow"</code></p>
+
+      <h3>Le nofollow, c'est quoi ?</h3>
+      <p>L'attribut <strong>nofollow</strong> permet notamment d'indiquer aux moteurs de recherche que le site ne souhaite pas que le lien soit considéré de la même manière qu'un lien classique.</p>
+      <p>Cela peut être utilisé dans certaines situations particulières. Par exemple, un site peut qualifier certains liens commerciaux ou certains liens dont il ne souhaite pas transmettre une recommandation éditoriale classique.</p>
+
+      <h3>Et le follow ?</h3>
+      <p>On parle souvent de « lien follow » pour désigner un lien qui n'utilise pas l'attribut nofollow.</p>
+      <p>Attention toutefois : <strong>« Follow » n'est pas réellement un attribut HTML que tu ajoutes obligatoirement au lien.</strong></p>
+      <p>Le terme est surtout utilisé par les professionnels du SEO pour désigner un lien classique qui n'est pas qualifié avec nofollow.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie — La recommandation</strong> — Imagine que tu recommandes un restaurant. Tu peux dire : « Je recommande vraiment ce restaurant. » Ou : « Voici un restaurant dont je parle, mais je ne veux pas présenter ce lien comme une recommandation éditoriale classique. » Dans les deux cas, le restaurant est cité. Mais le contexte de la recommandation n'est pas exactement le même.
+      </div>
+
+      <h3>Un lien nofollow peut-il apporter des visiteurs ?</h3>
+      <p>Oui. C'est essentiel à comprendre.</p>
+      <p>Un visiteur peut cliquer sur un lien nofollow. Il peut arriver sur ton site. Il peut lire ton contenu. Et potentiellement découvrir tes autres pages.</p>
+      <p>Le nofollow ne signifie donc pas : « Ce lien ne sert à rien. »</p>
+
+      <h3>Il existe aussi d'autres attributs</h3>
+      <p>Tu peux également rencontrer :</p>
+      <div class="example-card">
+        <div class="example-bar">🌐 attributs-rel.html</div>
+<pre>rel="sponsored" pour certains liens sponsorisés ou commerciaux
+rel="ugc" pour certains contenus générés par les utilisateurs</pre>
+      </div>
+      <p>Ces attributs permettent de qualifier certains types de liens.</p>
+
+      <h3>⚠️ Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser qu'un nofollow est un lien inutile</li>
+        <li><span class="tick">✗</span> Croire qu'un lien follow garantit une meilleure position</li>
+        <li><span class="tick">✗</span> Acheter des liens uniquement parce qu'ils sont follow</li>
+        <li><span class="tick">✗</span> Confondre nofollow avec lien cassé</li>
+        <li><span class="tick">✗</span> Oublier que les visiteurs peuvent cliquer sur un nofollow</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Tu écris un article sur la photographie. Un forum permet aux utilisateurs de publier des liens. Un membre recommande ton guide.</p>
+      <p>Le forum peut utiliser <code>rel="ugc"</code> pour qualifier les liens issus des utilisateurs.</p>
+      <p>Autre exemple : un site publie un article sponsorisé contenant un lien vers ton entreprise. Le lien peut être qualifié avec <code>rel="sponsored"</code>.</p>
+      <p>Dans les deux cas, le lien existe toujours. Et dans les deux cas, un utilisateur peut cliquer dessus.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie la nature du lien</p>
+            <p>Lorsque tu analyses un backlink, regarde s'il est : classique, nofollow, sponsored, UGC.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Observe son contexte</p>
+            <p>Ne t'arrête pas à l'attribut. Regarde aussi : la page, le site, le sujet, l'ancre, la position du lien.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Demande-toi s'il peut apporter des visiteurs</p>
+            <p>Un lien présent sur une page réellement consultée peut avoir un intérêt même s'il est nofollow.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Ne trie pas tes opportunités uniquement sur follow/nofollow</p>
+            <p>Un bon lien nofollow provenant d'un site pertinent peut être plus intéressant qu'un lien follow provenant d'un site sans rapport.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Garde une vision globale</p>
+            <p>Le profil de liens d'un site peut naturellement contenir différents types de liens.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Follow</td><td>Terme SEO utilisé pour désigner généralement un lien sans attribut nofollow</td></tr>
+        <tr><td>Nofollow</td><td>Attribut indiquant que le lien ne doit pas être traité comme un lien classique de recommandation</td></tr>
+        <tr><td>Sponsored</td><td>Attribut permettant de qualifier certains liens sponsorisés ou commerciaux</td></tr>
+        <tr><td>UGC</td><td>Attribut utilisé notamment pour les liens provenant de contenus générés par les utilisateurs</td></tr>
+        <tr><td>Lien externe</td><td>Lien qui pointe vers un autre domaine</td></tr>
+        <tr><td>Backlink</td><td>Lien provenant d'un autre site vers ton site</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — Que signifie généralement « nofollow » ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Que le lien est cassé</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Qu'un attribut qualifie le lien afin qu'il ne soit pas traité comme un lien classique</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Que le lien est interdit aux visiteurs</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Que la page n'existe plus</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Nofollow est un attribut qui permet notamment de qualifier la manière dont le lien doit être considéré.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Un visiteur peut-il cliquer sur un lien nofollow ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Non</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Oui</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement sur mobile</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement avec Google Chrome</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le nofollow n'empêche pas un utilisateur de cliquer sur le lien.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — « Follow » est-il un attribut que l'on ajoute obligatoirement à tous les liens classiques ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Seulement sur WordPress</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Seulement en e-commerce</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> « Follow » est surtout un terme utilisé en SEO pour désigner un lien qui n'est pas qualifié avec nofollow.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Quelle approche est la plus pertinente ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Refuser tous les liens nofollow</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Regarder uniquement l'attribut du lien</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Analyser le lien dans son contexte global</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Acheter uniquement des liens follow</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Le contexte, la pertinence du site, la page, l'ancre et le potentiel de trafic sont également importants.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Parfait ! Tu sais maintenant distinguer un lien follow d'un lien nofollow, sponsored ou UGC, et analyser un backlink dans son contexte global.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-5/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu sais maintenant qu'un backlink peut être qualifié de différentes manières.</p>
+      <p>Mais une autre question se pose : <strong>« Et si je cherche volontairement à obtenir beaucoup de liens ? »</strong> C'est justement là que les choses peuvent devenir risquées.</p>
+      <p>Car en netlinking, il existe une différence importante entre <strong>obtenir naturellement des liens</strong> et chercher à les manipuler artificiellement.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-3/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Netlinking naturel vs artificiel : les risques</h3>
+          </div>
+          <a href="../chapitre-5/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
