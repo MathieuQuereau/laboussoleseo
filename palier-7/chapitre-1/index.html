@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre Google Search Console, son utilité en SEO, les principales données qu'elle fournit et comment l'utiliser pour suivre la visibilité de ton site sur Google.">
+<title>Google Search Console : comprendre et utiliser cet outil SEO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🔴 Palier 7 — L'analyse des données</a> <span>/</span>
+    <span>Chapitre 1</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Découvrir la Google Search Console</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~9 min</span>
+          <span>🧩 Aucun prérequis</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-7-bg);color:var(--palier-7)">🔴 Palier 7 · Chapitre 1 sur 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Comment savoir si Google voit vraiment ton site ?</h3>
+      <p>Tu as créé ton site. Tu as publié des contenus, travaillé tes mots-clés, organisé tes pages et ajouté des liens internes. Mais une question reste en suspens : <strong>comment savoir si Google trouve ton site et si tes contenus apparaissent dans ses résultats ?</strong></p>
+      <p>Tu peux taper quelques mots-clés dans Google pour vérifier. Mais cette méthode reste limitée : les résultats peuvent varier selon la requête, la localisation, l'appareil et d'autres facteurs.</p>
+      <p>Heureusement, Google propose un outil gratuit pour mieux comprendre ce qui se passe entre ton site et son moteur de recherche. Cet outil s'appelle <strong>Google Search Console</strong>.</p>
+      <p>Il va devenir l'un de tes meilleurs alliés pour observer ta visibilité SEO et repérer des pistes d'amélioration.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre à quoi sert Google Search Console</li>
+        <li><span class="tick">✓</span> Faire la différence entre Google Search Console et Google Analytics</li>
+        <li><span class="tick">✓</span> Découvrir les principales données de l'outil</li>
+        <li><span class="tick">✓</span> Comprendre les notions d'impressions, de clics et de position moyenne</li>
+        <li><span class="tick">✓</span> Repérer les pages et les requêtes qui attirent l'attention</li>
+        <li><span class="tick">✓</span> Commencer à utiliser les données pour améliorer ton référencement</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Google Search Console, c'est quoi ?</h3>
+      <p><strong>Google Search Console (GSC)</strong> est un outil gratuit proposé par Google qui te permet de suivre différents aspects de la présence de ton site dans les résultats de recherche Google.</p>
+      <p>Il t'aide notamment à comprendre :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Si certaines de tes pages sont indexées par Google</li>
+        <li><span class="tick">✓</span> Quelles requêtes font apparaître tes pages dans les résultats</li>
+        <li><span class="tick">✓</span> Combien de fois tes pages sont affichées</li>
+        <li><span class="tick">✓</span> Combien de clics elles reçoivent depuis les résultats de recherche</li>
+        <li><span class="tick">✓</span> Quelle est leur position moyenne dans les résultats</li>
+        <li><span class="tick">✓</span> Si Google signale certains problèmes techniques ou d'indexation</li>
+      </ul>
+      <p>Tu peux donc utiliser cet outil pour observer ce que Google voit de ton site et comment les internautes le découvrent dans ses résultats.</p>
+
+      <h3>À quoi sert cet outil en SEO ?</h3>
+      <p>Imagine que tu publies un article intitulé : <strong>Comment choisir ses chaussures de randonnée ?</strong> Tu souhaites savoir si cet article est visible sur Google.</p>
+      <p>Avec Google Search Console, tu peux notamment examiner les requêtes qui ont affiché ton article, les clics obtenus et sa position moyenne.</p>
+      <p>Tu pourrais découvrir que ta page apparaît pour des recherches auxquelles tu n'avais pas pensé, comme « chaussures de randonnée pour débutant ».</p>
+      <p>Cette information peut t'aider à mieux comprendre les besoins des internautes et à identifier des possibilités d'amélioration.</p>
+
+      <h3>Les trois notions essentielles à connaître</h3>
+      <p><strong>1. Les impressions</strong></p>
+      <p>Une impression correspond, dans le rapport de performance, à une apparition de ton résultat dans les résultats de recherche Google selon les règles de comptabilisation de l'outil.</p>
+      <p>Si ton résultat apparaît 500 fois sur une période, tu peux observer environ 500 impressions. Une impression ne signifie pas que l'internaute a cliqué sur ton résultat.</p>
+      <p><strong>2. Les clics</strong></p>
+      <p>Un clic correspond à une visite provenant d'un clic sur ton résultat dans Google Search.</p>
+      <p>Si ton résultat est affiché 500 fois et reçoit 25 clics, tu obtiens 25 clics dans le rapport.</p>
+      <p><strong>3. La position moyenne</strong></p>
+      <p>La position moyenne indique la position moyenne de ton résultat dans les résultats de recherche, selon les données et les règles de calcul de Google.</p>
+      <p>Plus le chiffre est petit, plus le résultat apparaît généralement haut dans la liste.</p>
+      <p>Attention : il s'agit d'une moyenne. Ta page peut apparaître à différentes positions selon les requêtes, les dates, les appareils et les contextes.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le tableau de bord de ta boutique</strong> — Imagine que tu possèdes une boutique. Tu veux savoir combien de personnes passent devant ta vitrine, combien entrent dans le magasin et quels produits attirent leur attention. Google Search Console ressemble à un tableau de bord qui t'aide à comprendre la partie de ton activité liée aux recherches Google. Les impressions te renseignent sur la visibilité de tes résultats. Les clics indiquent combien de fois les internautes ont cliqué sur ces résultats. Les requêtes te montrent ce que les internautes recherchaient. Les pages te permettent de voir quels contenus apparaissent dans Google. Tu ne te contentes plus de publier en espérant que cela fonctionne : tu commences à observer des données.
+      </div>
+
+      <h3>Google Search Console et Google Analytics : quelle différence ?</h3>
+      <p>Ces deux outils sont complémentaires, mais ils ne répondent pas exactement aux mêmes questions.</p>
+      <p><strong>Google Search Console</strong> se concentre principalement sur la présence de ton site dans Google Search : impressions, clics issus des résultats, requêtes et indexation.</p>
+      <p><strong>Google Analytics</strong>, notamment Google Analytics 4 (GA4), permet d'étudier ce qui se passe sur ton site grâce aux données collectées lorsque les visiteurs le consultent : pages vues, événements et interactions mesurées.</p>
+      <p>En résumé :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Search Console t'aide à comprendre comment les internautes découvrent ton site dans Google</li>
+        <li><span class="tick">✓</span> Analytics t'aide à comprendre ce que les visiteurs font sur ton site, dans la limite des données collectées</li>
+      </ul>
+      <p>Les deux outils ne comptabilisent pas nécessairement les mêmes choses. Il est donc normal que leurs chiffres diffèrent.</p>
+
+      <h3>⚠️ Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser que Google Search Console mesure toutes les visites de ton site</li>
+        <li><span class="tick">✗</span> Confondre une impression avec un clic</li>
+        <li><span class="tick">✗</span> Croire qu'une position moyenne représente une position fixe</li>
+        <li><span class="tick">✗</span> Penser qu'une page non visible dans un rapport est forcément inexistante</li>
+        <li><span class="tick">✗</span> Tirer des conclusions à partir d'une seule journée de données</li>
+        <li><span class="tick">✗</span> Croire que Google Search Console améliore automatiquement ton référencement simplement parce que tu l'utilises</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Tu possèdes un site qui propose des conseils pour les petites entreprises. Tu publies un article : <strong>Comment créer son premier site Internet ?</strong></p>
+      <p>Après quelques semaines, tu consultes Google Search Console. Tu observes les données suivantes sur une période donnée :</p>
+      <table class="jargon-table">
+        <tr><th>Indicateur</th><th>Exemple de résultat</th></tr>
+        <tr><td>Impressions</td><td>1 200</td></tr>
+        <tr><td>Clics</td><td>48</td></tr>
+        <tr><td>Position moyenne</td><td>12</td></tr>
+      </table>
+      <p>Ces chiffres sont fictifs et servent uniquement à illustrer le fonctionnement de l'outil.</p>
+      <p>Que peux-tu en déduire ?</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Ton résultat est apparu de nombreuses fois dans Google</li>
+        <li><span class="tick">✓</span> Des internautes ont cliqué sur ton article</li>
+        <li><span class="tick">✓</span> La position moyenne indique que ton résultat se situe, en moyenne, autour de la douzième position selon les calculs de Google</li>
+      </ul>
+      <p>Tu peux alors examiner les requêtes associées à cette page.</p>
+      <p>Si plusieurs internautes arrivent sur ton contenu en recherchant « créer un site Internet quand on débute », tu peux vérifier si ton article répond suffisamment à cette question.</p>
+      <p>Tu as maintenant une piste d'analyse concrète. Tu ne sais pas encore si une modification améliorera les résultats, mais tu disposes d'informations pour prendre une décision plus éclairée.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Accède à Google Search Console</p>
+            <p>Rends-toi sur le site officiel de Google Search Console et connecte-toi avec ton compte Google. Si ton site n'est pas encore configuré, tu devras ajouter une propriété et prouver que tu en es bien propriétaire ou que tu es autorisé à la gérer. Selon la configuration de ton site, tu peux notamment utiliser une propriété de type domaine ou une propriété basée sur un préfixe d'URL. Suis les instructions proposées par Google pour effectuer la vérification.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Vérifie que tu consultes le bon site</p>
+            <p>Si tu possèdes plusieurs sites ou plusieurs propriétés, sélectionne celle que tu souhaites analyser. Vérifie également la période étudiée. Une mauvaise propriété ou une période inadaptée peut fausser ton interprétation.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Découvre le rapport de performance</p>
+            <p>Dans le menu, ouvre le rapport consacré aux performances dans les résultats de recherche. Tu y trouveras notamment les clics, les impressions, le taux de clics moyen et la position moyenne. Commence par regarder les tendances générales avant d'essayer d'interpréter chaque chiffre.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Explore les requêtes</p>
+            <p>Consulte le tableau des requêtes. Tu peux découvrir les expressions que les internautes ont utilisées lorsque ton site est apparu dans Google. Repère les requêtes qui correspondent à tes objectifs, mais aussi celles auxquelles tu ne pensais pas. Certaines peuvent révéler des besoins auxquels tes contenus pourraient mieux répondre. Toutes les requêtes ne sont pas forcément affichées : certaines données peuvent être absentes des rapports, notamment pour des raisons liées à la confidentialité ou aux limites de présentation.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Explore les pages</p>
+            <p>Passe ensuite à l'onglet des pages. Tu peux comparer les performances des différentes URL de ton site. Demande-toi : Quelles pages attirent le plus d'impressions ? Quelles pages obtiennent le plus de clics ? Certaines pages ont-elles peu de visibilité ? Les pages importantes pour ton activité apparaissent-elles dans les résultats ?</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Observe les tendances dans le temps</p>
+            <p>Compare plusieurs périodes lorsque cela a du sens. Une baisse sur une seule journée ne suffit pas à conclure qu'il existe un problème. Regarde si la tendance se prolonge et vérifie si la comparaison porte sur des périodes comparables.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">7</div>
+          <div>
+            <p class="step-title">Note une première piste d'amélioration</p>
+            <p>Ne cherche pas à tout modifier immédiatement. Choisis une page, une requête ou une tendance qui mérite ton attention. Note ce que tu observes, l'hypothèse que tu formules et l'action que tu souhaites tester. Tu pourras ensuite revenir dans Search Console pour suivre l'évolution.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="measure-card">
+        <div class="icon">💡</div>
+        <p><strong>À retenir :</strong> Google Search Console ne prend pas les décisions à ta place. Il te donne des informations pour mieux comprendre ta visibilité et choisir les prochaines actions à mener.</p>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Google Search Console</td><td>Outil gratuit permettant de suivre différents aspects de la présence d'un site dans Google Search</td></tr>
+        <tr><td>Impression</td><td>Apparition d'un résultat dans les résultats de recherche, selon les règles de comptabilisation de Google</td></tr>
+        <tr><td>Clic</td><td>Clic effectué sur un résultat dans Google Search</td></tr>
+        <tr><td>Position moyenne</td><td>Moyenne des positions enregistrées pour un résultat selon les calculs de Google</td></tr>
+        <tr><td>Requête</td><td>Expression recherchée par un internaute</td></tr>
+        <tr><td>Indexation</td><td>Processus par lequel Google enregistre une page dans son index</td></tr>
+        <tr><td>Propriété</td><td>Site ou ensemble d'URL configuré dans Search Console pour être suivi</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — À quoi sert principalement Google Search Console ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> À créer des articles automatiquement</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> À suivre la présence de son site dans les résultats de recherche Google</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> À gérer ses campagnes publicitaires uniquement</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> À remplacer son site Internet</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Search Console permet notamment d'observer les impressions, les clics, les requêtes et certains problèmes d'indexation.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Que signifie une impression ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Un internaute a forcément visité le site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Une page a été modifiée</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Un résultat est apparu dans les résultats de recherche selon les règles de comptabilisation de Google</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Un internaute a acheté un produit</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Une impression indique une apparition du résultat, pas nécessairement un clic.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Quelle est la principale différence entre Search Console et Google Analytics ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Les deux outils mesurent exactement les mêmes données</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Search Console se concentre sur la présence dans Google Search, tandis qu'Analytics étudie les interactions mesurées sur le site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Analytics sert uniquement à choisir les mots-clés</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Search Console sert uniquement à écrire les titres</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Les deux outils sont complémentaires, mais leurs périmètres et leurs méthodes de mesure sont différents.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Que faire si une page affiche peu de clics ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> La supprimer immédiatement</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Acheter des backlinks sans analyser la situation</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Examiner les impressions, les requêtes, la position et le contexte avant de décider</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Changer toutes les pages du site</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Il faut analyser plusieurs indicateurs avant de choisir une action adaptée.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Bravo ! Tu sais maintenant à quoi sert Google Search Console et comment lire ses premières données : impressions, clics et position moyenne.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-2/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu sais maintenant à quoi sert Google Search Console et comment commencer à explorer ses données.</p>
+      <p>Mais consulter des chiffres ne suffit pas. L'étape suivante consiste à les interpréter : pourquoi une page reçoit-elle beaucoup d'impressions mais peu de clics ? Pourquoi une autre gagne-t-elle en visibilité ? Et comment repérer les contenus qui méritent une amélioration ?</p>
+      <p>C'est ce que tu vas découvrir dans le prochain chapitre.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../../palier-6/chapitre-6/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Lire et interpréter ses rapports de performance</h3>
+          </div>
+          <a href="../chapitre-2/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
