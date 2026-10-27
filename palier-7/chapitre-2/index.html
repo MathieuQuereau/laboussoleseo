@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Apprends à lire les rapports de performance de Google Search Console, à interpréter les clics, impressions, taux de clics et positions, et à identifier les optimisations SEO prioritaires.">
+<title>Google Search Console : lire et interpréter les rapports de performance SEO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🔴 Palier 7 — L'analyse des données</a> <span>/</span>
+    <span>Chapitre 2</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Lire et interpréter ses rapports de performance</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~10 min</span>
+          <span>🧩 Prérequis : Chapitre 1</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-7-bg);color:var(--palier-7)">🔴 Palier 7 · Chapitre 2 sur 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Que faire de tous ces chiffres ?</h3>
+      <p>Tu ouvres Google Search Console. Tu vois des chiffres, des courbes et des tableaux. Une page possède beaucoup d'impressions, mais peu de clics. Une autre attire davantage de visiteurs. Une requête semble progresser, tandis qu'une autre recule.</p>
+      <p>Tu te demandes alors : <strong>est-ce que mon SEO fonctionne vraiment ? Et surtout, que dois-je faire avec toutes ces données ?</strong></p>
+      <p>C'est une étape importante. Un outil SEO ne devient réellement utile que lorsque tu sais interpréter ses informations et les transformer en décisions.</p>
+      <p>L'objectif n'est donc pas de regarder tous les chiffres chaque jour. L'objectif est de comprendre ce qu'ils peuvent t'apprendre sur tes contenus et sur la manière dont les internautes les découvrent.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre les quatre principaux indicateurs du rapport de performance</li>
+        <li><span class="tick">✓</span> Faire la différence entre impressions, clics, taux de clics et position moyenne</li>
+        <li><span class="tick">✓</span> Explorer les données par requête et par page</li>
+        <li><span class="tick">✓</span> Repérer des contenus qui méritent une amélioration</li>
+        <li><span class="tick">✓</span> Comparer les performances sur différentes périodes</li>
+        <li><span class="tick">✓</span> Éviter les conclusions trop rapides</li>
+        <li><span class="tick">✓</span> Transformer tes observations en actions SEO concrètes</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Les quatre indicateurs à connaître</h3>
+      <p>Dans le rapport de performance de Google Search Console, quatre indicateurs sont particulièrement utiles.</p>
+
+      <h3>1. Les impressions</h3>
+      <p>Les impressions indiquent combien de fois tes résultats sont apparus dans Google Search, selon les règles de comptabilisation de Google.</p>
+      <p>Elles permettent d'observer la visibilité de tes pages. Si tes impressions augmentent, cela peut signifier que tes résultats apparaissent plus souvent.</p>
+      <p>Mais cette hausse ne signifie pas automatiquement que ton référencement s'améliore sur tous les mots-clés. Elle peut aussi venir de nouvelles requêtes, d'une saisonnalité ou d'autres évolutions.</p>
+
+      <h3>2. Les clics</h3>
+      <p>Les clics correspondent aux clics effectués sur tes résultats dans Google Search.</p>
+      <p>Ils te renseignent sur le nombre de fois où les internautes ont choisi de visiter ton site depuis les résultats concernés.</p>
+      <p>Une page peut obtenir beaucoup d'impressions et peu de clics. Une autre peut recevoir moins d'impressions, mais attirer une part plus importante des personnes qui voient son résultat.</p>
+
+      <h3>3. Le taux de clics (CTR)</h3>
+      <p>Le CTR, ou taux de clics, correspond au rapport entre les clics et les impressions. La formule est :</p>
+      <div class="example-card">
+        <div class="example-bar">🧮 calcul-ctr.txt</div>
+<pre>CTR = (Nombre de clics ÷ Nombre d'impressions) × 100</pre>
+      </div>
+      <p>Par exemple, si une page obtient 40 clics pour 1 000 impressions : 40 ÷ 1 000 × 100 = 4 %. Son CTR est de 4 %.</p>
+      <p>Cet indicateur aide à comprendre la proportion d'impressions qui se transforment en clics.</p>
+      <p>Il faut toutefois le comparer avec prudence : le CTR dépend notamment de la position du résultat, de la requête et de la présentation des résultats de recherche.</p>
+
+      <h3>4. La position moyenne</h3>
+      <p>La position moyenne correspond à une moyenne des positions enregistrées pour ton résultat dans Google Search, selon les règles de calcul de l'outil.</p>
+      <p>En général, une position moyenne plus proche de 1 indique une présence plus haute dans les résultats.</p>
+      <p>Mais attention : ce chiffre ne correspond pas à une position fixe que tu pourrais retrouver systématiquement en effectuant une recherche manuelle.</p>
+      <p>Une page peut apparaître à différentes positions selon les requêtes, les appareils et les contextes.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie — Une vitrine dans une rue commerçante</strong> — Imagine que tu possèdes une boutique. Les impressions représentent les occasions où ta vitrine est visible. Les clics représentent les personnes qui choisissent d'entrer depuis cette visibilité en ligne. Le CTR indique la proportion de personnes qui cliquent parmi les impressions comptabilisées. La position moyenne donne une indication sur la place occupée par ton résultat dans Google. Ces indicateurs racontent des choses différentes. Pour comprendre ce qui se passe, tu dois les regarder ensemble.
+      </div>
+
+      <h3>Pourquoi faut-il croiser les indicateurs ?</h3>
+      <p>Prenons deux situations.</p>
+      <p><strong>Situation A : beaucoup d'impressions, peu de clics</strong> — Ton résultat apparaît souvent, mais attire relativement peu de clics. Tu peux examiner le titre affiché, la description, la position et les requêtes concernées.</p>
+      <p><strong>Situation B : peu d'impressions, mais un CTR élevé</strong> — Ton résultat attire une proportion intéressante de clics lorsqu'il apparaît. Cependant, il peut encore manquer de visibilité sur des requêtes pertinentes.</p>
+      <p>Dans les deux cas, la bonne décision dépend du contexte. Il ne suffit pas de regarder un indicateur isolément.</p>
+
+      <h3>Les dimensions : requêtes, pages, pays et appareils</h3>
+      <p>Le rapport de performance permet également d'examiner les données selon différentes dimensions, notamment :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Les requêtes qui font apparaître ton site</li>
+        <li><span class="tick">✓</span> Les pages de ton site qui apparaissent dans Google</li>
+        <li><span class="tick">✓</span> Les pays depuis lesquels les recherches sont effectuées</li>
+        <li><span class="tick">✓</span> Les appareils utilisés, comme les mobiles et les ordinateurs</li>
+      </ul>
+      <p>Ces dimensions t'aident à préciser ton analyse.</p>
+      <p>Par exemple, si une page attire des impressions sur plusieurs requêtes proches, tu peux examiner si son contenu répond bien aux besoins associés.</p>
+
+      <h3>⚠️ Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Considérer qu'un CTR faible signifie toujours que le titre est mauvais</li>
+        <li><span class="tick">✗</span> Croire qu'une position moyenne correspond à une position identique pour tout le monde</li>
+        <li><span class="tick">✗</span> Comparer deux pages sans tenir compte de leurs sujets et de leurs positions</li>
+        <li><span class="tick">✗</span> Modifier plusieurs éléments à la fois sans suivre les résultats</li>
+        <li><span class="tick">✗</span> Tirer une conclusion à partir de quelques impressions seulement</li>
+        <li><span class="tick">✗</span> Oublier les variations saisonnières et les changements de demande</li>
+        <li><span class="tick">✗</span> Considérer une hausse des impressions comme une garantie de hausse du trafic</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Tu gères un site consacré au jardinage. Tu as publié deux articles. Voici des données fictives sur une période de 28 jours :</p>
+      <table class="jargon-table">
+        <tr><th>Indicateur</th><th>Article A : planter des tomates</th><th>Article B : arroser un potager</th></tr>
+        <tr><td>Impressions</td><td>2 000</td><td>800</td></tr>
+        <tr><td>Clics</td><td>40</td><td>48</td></tr>
+        <tr><td>CTR</td><td>2 %</td><td>6 %</td></tr>
+        <tr><td>Position moyenne</td><td>11</td><td>5</td></tr>
+      </table>
+      <p>Que peux-tu observer ?</p>
+      <p><strong>L'article A</strong> obtient davantage d'impressions, mais son CTR est plus faible et sa position moyenne est moins favorable. Tu peux examiner les requêtes qui génèrent ces impressions, puis vérifier si le titre et le contenu correspondent bien aux attentes des internautes.</p>
+      <p><strong>L'article B</strong> apparaît moins souvent, mais attire davantage de clics malgré son volume d'impressions plus faible. Il peut être intéressant d'identifier les requêtes sur lesquelles il est déjà visible et de vérifier s'il existe des possibilités réalistes d'élargir sa visibilité.</p>
+      <p>Ces données ne prouvent pas, à elles seules, qu'un article est meilleur que l'autre. Elles te donnent des pistes pour approfondir ton analyse.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Choisis une période adaptée</p>
+            <p>Ouvre le rapport de performance et sélectionne une période suffisamment longue pour obtenir des données utiles. Pour commencer, tu peux analyser les 28 derniers jours. Si ton site reçoit peu de trafic, une période plus longue sera parfois nécessaire. L'essentiel est de disposer d'assez de données pour éviter les conclusions fondées sur quelques impressions seulement.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Observe les quatre indicateurs principaux</p>
+            <p>Regarde les impressions, les clics, le CTR et la position moyenne. Note les tendances qui te semblent intéressantes. Par exemple : une hausse des impressions sans hausse comparable des clics, une page qui attire beaucoup de clics, une baisse qui se prolonge sur plusieurs semaines, une position moyenne qui s'améliore. Ne cherche pas encore à tout expliquer. Commence par identifier les éléments qui méritent une investigation.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Analyse les requêtes</p>
+            <p>Ouvre l'onglet des requêtes. Repère les expressions qui génèrent des impressions et des clics. Demande-toi si elles correspondent au sujet de ta page et à l'intention de recherche des internautes. Tu peux aussi découvrir des formulations auxquelles tu n'avais pas pensé lorsque tu as rédigé ton contenu. Ces requêtes peuvent t'aider à mieux comprendre les besoins de ton audience.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Analyse les pages</p>
+            <p>Passe à l'onglet des pages. Repère les contenus qui attirent le plus de clics, ceux qui génèrent beaucoup d'impressions et ceux dont les performances semblent évoluer. Choisis une page importante pour ton activité et examine ses données. Tu peux ensuite ouvrir cette page sur ton site et vérifier si son contenu répond bien aux besoins associés aux requêtes observées.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Compare des périodes équivalentes</p>
+            <p>Compare, par exemple, les 28 derniers jours avec les 28 jours précédents. Regarde si les évolutions sont cohérentes sur plusieurs indicateurs. Si les impressions augmentent mais que les clics diminuent, examine notamment l'évolution du CTR, des positions et des requêtes. Une variation peut avoir plusieurs causes. Il faut donc éviter d'attribuer automatiquement un changement à une modification que tu as effectuée.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Formule une hypothèse</p>
+            <p>Une observation devient utile lorsque tu peux formuler une question précise. Par exemple : « Cette page apparaît souvent sur une requête importante, mais son CTR est faible. Le titre affiché correspond-il clairement à ce que recherchent les internautes ? » Tu peux ensuite examiner la page, son titre, sa description et le contexte des résultats de recherche. L'objectif n'est pas de modifier immédiatement le contenu, mais de vérifier si ton hypothèse est plausible.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">7</div>
+          <div>
+            <p class="step-title">Choisis une action et mesure son évolution</p>
+            <p>Si tu identifies une amélioration pertinente, réalise une modification ciblée. Note la date et ce que tu as changé. Puis observe les résultats sur une période adaptée, en tenant compte des autres évolutions possibles. Une amélioration ne produit pas toujours un effet immédiat. Et si les résultats changent, cela ne prouve pas forcément que ta modification en est l'unique cause.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="measure-card">
+        <div class="icon">💡</div>
+        <p><strong>À retenir :</strong> une bonne analyse SEO suit une logique simple : observer, comprendre, formuler une hypothèse, agir et mesurer. C'est cette méthode qui transforme des chiffres en décisions utiles.</p>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>CTR</td><td>Pourcentage d'impressions qui aboutissent à un clic</td></tr>
+        <tr><td>Impression</td><td>Apparition d'un résultat dans Google Search selon les règles de comptabilisation de l'outil</td></tr>
+        <tr><td>Clic</td><td>Clic sur un résultat de recherche</td></tr>
+        <tr><td>Position moyenne</td><td>Moyenne des positions enregistrées pour un résultat</td></tr>
+        <tr><td>Requête</td><td>Expression recherchée par un internaute</td></tr>
+        <tr><td>Dimension</td><td>Catégorie utilisée pour analyser les données, comme une page, une requête ou un appareil</td></tr>
+        <tr><td>Hypothèse SEO</td><td>Explication possible d'une observation que l'on cherche à vérifier</td></tr>
+        <tr><td>Période de comparaison</td><td>Intervalle utilisé pour comparer les performances dans le temps</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — Comment calcule-t-on le CTR ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Nombre d'impressions ÷ nombre de clics</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Nombre de clics ÷ nombre d'impressions × 100</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Nombre de clics × position moyenne</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Nombre de pages ÷ nombre de requêtes</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Le CTR correspond au nombre de clics divisé par le nombre d'impressions, multiplié par 100.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Une page possède beaucoup d'impressions, mais peu de clics. Que faut-il faire ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> La supprimer immédiatement</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Acheter des backlinks sans autre analyse</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Examiner les requêtes, les positions, le CTR et la présentation du résultat</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Modifier toutes les pages du site</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Plusieurs facteurs peuvent expliquer un faible CTR. Il faut analyser le contexte avant de choisir une action.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Pourquoi comparer plusieurs périodes ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Pour garantir une hausse du trafic</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Pour observer les évolutions et identifier des tendances</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Pour éviter de regarder les requêtes</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Pour remplacer Google Analytics</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> La comparaison aide à repérer des évolutions, à condition d'utiliser des périodes pertinentes et de tenir compte du contexte.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Quelle méthode est la plus adaptée pour améliorer un contenu ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Modifier plusieurs éléments au hasard</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Observer les données, formuler une hypothèse, effectuer une action ciblée et mesurer l'évolution</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Se fier uniquement à la position moyenne</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Modifier le contenu chaque jour</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Une démarche structurée permet de mieux comprendre les effets possibles de tes actions.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Excellent ! Tu sais maintenant croiser impressions, clics, CTR et position moyenne pour transformer tes rapports Search Console en hypothèses et en actions.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-3/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu sais maintenant lire les principaux indicateurs de Google Search Console et les utiliser pour repérer des pistes d'amélioration.</p>
+      <p>Mais une fois que l'internaute clique sur ton résultat, une autre question devient importante : <strong>que fait-il sur ton site ?</strong></p>
+      <p>Consulte-t-il plusieurs pages ? Interagit-il avec tes contenus ? Réalise-t-il une action importante pour ton activité ?</p>
+      <p>Pour étudier ces comportements, tu vas découvrir un autre outil : Google Analytics.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-1/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Notions de base avec Google Analytics</h3>
+          </div>
+          <a href="../chapitre-3/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>

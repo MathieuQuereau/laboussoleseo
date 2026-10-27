@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre Google Analytics 4, comprends les utilisateurs, les sessions, les événements et les sources de trafic, puis apprends à analyser les comportements sur ton site.">
+<title>Google Analytics pour débutants : comprendre les données de son site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="#">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="#">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🔴 Palier 7 — L'analyse des données</a> <span>/</span>
+    <span>Chapitre 3</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Notions de base avec Google Analytics</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~12 min</span>
+          <span>🧩 Prérequis : Chapitre 2</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-7-bg);color:var(--palier-7)">🔴 Palier 7 · Chapitre 3 sur 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Que font les visiteurs une fois sur ton site ?</h3>
+      <p>Imagine que tu possèdes une boutique en ligne. Tu sais combien de personnes passent devant ta vitrine. Tu sais même combien cliquent sur ton résultat dans Google.</p>
+      <p>Mais une fois arrivées sur ton site, que font-elles ? Consultent-elles tes produits ? Lisent-elles tes articles ? Ajoutent-elles un produit au panier ? Envoient-elles une demande de contact ? C'est une autre partie de l'histoire.</p>
+      <p><strong>Google Search Console t'aide à comprendre comment les internautes découvrent ton site dans Google. Google Analytics t'aide à étudier ce qu'ils font une fois sur ton site, à partir des données collectées.</strong></p>
+      <p>Dans ce chapitre, tu vas découvrir les notions essentielles de Google Analytics, sans te perdre dans les dizaines de rapports et d'indicateurs disponibles.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre à quoi sert Google Analytics 4</li>
+        <li><span class="tick">✓</span> Faire la différence entre un utilisateur, une session et un événement</li>
+        <li><span class="tick">✓</span> Identifier les principales sources de trafic</li>
+        <li><span class="tick">✓</span> Découvrir les rapports utiles pour un site</li>
+        <li><span class="tick">✓</span> Comprendre ce que les visiteurs font sur tes pages</li>
+        <li><span class="tick">✓</span> Repérer des pistes d'amélioration à partir des données</li>
+        <li><span class="tick">✓</span> Éviter les erreurs d'interprétation les plus fréquentes</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Google Analytics, c'est quoi ?</h3>
+      <p><strong>Google Analytics 4 (GA4)</strong> est un outil d'analyse d'audience qui permet d'étudier les interactions mesurées sur un site Internet ou une application.</p>
+      <p>Selon la configuration de ton site et les données collectées, tu peux notamment observer :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Le nombre d'utilisateurs</li>
+        <li><span class="tick">✓</span> Les sessions</li>
+        <li><span class="tick">✓</span> Les pages consultées</li>
+        <li><span class="tick">✓</span> Les événements enregistrés</li>
+        <li><span class="tick">✓</span> Les sources de trafic</li>
+        <li><span class="tick">✓</span> Certaines actions importantes, comme un achat ou l'envoi d'un formulaire lorsqu'elles sont correctement mesurées</li>
+      </ul>
+      <p>Ces informations t'aident à mieux comprendre comment les visiteurs utilisent ton site.</p>
+      <p>Attention : Google Analytics ne connaît pas automatiquement tous les comportements de tous les internautes. Les résultats dépendent notamment de l'installation de l'outil, de la configuration de la mesure, des choix de consentement et des limites de collecte.</p>
+
+      <h3>La différence entre utilisateur, session et événement</h3>
+      <p>Ces trois notions sont essentielles pour commencer.</p>
+      <p><strong>1. L'utilisateur</strong></p>
+      <p>Un utilisateur correspond à une personne ou à une identité utilisateur estimée par les mécanismes de mesure de Google Analytics.</p>
+      <p>Le chiffre affiché ne correspond donc pas nécessairement au nombre exact de personnes physiques différentes.</p>
+      <p>Par exemple, une même personne peut consulter ton site depuis plusieurs appareils et être comptabilisée différemment selon les possibilités d'identification et la configuration.</p>
+      <p><strong>2. La session</strong></p>
+      <p>Une session représente une période d'interactions enregistrées sur ton site. Un même utilisateur peut effectuer plusieurs sessions.</p>
+      <p>Par exemple, une personne consulte ton site le matin, revient le soir et visite à nouveau plusieurs pages. Ces visites peuvent correspondre à plusieurs sessions.</p>
+      <p><strong>3. L'événement</strong></p>
+      <p>Dans Google Analytics 4, les interactions sont mesurées sous forme d'événements. Selon la configuration, il peut s'agir :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> D'une consultation de page</li>
+        <li><span class="tick">✓</span> D'un défilement répondant aux conditions de mesure</li>
+        <li><span class="tick">✓</span> D'un clic mesuré</li>
+        <li><span class="tick">✓</span> D'une recherche effectuée sur le site</li>
+        <li><span class="tick">✓</span> D'un ajout au panier</li>
+        <li><span class="tick">✓</span> D'un achat</li>
+        <li><span class="tick">✓</span> D'un envoi de formulaire correctement configuré</li>
+      </ul>
+      <p>Un événement correspond donc à une interaction ou à une action enregistrée.</p>
+      <p>Tous les événements ne représentent pas la même valeur pour ton activité. Une consultation de page et un achat sont deux actions différentes.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie — Le magasin et ses visiteurs</strong> — Imagine un magasin physique. <strong>L'utilisateur</strong> représente une personne qui vient découvrir le magasin. <strong>La session</strong> représente une visite du magasin. <strong>L'événement</strong> représente une action observée pendant cette visite, comme entrer dans un rayon ou acheter un produit. Cette analogie reste simplifiée : sur un site Internet, les mécanismes de mesure ne permettent pas toujours d'identifier les personnes de manière exacte. Mais elle permet de comprendre la différence entre ces trois notions.
+      </div>
+
+      <h3>Les sources de trafic : d'où viennent les visiteurs ?</h3>
+      <p>Google Analytics peut également t'aider à comprendre comment les visiteurs arrivent sur ton site. Selon les données disponibles, tu peux retrouver plusieurs catégories de trafic.</p>
+      <p><strong>Organic Search</strong> — Il s'agit du trafic provenant des résultats naturels des moteurs de recherche. Par exemple, une personne recherche « comment choisir un ordinateur portable », clique sur un résultat non sponsorisé et arrive sur ton site.</p>
+      <p><strong>Direct</strong> — Cette catégorie regroupe les visites pour lesquelles Google Analytics ne dispose pas d'informations suffisantes pour identifier une autre source. Elle ne signifie donc pas toujours que l'utilisateur a tapé directement ton adresse dans son navigateur.</p>
+      <p><strong>Referral</strong> — Il s'agit généralement du trafic provenant d'un lien placé sur un autre site. Par exemple, un blog parle de ton entreprise et un lecteur clique sur le lien vers ton site.</p>
+      <p><strong>Organic Social</strong> — Cette catégorie peut regrouper du trafic provenant de publications naturelles sur des réseaux sociaux, lorsque les informations disponibles permettent de le classer ainsi.</p>
+      <p><strong>Paid Search</strong> — Cette catégorie correspond au trafic issu des annonces payantes sur les moteurs de recherche, lorsque les visites sont correctement identifiées.</p>
+      <p>Ces catégories te permettent de mieux comprendre les différents chemins qui conduisent les visiteurs jusqu'à ton site.</p>
+
+      <h3>Les pages consultées et les interactions</h3>
+      <p>Tu peux également examiner les pages que les visiteurs consultent. Cela permet de repérer :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Les contenus les plus consultés</li>
+        <li><span class="tick">✓</span> Les pages qui attirent l'attention</li>
+        <li><span class="tick">✓</span> Les pages qui participent à un parcours utilisateur</li>
+        <li><span class="tick">✓</span> Les contenus qui semblent peu consultés</li>
+        <li><span class="tick">✓</span> Les pages associées à des actions importantes, si celles-ci sont mesurées</li>
+      </ul>
+      <p>Attention toutefois : une page très consultée n'est pas automatiquement une page performante. Tout dépend de son objectif.</p>
+      <p>Un article informatif peut avoir pour objectif de répondre à une question. Une page de contact doit plutôt faciliter une prise de contact.</p>
+
+      <h3>Les conversions : quand une visite devient utile pour ton activité</h3>
+      <p>Une conversion correspond à une action importante pour ton activité, que tu as choisi de mesurer. Selon ton site, il peut s'agir : d'un achat, d'une demande de devis, d'un envoi de formulaire, d'une inscription, d'une prise de rendez-vous.</p>
+      <p>Dans GA4, les événements importants peuvent être marqués comme événements clés.</p>
+      <p>Il faut donc configurer correctement la mesure pour que ces actions soient enregistrées de manière fiable.</p>
+
+      <h3>Google Analytics ne remplace pas Google Search Console</h3>
+      <p>Les deux outils sont complémentaires.</p>
+      <table class="jargon-table">
+        <tr><th>Google Search Console</th><th>Google Analytics</th></tr>
+        <tr><td>Mesure notamment les impressions et les clics dans Google Search</td><td>Mesure les interactions enregistrées sur le site</td></tr>
+        <tr><td>Aide à analyser les requêtes de recherche</td><td>Aide à analyser les sources de trafic et les comportements</td></tr>
+        <tr><td>Permet d'étudier la visibilité des pages dans Google</td><td>Permet d'étudier les pages consultées et les événements</td></tr>
+        <tr><td>Aide à identifier certaines questions liées à l'indexation</td><td>Aide à comprendre les parcours et les actions mesurées</td></tr>
+      </table>
+      <p>Il est normal que les chiffres ne correspondent pas exactement.</p>
+      <p>Les outils n'ont pas le même périmètre, les mêmes règles de collecte ni nécessairement les mêmes données disponibles.</p>
+
+      <h3>⚠️ Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Confondre utilisateurs et sessions</li>
+        <li><span class="tick">✗</span> Penser que chaque événement représente une personne différente</li>
+        <li><span class="tick">✗</span> Croire que Google Analytics identifie parfaitement tous les visiteurs</li>
+        <li><span class="tick">✗</span> Considérer le trafic direct comme exclusivement composé de personnes ayant tapé l'adresse du site</li>
+        <li><span class="tick">✗</span> Penser qu'une page très consultée atteint nécessairement son objectif</li>
+        <li><span class="tick">✗</span> Interpréter les données sans vérifier la configuration de la mesure</li>
+        <li><span class="tick">✗</span> Comparer directement les chiffres de Search Console et d'Analytics sans tenir compte de leurs différences</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Tu possèdes un site qui propose des conseils SEO et une formation pour débutants. Tu publies un article : <strong>Comment choisir ses premiers mots-clés SEO ?</strong></p>
+      <p>Tu consultes Google Search Console et tu constates que cet article reçoit des clics depuis Google. Tu ouvres ensuite Google Analytics.</p>
+      <p>Tu peux y examiner, selon les données collectées :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Le trafic associé à la recherche naturelle</li>
+        <li><span class="tick">✓</span> Les consultations de l'article</li>
+        <li><span class="tick">✓</span> Les autres pages consultées pendant les visites</li>
+        <li><span class="tick">✓</span> Les interactions mesurées</li>
+        <li><span class="tick">✓</span> Les inscriptions à ta newsletter, si elles sont correctement suivies</li>
+      </ul>
+      <p>Imaginons que ton article attire beaucoup de visiteurs, mais que peu d'entre eux consultent la page de ta formation.</p>
+      <p>Tu ne peux pas conclure immédiatement que l'article est mauvais. Il faut d'abord vérifier son objectif.</p>
+      <p>Peut-être que les lecteurs viennent simplement chercher une réponse rapide. Peut-être que le lien vers la formation est difficile à repérer. Peut-être encore que l'article répond parfaitement à la question, mais que la proposition de formation n'est pas adaptée à leur besoin.</p>
+      <p>Google Analytics peut t'aider à approfondir ces questions, à condition de disposer de données correctement collectées et de ne pas tirer de conclusions trop rapides.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Accède à Google Analytics</p>
+            <p>Connecte-toi à Google Analytics avec ton compte Google. Si tu n'as pas encore configuré ton site, tu devras créer une propriété GA4 et suivre les étapes proposées pour installer et configurer la collecte des données. L'installation peut passer par une balise Google, Google Tag Manager ou une intégration proposée par ton système de gestion de contenu. La méthode dépend de ton site et de sa configuration. Si tu utilises un outil de gestion du consentement, vérifie également que la collecte respecte les choix des visiteurs et les exigences applicables à ton site.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Vérifie que les données sont bien collectées</p>
+            <p>Avant d'interpréter les chiffres, vérifie que la mesure fonctionne. Tu peux notamment consulter les rapports en temps réel et effectuer une visite de test pour vérifier si les interactions attendues sont enregistrées. Attention : les résultats peuvent dépendre de la configuration, du consentement et des mécanismes de collecte. Une absence de données ne signifie donc pas systématiquement que personne n'a visité le site.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Découvre le rapport d'acquisition</p>
+            <p>Commence par explorer les rapports d'acquisition. Ils permettent notamment d'étudier comment les utilisateurs ou les sessions arrivent sur ton site, selon le rapport consulté et la dimension choisie. Tu peux examiner la part du trafic provenant de la recherche naturelle, des réseaux sociaux, des sites référents ou d'autres sources disponibles. Demande-toi si les canaux qui t'apportent des visiteurs correspondent à tes objectifs.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Explore les pages consultées</p>
+            <p>Consulte le rapport consacré aux pages et aux écrans, ou les rapports équivalents disponibles dans ton interface. Repère les contenus qui attirent l'attention. Compare les pages en tenant compte de leur objectif : un article de blog, une fiche produit et une page de contact ne remplissent pas la même fonction.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Observe les interactions</p>
+            <p>Regarde les événements enregistrés. Tu peux commencer par comprendre les événements de consultation de page, puis examiner les interactions pertinentes pour ton activité. Si tu souhaites suivre une inscription, un achat ou un envoi de formulaire, vérifie que l'action est correctement mesurée. Ne suppose pas qu'un événement spécifique existe automatiquement : certains événements nécessitent une configuration supplémentaire.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">6</div>
+          <div>
+            <p class="step-title">Définis une action importante</p>
+            <p>Choisis une action qui compte réellement pour ton site. Par exemple : pour un site vitrine, une demande de contact ; pour une boutique en ligne, un achat ; pour un site de formation, une inscription ; pour un média, une consultation de contenu ou une inscription à une newsletter. Vérifie ensuite que cette action est correctement mesurée et, si nécessaire, configurée comme événement clé.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">7</div>
+          <div>
+            <p class="step-title">Formule une question et prends une décision</p>
+            <p>Évite de regarder tous les indicateurs en même temps. Choisis plutôt une question précise. Par exemple : « Les visiteurs qui arrivent depuis Google consultent-ils également mes pages de services ? » Examine les données disponibles, formule une hypothèse et cherche une action adaptée. Tu peux ensuite suivre l'évolution pour voir si les changements observés correspondent à tes attentes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="measure-card">
+        <div class="icon">💡</div>
+        <p><strong>À retenir :</strong> Google Analytics est utile lorsqu'il répond à une question concrète sur ton audience ou ton activité. Il ne s'agit pas d'accumuler les rapports, mais de comprendre les comportements mesurés pour améliorer ton site.</p>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>Google Analytics 4 (GA4)</td><td>Outil d'analyse permettant d'étudier les interactions mesurées sur un site ou une application</td></tr>
+        <tr><td>Utilisateur</td><td>Personne ou identité utilisateur estimée par les mécanismes de mesure</td></tr>
+        <tr><td>Session</td><td>Période d'interactions enregistrées sur le site</td></tr>
+        <tr><td>Événement</td><td>Interaction ou action enregistrée par Analytics</td></tr>
+        <tr><td>Source de trafic</td><td>Origine identifiée d'une visite, comme un moteur de recherche ou un site référent</td></tr>
+        <tr><td>Organic Search</td><td>Trafic provenant des résultats naturels des moteurs de recherche</td></tr>
+        <tr><td>Referral</td><td>Trafic provenant généralement d'un lien sur un autre site</td></tr>
+        <tr><td>Conversion</td><td>Action importante pour l'activité, selon la définition et la mesure mises en place</td></tr>
+        <tr><td>Événement clé</td><td>Événement considéré comme particulièrement important pour les objectifs du site</td></tr>
+        <tr><td>Acquisition</td><td>Analyse de la manière dont les utilisateurs ou les sessions arrivent sur le site</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — À quoi sert principalement Google Analytics ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> À mesurer uniquement les positions des mots-clés</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> À étudier les interactions mesurées sur un site ou une application</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> À remplacer Google Search Console</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> À créer automatiquement des backlinks</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Google Analytics permet d'étudier les interactions enregistrées, les sources de trafic et les comportements mesurés sur le site.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Quelle est la différence entre un utilisateur et une session ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> Un utilisateur correspond à une identité estimée, tandis qu'une session correspond à une période d'interactions</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Une session correspond toujours à une personne différente</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Les deux termes désignent exactement la même chose</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Un utilisateur correspond uniquement à un achat</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Un même utilisateur peut effectuer plusieurs sessions, et la mesure ne correspond pas nécessairement au nombre exact de personnes physiques.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Que signifie généralement la catégorie Organic Search ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Le trafic issu des annonces payantes</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Le trafic provenant des résultats naturels des moteurs de recherche</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Le trafic provenant uniquement des réseaux sociaux</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Le trafic généré par les newsletters</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Organic Search désigne le trafic issu des résultats naturels des moteurs de recherche lorsque la source est correctement identifiée.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Pourquoi faut-il configurer correctement les événements importants ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Pour garantir automatiquement une hausse du trafic</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Pour mesurer les actions importantes pour l'activité</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Pour remplacer les contenus du site</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">D</span> Pour améliorer automatiquement les positions dans Google</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Les événements doivent être correctement mesurés pour analyser des actions comme les achats, les inscriptions ou les demandes de contact.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Félicitations ! Tu sais maintenant distinguer utilisateurs, sessions et événements, et lire les sources de trafic dans Google Analytics. Tu as terminé le Palier 7 !</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <button type="button" class="btn btn-primary" disabled aria-disabled="true">Palier suivant — à venir</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu viens de découvrir les bases de Google Analytics et la manière dont cet outil complète Google Search Console.</p>
+      <p>Tu peux maintenant distinguer trois étapes importantes :</p>
+      <ul>
+        <li><strong>La visibilité :</strong> tes contenus apparaissent-ils dans Google ?</li>
+        <li><strong>L'acquisition :</strong> comment les visiteurs arrivent-ils sur ton site ?</li>
+        <li><strong>Les interactions :</strong> que font-ils une fois sur tes pages ?</li>
+      </ul>
+      <p>Ces trois dimensions t'aident à mieux comprendre les performances de ton site.</p>
+      <p>Mais garde une règle en tête : <strong>un chiffre n'est utile que si tu sais quelle question il permet d'éclairer</strong>.</p>
+      <p>Tu n'as pas besoin de maîtriser tous les rapports dès le départ. Commence par quelques indicateurs, vérifie que les données sont fiables et utilise-les pour prendre des décisions progressives.</p>
+      <p><strong>Fin du Palier 7 — L'analyse des données</strong></p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../chapitre-2/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Palier suivant</div>
+            <h3>🔴 Palier 8 — Pour aller plus loin</h3>
+          </div>
+          <button type="button" class="btn btn-primary" disabled aria-disabled="true">À venir</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
