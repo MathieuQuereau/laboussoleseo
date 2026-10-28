@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="À propos de La Boussole SEO : une formation gratuite créée par Mathieu Quereau, spécialiste SEO et GEO, pour rendre le référencement accessible aux PME, consultants débutants et autodidactes.">
+<title>À propos — La Boussole SEO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><img src="../logo-la-boussole-seo-geo-vf.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../programme/">Programme</a>
+      <a href="./" class="active">À propos</a>
+    </nav>
+    <a href="../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../programme/">Programme</a>
+    <a href="./">À propos</a>
+    <a href="../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="about-body">
+      <nav class="breadcrumb">
+        <a href="../">Accueil</a> <span>/</span>
+        <span>À propos</span>
+      </nav>
+      <h1>À propos de La Boussole SEO</h1>
+    </div>
+  </div>
+</section>
+
+<section class="about-page">
+  <div class="container">
+    <div class="about-body">
+
+      <p>Je suis <strong>Mathieu Quereau</strong>, spécialiste SEO et GEO depuis plus de 5 ans.</p>
+
+      <p>Je travaille dans l'acquisition web depuis plus de 8 ans, après un parcours d'études dans le digital et un <strong>Master dans le domaine</strong>. J'ai eu l'occasion de travailler aussi bien <strong>en agence que chez l'annonceur</strong>, sur différentes problématiques liées au web : SEO, SEA, Analytics, stratégie digitale, stratégie SEO et stratégie SEA.</p>
+
+      <p>Au fil de ces expériences, j'ai constaté une chose : <strong>le SEO peut rapidement sembler beaucoup plus compliqué qu'il ne l'est réellement</strong>.</p>
+
+      <p>Entre les balises, les robots, les backlinks, les mots-clés, les données, les redirections ou encore les nouvelles problématiques liées aux IA génératives, il est facile de se perdre dans le vocabulaire et les concepts techniques.</p>
+
+      <div class="hook-block">
+        <p>C'est justement pour cela que j'ai créé <strong>La Boussole SEO</strong>.</p>
+        <p>L'objectif est simple : <strong>rendre le SEO et le GEO accessibles</strong>, sans partir du principe que tu es développeur, marketeur ou expert du digital.</p>
+      </div>
+
+      <p>La Boussole SEO s'adresse notamment aux <strong>PME, aux consultants débutants et aux autodidactes</strong> qui souhaitent comprendre comment fonctionne le référencement et progresser à leur rythme.</p>
+
+      <p>Chaque notion est expliquée simplement, avec des <strong>exemples concrets, des analogies et des mini-quiz</strong> pour vérifier que tu as bien compris avant de passer à la suite.</p>
+
+      <div class="measure-card">
+        <div class="icon">🧭</div>
+        <p>Pas besoin de tout connaître dès le départ. <strong>Tu avances simplement, un chapitre après l'autre.</strong></p>
+      </div>
+
+      <p class="about-welcome">Bienvenue sur <strong>La Boussole SEO</strong>.</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta about-cta">
+  <div class="container">
+    <h2>Alors, prêt à commencer ?</h2>
+    <ul class="objectives-list">
+      <li><span class="tick">✓</span> Tu n'as pas besoin de compte.</li>
+      <li><span class="tick">✓</span> Tu n'as pas besoin de connaître le SEO.</li>
+      <li><span class="tick">✓</span> Tu n'as pas besoin de tout comprendre dès le premier chapitre.</li>
+    </ul>
+    <p>Commence simplement par la première notion qui t'intéresse.</p>
+    <p><strong>La Boussole SEO est là pour t'aider à trouver ton chemin.</strong></p>
+    <div class="hero-chip-row">
+      <span class="chip">Un terme après l'autre.</span>
+      <span class="chip">Un chapitre après l'autre.</span>
+      <span class="chip">Un palier après l'autre.</span>
+    </div>
+    <p><strong>Bienvenue sur La Boussole SEO.</strong></p>
+    <div class="hero-actions">
+      <a href="../palier-0/chapitre-1/" class="btn btn-primary">Découvrir le premier chapitre →</a>
+      <a href="../programme/" class="btn btn-ghost">Voir le programme complet</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../programme/">Programme</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+
+</body>
+</html>
