@@ -4,7 +4,7 @@ Ce document est la référence unique pour tout développement futur du site **L
 
 Le style retenu est un **néo-brutalisme doux** : couleurs vives et franches, contours noirs épais, ombres pleines décalées (sans flou), typographie bold. L'ensemble donne une identité ludique, énergique et très lisible, assumée comme un parti pris graphique fort plutôt qu'un style neutre/corporate.
 
-> Nom de marque : **La Boussole SEO**. Logo : `logo-la-boussole-seo.png` (image), affiché à côté du nom de marque en toutes lettres dans le header (classe `.logo` = image `.logo-mark` 38×38px + texte).
+> Nom de marque : **La Boussole SEO**. Logo : `logo-la-boussole-seo-geo-vf.png` (image), affiché à côté du nom de marque en toutes lettres dans le header (classe `.logo` = image `.logo-mark` 38×38px + texte).
 
 ---
 
@@ -231,7 +231,7 @@ Ces emojis sont insérés en dur dans le HTML, pas via CSS `content`, et **héri
 
 ## 8. Images et logo
 
-- **Logo** : `logo-la-boussole-seo.png`, affiché en 38×38px (`object-fit: contain`) dans le header, toujours accompagné du nom de marque "La Boussole SEO" en texte à côté (jamais le logo seul).
+- **Logo** : `logo-la-boussole-seo-geo-vf.png`, affiché en 38×38px (`object-fit: contain`) dans le header, toujours accompagné du nom de marque "La Boussole SEO" en texte à côté (jamais le logo seul).
 - **Images de contenu** : règle générique `img { max-width: 100%; }` uniquement — pas de traitement automatique (pas de `border-radius` ni d'ombre par défaut sur une balise `<img>` isolée). Les seuls éléments visuellement traités (bordure/radius/ombre) sont les conteneurs de type carte qui encadrent du contenu (`.hero-art`, `.example-card`), pas les images brutes.
 - Pas de ratio d'image imposé (`aspect-ratio` non utilisé dans le CSS).
 

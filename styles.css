@@ -542,6 +542,21 @@ section { padding: 60px 0; }
 .page-hero h1 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); }
 .page-hero p { max-width: 60ch; }
 
+/* ===========================================================
+   Page À propos
+   =========================================================== */
+
+.about-body { max-width: 720px; margin: 0 auto; }
+.about-body .hook-block,
+.about-body .measure-card { margin: 28px 0; }
+.about-body .measure-card p { margin-bottom: 0; color: var(--ink); }
+.about-welcome { font-size: 1.1rem; }
+
+.about-cta { background: var(--bg-soft); border-top: 3px solid var(--border); }
+.about-cta .objectives-list { max-width: 520px; margin: 24px auto; text-align: left; }
+.about-cta .hero-chip-row { justify-content: center; margin: 8px 0 20px; }
+.about-cta .hero-actions { justify-content: center; }
+
 .programme-legend {
   display: flex;
   gap: 16px;
