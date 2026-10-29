@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Comprends comment les IA génératives recherchent, sélectionnent et citent des contenus, pourquoi certaines sources sont reprises et comment fonctionne la visibilité dans les réponses générées par l'IA.">
+<title>Chapitre 1 — Comment les IA génératives trouvent et citent du contenu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../../" class="logo"><img src="../../logo-la-boussole-seo-geo-vf.png" class="logo-mark" alt="La Boussole SEO"> La Boussole SEO</a>
+    <nav class="main-nav">
+      <a href="../../programme/">Programme</a>
+      <a href="../../a-propos/">À propos</a>
+    </nav>
+    <a href="../../programme/" class="btn btn-primary btn-sm">Voir le programme</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="../../programme/">Programme</a>
+    <a href="../../a-propos/">À propos</a>
+    <a href="../../programme/" class="btn btn-primary">Voir le programme</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../../programme/">Programme</a> <span>/</span>
+    <a href="../">🟣 Palier 9 — Le GEO en profondeur</a> <span>/</span>
+    <span>Chapitre 1</span>
+  </nav>
+</div>
+
+<section class="chapter-hero">
+  <div class="container">
+    <div class="chapter-hero-grid">
+      <div>
+        <h1>Comment les IA génératives trouvent et citent du contenu</h1>
+        <div class="chapter-meta">
+          <span>⏱️ Lecture ~14 min</span>
+          <span>🧩 Aucun prérequis</span>
+          <span>✅ Quiz en fin de chapitre</span>
+        </div>
+      </div>
+      <div class="chapter-hero-tag">
+        <span class="palier-tag" style="background:var(--palier-9-bg);color:var(--palier-9)">🟣 Palier 9 · Chapitre 1 sur 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container chapter-layout">
+
+  <aside class="chapter-toc">
+    <a href="#accroche" class="active">Accroche</a>
+    <a href="#objectifs">Ce que tu vas apprendre</a>
+    <a href="#concept">Le concept expliqué simplement</a>
+    <a href="#exemple">Exemple concret</a>
+    <a href="#pratique">Comment le mettre en pratique</a>
+    <a href="#jargon">Le jargon de ce chapitre</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#suite">Et après ?</a>
+  </aside>
+
+  <main class="chapter-body">
+
+    <article id="accroche" class="block hook-block">
+      <h2 class="block-kicker"><span class="num">1</span> Accroche</h2>
+      <h3>Pourquoi l'IA cite ton concurrent, et pas toi ?</h3>
+      <p>Imagine que tu as passé plusieurs jours à rédiger un excellent guide sur le référencement naturel. Ton article est bien structuré, il répond aux questions de tes lecteurs et il commence même à apparaître dans les résultats de Google.</p>
+      <p>Pourtant, lorsqu'un internaute pose une question à une IA générative sur le même sujet, ton site n'apparaît pas dans la réponse. À l'inverse, un article publié par un concurrent est cité comme source. L'IA reprend certaines de ses explications et renvoie vers sa page.</p>
+      <p>Pourquoi cette différence ? Est-ce parce que ton concurrent est mieux référencé ? Parce que son contenu est plus clair ? Parce que l'IA connaissait déjà son site ? Ou parce qu'elle a effectué une recherche sur le Web au moment de répondre ? La réponse dépend du fonctionnement de l'outil utilisé.</p>
+      <p>Pour travailler le GEO, il faut d'abord comprendre une chose essentielle : <strong>les IA génératives ne produisent pas toutes leurs réponses de la même manière, et toutes ne recherchent pas systématiquement des pages Web en direct</strong>.</p>
+      <p>Certaines réponses s'appuient sur les connaissances apprises pendant l'entraînement du modèle. D'autres peuvent mobiliser des outils de recherche, consulter des pages accessibles en ligne et afficher des sources. Comprendre ces mécanismes te permettra de mieux travailler la visibilité de tes contenus dans les réponses générées par l'IA.</p>
+    </article>
+
+    <article id="objectifs" class="block">
+      <h2 class="block-kicker"><span class="num">2</span> Ce que tu vas apprendre</h2>
+      <h3>À la fin de ce chapitre, tu sauras :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Comprendre les grandes différences entre un modèle génératif et un moteur de recherche</li>
+        <li><span class="tick">✓</span> Découvrir comment une IA peut accéder à des informations disponibles sur le Web</li>
+        <li><span class="tick">✓</span> Comprendre le rôle de la recherche, de la récupération de documents et de la génération de réponses</li>
+        <li><span class="tick">✓</span> Identifier les facteurs qui peuvent favoriser la sélection d'un contenu comme source</li>
+        <li><span class="tick">✓</span> Faire la différence entre être connu d'une IA, être utilisé dans une réponse et être cité</li>
+        <li><span class="tick">✓</span> Comprendre pourquoi une citation dans une réponse IA ne peut pas être garantie</li>
+      </ul>
+    </article>
+
+    <article id="concept" class="block">
+      <h2 class="block-kicker"><span class="num">3</span> Le concept expliqué simplement</h2>
+
+      <h3>Une IA générative ne fonctionne pas exactement comme Google</h3>
+      <p>Un moteur de recherche classique présente une liste de résultats que l'internaute peut consulter. Il explore le Web, indexe des pages et classe des résultats en fonction de nombreux signaux.</p>
+      <p>Une IA générative, elle, produit une réponse en langage naturel à partir des informations dont elle dispose et des mécanismes accessibles dans le contexte de la conversation.</p>
+      <p>Selon l'outil et la requête, elle peut notamment :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Produire une réponse à partir des connaissances acquises pendant son entraînement</li>
+        <li><span class="tick">✓</span> Utiliser le contexte de la conversation pour comprendre la question</li>
+        <li><span class="tick">✓</span> Interroger un moteur de recherche ou un outil de récupération d'informations</li>
+        <li><span class="tick">✓</span> Analyser des pages ou des documents qui lui sont fournis</li>
+        <li><span class="tick">✓</span> Combiner plusieurs sources avant de rédiger une réponse</li>
+      </ul>
+      <p>Ces possibilités ne sont pas présentes de la même manière dans tous les systèmes. Une IA qui n'a pas accès au Web en direct ne peut pas nécessairement découvrir un nouvel article publié hier. À l'inverse, un système doté d'un outil de recherche peut consulter des informations plus récentes.</p>
+      <div class="measure-card">
+        <div class="icon">💡</div>
+        <p><strong>Conséquence pour le GEO :</strong> publier un contenu ne signifie pas automatiquement qu'une IA le connaît, qu'elle le consultera ou qu'elle le citera.</p>
+      </div>
+
+      <h3>Comment une IA peut-elle trouver une page Web ?</h3>
+      <p>Prenons un assistant IA qui dispose d'une fonctionnalité de recherche sur Internet.</p>
+      <p>Lorsqu'un internaute pose une question, le système peut suivre un processus de ce type :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">1</span> <span><strong>Comprendre la question</strong> — L'IA interprète la demande, identifie le sujet et cherche à comprendre ce que l'utilisateur veut réellement savoir.</span></li>
+        <li><span class="tick">2</span> <span><strong>Rechercher des informations</strong> — Si le système utilise un outil de recherche, il peut lancer une ou plusieurs recherches pour trouver des pages pertinentes.</span></li>
+        <li><span class="tick">3</span> <span><strong>Récupérer et analyser des contenus</strong> — Le système peut examiner les résultats et récupérer des informations dans certaines pages ou certains documents accessibles.</span></li>
+        <li><span class="tick">4</span> <span><strong>Construire une réponse</strong> — L'IA sélectionne les éléments qu'elle juge utiles pour répondre, puis les organise et les reformule.</span></li>
+        <li><span class="tick">5</span> <span><strong>Afficher éventuellement des citations</strong> — Certains systèmes associent des passages de la réponse à des sources. D'autres peuvent répondre sans afficher de références cliquables.</span></li>
+      </ul>
+      <p>Ce schéma est simplifié. L'ordre exact, les outils utilisés et les mécanismes de sélection varient selon les systèmes. Une IA peut également effectuer plusieurs recherches successives avant de rédiger sa réponse.</p>
+
+      <h3>La récupération d'informations : le principe du RAG</h3>
+      <p>Tu rencontreras parfois le terme <strong>RAG</strong>, pour <em>Retrieval-Augmented Generation</em>, que l'on peut traduire par « génération augmentée par récupération d'informations ».</p>
+      <p>Le principe général consiste à fournir au modèle des informations récupérées dans des documents pertinents afin qu'il puisse les utiliser pour construire sa réponse.</p>
+      <p>Imagine que tu poses une question sur les avantages d'un cocon sémantique. Un système peut rechercher plusieurs documents sur le sujet, récupérer des passages qui expliquent le principe et s'appuyer sur ces éléments pour formuler une réponse.</p>
+      <p>Le modèle ne se contente donc pas nécessairement de mobiliser ses connaissances internes : il peut aussi utiliser des informations récupérées au moment de la demande.</p>
+      <p>Le RAG est une architecture possible, mais toutes les IA génératives ne l'utilisent pas de la même manière. Il ne faut pas non plus confondre récupération d'informations, recherche Web classique et entraînement d'un modèle : ce sont des mécanismes différents.</p>
+
+      <h3>Pourquoi une IA choisit-elle une source plutôt qu'une autre ?</h3>
+      <p>Lorsqu'un système consulte plusieurs pages, toutes ne seront pas forcément utilisées dans la réponse finale.</p>
+      <p>Un contenu peut présenter plusieurs avantages :</p>
+      <ul class="objectives-list">
+        <li><span class="tick">✓</span> Il répond directement à la question posée</li>
+        <li><span class="tick">✓</span> Il présente des informations précises et compréhensibles</li>
+        <li><span class="tick">✓</span> Il distingue clairement les faits, les exemples et les recommandations</li>
+        <li><span class="tick">✓</span> Il apporte des éléments suffisamment détaillés pour traiter le sujet</li>
+        <li><span class="tick">✓</span> Il présente des informations récentes lorsque la fraîcheur est importante</li>
+        <li><span class="tick">✓</span> Il provient d'une source identifiable et crédible</li>
+        <li><span class="tick">✓</span> Il est accessible et exploitable par les outils utilisés</li>
+      </ul>
+      <p>Ces éléments constituent des pistes de travail, pas une formule officielle de classement. Chaque système possède ses propres mécanismes, et les critères exacts de sélection ne sont pas toujours publics.</p>
+      <p>Un article long n'est donc pas automatiquement meilleur qu'un article court. Une page très populaire n'est pas nécessairement citée dans toutes les réponses. Le point essentiel est de fournir une information pertinente, exploitable et digne de confiance.</p>
+
+      <h3>Être connu, être utilisé et être cité : trois choses différentes</h3>
+      <p>Ces trois situations ne doivent pas être confondues.</p>
+      <p><strong>Être connu d'une IA</strong> signifie que des informations sur ton entreprise ou tes contenus peuvent faire partie des connaissances du modèle ou de son environnement documentaire. Cela ne prouve pas qu'une page précise sera utilisée.</p>
+      <p><strong>Être utilisé dans une réponse</strong> signifie qu'un système s'appuie sur une information issue de ton contenu. Cette utilisation peut se produire sans que ton site soit visible pour l'utilisateur.</p>
+      <p><strong>Être cité</strong> signifie que l'outil affiche une référence associée à ton contenu, par exemple un lien vers une page Web.</p>
+      <p>Pour une stratégie GEO, cette distinction est importante. Une marque peut être mentionnée sans lien, une page peut être consultée sans être citée, et une citation peut apparaître dans une réponse sans produire beaucoup de visites.</p>
+
+      <div class="analogy-card">
+        💡 <strong>Analogie — Une IA qui prépare un exposé</strong> — Imagine un étudiant qui doit préparer un exposé. Il peut utiliser ce qu'il connaît déjà, consulter des livres, lire plusieurs sites et finalement citer seulement certaines sources dans sa bibliographie. Le fait qu'il connaisse une information ne signifie pas qu'il a consulté ton site. Le fait qu'il l'ait consulté ne garantit pas qu'il le citera. Et le fait qu'il le cite ne garantit pas que tous les lecteurs visiteront ta page.
+      </div>
+
+      <h3>⚠️ Les pièges à éviter :</h3>
+      <ul class="objectives-list">
+        <li><span class="tick">✗</span> Penser que toutes les IA effectuent une recherche Web avant chaque réponse</li>
+        <li><span class="tick">✗</span> Croire qu'une bonne position sur Google garantit une citation par une IA</li>
+        <li><span class="tick">✗</span> Supposer qu'un contenu consulté sera forcément mentionné dans la réponse</li>
+        <li><span class="tick">✗</span> Confondre une mention de marque avec un lien vers ton site</li>
+        <li><span class="tick">✗</span> Chercher une formule universelle qui garantirait d'être cité</li>
+        <li><span class="tick">✗</span> Oublier que les réponses peuvent varier selon la question, le contexte et l'outil utilisé</li>
+      </ul>
+    </article>
+
+    <article id="exemple" class="block">
+      <h2 class="block-kicker"><span class="num">4</span> Exemple concret</h2>
+      <p>Imaginons que tu publies un guide intitulé « Comment choisir ses mots-clés SEO ? ».</p>
+      <p>Ton article explique la différence entre un mot-clé principal et des mots-clés secondaires. Il présente une méthode en cinq étapes, un exemple de recherche de mots-clés pour une boutique de chaussures et un tableau récapitulatif.</p>
+      <p>Un internaute demande à un assistant IA : « Comment choisir les mots-clés de mon site quand je débute en SEO ? »</p>
+      <p>Plusieurs scénarios sont possibles.</p>
+
+      <h3>Scénario 1 : l'IA répond sans recherche Web</h3>
+      <p>Elle peut produire une réponse à partir de ses connaissances générales. Ton article ne sera pas nécessairement consulté pendant cette conversation, même s'il est pertinent.</p>
+
+      <h3>Scénario 2 : l'IA effectue une recherche Web</h3>
+      <p>Elle trouve plusieurs guides, dont le tien. Elle peut retenir un passage de ton article parce qu'il explique clairement les étapes et fournit un exemple concret.</p>
+
+      <h3>Scénario 3 : l'IA utilise ton contenu, mais ne le cite pas</h3>
+      <p>Elle peut reprendre une information présente dans ton guide sans afficher de lien vers ta page. Tu ne peux pas nécessairement observer cette utilisation depuis tes statistiques habituelles.</p>
+
+      <h3>Scénario 4 : l'IA cite ton guide</h3>
+      <p>Elle affiche un lien vers ton article pour permettre à l'internaute de consulter la source. Cette citation peut générer une visite, mais ce n'est pas automatique.</p>
+
+      <p>Dans cet exemple, ton travail éditorial améliore les chances que ton contenu soit utile lorsqu'un système le rencontre. Il ne garantit toutefois ni sa découverte, ni son utilisation, ni sa citation.</p>
+    </article>
+
+    <article id="pratique" class="block">
+      <h2 class="block-kicker"><span class="num">5</span> Comment le mettre en pratique</h2>
+
+      <div class="practice-block">
+        <div class="practice-step">
+          <div class="step-num">1</div>
+          <div>
+            <p class="step-title">Identifie les questions auxquelles ton site doit répondre</p>
+            <p>Commence par dresser la liste des questions réelles de ton public. Ne te limite pas aux mots-clés très courts comme « SEO » ou « référencement ». Un débutant peut demander : « Comment trouver les mots-clés de mon site ? », « Quelle différence entre une impression et un clic ? » ou « Comment améliorer une page qui ne reçoit pas de trafic ? ». Ces questions t'aident à identifier les informations que ton contenu doit apporter. Elles peuvent devenir des titres, des sous-parties, des exemples ou des réponses dans une FAQ lorsque cela est pertinent. L'objectif n'est pas de créer une page pour chaque formulation possible. Regroupe les questions qui correspondent au même besoin et construis un contenu qui y répond de manière complète.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">2</div>
+          <div>
+            <p class="step-title">Vérifie que tes contenus sont accessibles</p>
+            <p>Un contenu intéressant ne peut pas être exploité par un outil qui ne parvient pas à y accéder. Vérifie que tes pages importantes sont accessibles sans connexion, qu'elles ne renvoient pas d'erreur et que les robots nécessaires peuvent les explorer selon la configuration de ton site. Contrôle également les règles de <code>robots.txt</code>, les balises <code>noindex</code> et les éventuelles restrictions d'accès. Les différents robots d'exploration n'ont pas tous les mêmes fonctions : certains explorent des pages pour alimenter un moteur de recherche, tandis que d'autres peuvent servir à l'entraînement ou à d'autres usages. Les règles et les effets dépendent du service concerné. Ne bloque pas un robot au hasard dans l'espoir d'améliorer ton GEO. Identifie d'abord le robot, son rôle et les conséquences de la règle appliquée.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">3</div>
+          <div>
+            <p class="step-title">Rends tes informations faciles à comprendre</p>
+            <p>Une page bien organisée aide les lecteurs à trouver rapidement les réponses et facilite l'identification des informations importantes. Utilise des titres explicites, des paragraphes centrés sur une idée, des listes lorsque plusieurs éléments doivent être comparés et des tableaux lorsque les données s'y prêtent. Si tu expliques une notion technique, commence par une définition simple, puis donne un exemple concret. Si tu présentes une méthode, indique les étapes dans un ordre logique. Évite les formulations vagues. Au lieu d'écrire « plusieurs facteurs peuvent jouer un rôle », précise les facteurs dont tu parles et explique leur importance, en distinguant ce qui est établi de ce qui reste incertain.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">4</div>
+          <div>
+            <p class="step-title">Renforce la fiabilité de tes contenus</p>
+            <p>Indique clairement qui publie le contenu et, lorsque c'est pertinent, quelles sont les compétences ou l'expérience de l'auteur. Appuie les affirmations importantes sur des sources fiables. Si tu donnes des chiffres, précise leur contexte et leur date lorsque celle-ci compte. Si une pratique relève d'une recommandation plutôt que d'une règle officielle, présente-la comme telle. Mets à jour les contenus qui deviennent obsolètes. Il vaut mieux corriger une information réellement dépassée que modifier artificiellement une date pour donner l'impression d'une actualisation.</p>
+          </div>
+        </div>
+
+        <div class="practice-step">
+          <div class="step-num">5</div>
+          <div>
+            <p class="step-title">Observe comment les IA présentent ton sujet</p>
+            <p>Choisis plusieurs questions importantes pour ton activité et teste-les dans différents assistants qui disposent de fonctions de recherche, lorsque c'est possible. Note les sources citées, les marques mentionnées, les angles de réponse et les informations manquantes. Recommence ces tests à intervalles réguliers, car les réponses peuvent varier. Cette observation reste un échantillon, pas une mesure exhaustive de ta visibilité. Ne tire pas de conclusion définitive à partir d'une seule question ou d'une seule réponse. Tu peux ensuite améliorer les pages qui apportent une réponse incomplète, qui manquent d'exemples ou qui présentent des informations peu claires. Suis également les éventuelles visites provenant des outils IA dans tes outils de mesure, tout en gardant à l'esprit que toutes les utilisations et toutes les citations ne génèrent pas une visite identifiable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="measure-card">
+        <div class="icon">💡</div>
+        <p><strong>Le bon réflexe :</strong> créer des contenus utiles aux lecteurs avant de chercher à plaire aux systèmes IA. La clarté, la précision et la fiabilité constituent une base durable, même si aucun format ne garantit une citation.</p>
+      </div>
+    </article>
+
+    <article id="jargon" class="block">
+      <h2 class="block-kicker"><span class="num">6</span> Le jargon de ce chapitre</h2>
+      <h3>Mini-lexique</h3>
+      <table class="jargon-table">
+        <tr><th>Terme</th><th>Définition simple</th></tr>
+        <tr><td>IA générative</td><td>Système capable de produire du texte ou d'autres contenus à partir d'une consigne</td></tr>
+        <tr><td>Récupération d'informations</td><td>Processus qui consiste à rechercher et à sélectionner des documents utiles pour répondre à une question</td></tr>
+        <tr><td>RAG</td><td>Architecture qui associe la récupération de documents à la génération d'une réponse</td></tr>
+        <tr><td>Source citée</td><td>Page ou document présenté comme référence dans une réponse</td></tr>
+        <tr><td>Citation IA</td><td>Référence affichée par un système d'IA vers une source utilisée ou présentée à l'appui d'une réponse</td></tr>
+        <tr><td>Robot d'exploration</td><td>Programme automatisé qui accède à des pages Web selon des règles définies</td></tr>
+        <tr><td><code>robots.txt</code></td><td>Fichier qui donne des consignes d'exploration aux robots compatibles</td></tr>
+        <tr><td><code>noindex</code></td><td>Directive indiquant aux moteurs de recherche qui la respectent de ne pas indexer une page</td></tr>
+        <tr><td>GEO</td><td>Ensemble des pratiques visant à améliorer la visibilité d'un contenu dans les réponses des moteurs et assistants génératifs</td></tr>
+      </table>
+    </article>
+
+    <article id="quiz" class="block">
+      <h2 class="block-kicker"><span class="num">7</span> Quiz — Vérifie que tu as compris</h2>
+      <div class="quiz-block">
+        <div class="quiz-progress">
+          <span>Question 1/4</span>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="quiz-question">
+          <p class="question-title">Question 1 — Toutes les IA génératives consultent-elles le Web avant de répondre ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui, sans exception</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Non, cela dépend du système et des outils disponibles</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Oui, mais uniquement pour les questions courtes</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> Certaines IA peuvent répondre à partir de leurs connaissances sans effectuer de recherche Web en direct.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 2 — Que signifie le sigle RAG ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true"><span class="letter">A</span> Une méthode qui associe la récupération d'informations à la génération d'une réponse</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Un format de titre SEO</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Un indicateur de trafic dans Google Analytics</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : A.</strong> Le RAG permet à un système de s'appuyer sur des documents récupérés pour produire une réponse.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 3 — Si une IA consulte une page, est-elle obligée de la citer ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Oui, systématiquement</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">B</span> Oui, si la page contient un tableau</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">C</span> Non, la consultation et la citation sont deux choses différentes</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : C.</strong> Une page peut être utilisée sans apparaître dans les références visibles de la réponse.</span></div>
+        </div>
+
+        <div class="quiz-question" hidden>
+          <p class="question-title">Question 4 — Quel est le meilleur point de départ pour rendre un contenu plus exploitable par les IA ?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false"><span class="letter">A</span> Ajouter des mots-clés dans chaque phrase</div>
+            <div class="quiz-option" data-correct="true"><span class="letter">B</span> Produire une réponse claire, utile, accessible et fiable</div>
+            <div class="quiz-option" data-correct="false"><span class="letter">C</span> Allonger toutes les pages sans tenir compte du sujet</div>
+          </div>
+          <div class="quiz-explain">💡 <span><strong>Bonne réponse : B.</strong> La clarté, l'accessibilité et la fiabilité aident les lecteurs à comprendre le contenu et constituent une base pertinente pour le GEO.</span></div>
+        </div>
+
+        <div class="quiz-score" hidden>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--ink-faint);">Ton score</div>
+          <div class="score-num">4/4</div>
+          <p>Bravo ! Tu sais maintenant comment une IA générative peut trouver, utiliser et citer un contenu, et pourquoi être connu, utilisé ou cité sont trois choses différentes.</p>
+          <div class="score-actions">
+            <button type="button" class="btn btn-ghost">↻ Refaire le quiz</button>
+            <a href="../chapitre-2/" class="btn btn-primary">Chapitre suivant →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="suite" class="block">
+      <h2 class="block-kicker"><span class="num">8</span> Et après ?</h2>
+      <h3>La suite logique</h3>
+      <p>Tu comprends maintenant les grandes étapes par lesquelles une IA peut trouver des informations, les analyser et éventuellement citer une source.</p>
+      <p>Tu as également vu pourquoi la visibilité dans les réponses générées ne se résume pas à une position dans Google : une IA doit pouvoir accéder à ton contenu, le considérer comme pertinent et décider de l'utiliser ou de le citer selon son propre fonctionnement.</p>
+      <p>Mais comprendre le mécanisme ne suffit pas. Il faut aussi savoir comment organiser et rédiger tes pages pour que leurs informations soient faciles à identifier, à comprendre et à réutiliser.</p>
+      <p>Dans le prochain chapitre, nous allons passer de la théorie à la pratique : <strong>comment optimiser ton contenu pour augmenter ses chances d'être cité par les IA génératives</strong>.</p>
+      <div class="next-card">
+        <div class="next-card-prev-row">
+          <a href="../../palier-8/chapitre-2/">← Chapitre précédent</a>
+        </div>
+        <div class="next-card-body">
+          <div>
+            <div class="label">Chapitre suivant</div>
+            <h3>Optimiser son contenu pour être cité par les IA</h3>
+          </div>
+          <a href="../chapitre-2/" class="btn btn-primary">Continuer →</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 La Boussole SEO — Formation libre SEO &amp; GEO</span>
+    <div class="footer-links">
+      <a href="../../programme/">Programme</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chapter-toc a"));
+  var sections = links
+    .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+    .filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (section) { observer.observe(section); });
+})();
+
+(function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.querySelector(".mobile-nav");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
+<script src="../../quiz.js"></script>
+
+</body>
+</html>
